@@ -9,9 +9,9 @@ Los creadores de esta idea somos 3:
 
 ¿Quiénes nos inspiraron y por qué?
 
-**https://www.elektron.se/en** nos parece que toda la página está muy bien lograda sin dejar de ser simple. En particular, nos llamó la atención en la parte de shop que cuando uno pone el cursor por encima del producto, te muestra una imagen distinta a la actual 
+**https://www.elektron.se/en** nos parece que toda la página está muy bien lograda sin dejar de ser simple. Nos gusta mucho el home, los colores, y las imagenes son muy buenas. En particular, nos llamó la atención en la parte de shop que cuando uno pone el cursor por encima del producto, te muestra una imagen distinta a la actual 
 
-**https://www.makenoisemusic.com/** sin dudas nuestra inspiración principal por su tipografía tan particular, el estilo tipo "computadora" y la estética en general
+**https://www.makenoisemusic.com/** nos gusta mucho esta pagina, en especial el home y la pagina descripcion del producto. toda la pagina tiene una estetica muy bien lograda, por su tipografía tan particular, el estilo tipo "computadora"
 
 **https://intellijel.com/** tiene un pequeño detalle que nos llamó la atención y nos encanta: un logo que cambia de color al poner el cursor por encima. 
 
