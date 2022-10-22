@@ -21,5 +21,4 @@ Los creadores de esta idea somos 3:
 
 
 
-Link de acceso al tablero de Trello:
-https://trello.com/invite/b/Y7YqT6Bx/ATTI153d383668dacc47bb5ab26698e5e133B9EEF543/proyecto-integrador
+El trabajo de los sprints lo organizamos usando un tablero de Trello. Link de acceso: https://trello.com/invite/b/Y7YqT6Bx/ATTI153d383668dacc47bb5ab26698e5e133B9EEF543/proyecto-integrador
