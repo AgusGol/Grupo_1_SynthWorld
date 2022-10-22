@@ -18,3 +18,8 @@ Los creadores de esta idea somos 3:
 **https://www.perfectcircuit.com/** también es un sitio que nos gustó porque es simple y limpio. Destacamos el sistema de menú desplegable que tiene que muestra la información de manera muy clara. Está pensada para ahorrar clicks y ser fácil de entender
 
 **https://www.martinpas.com/** nos gusta como implementaron la barra de buscar. También que tengan un carrousel con ofertas, novedades, etc. Además tiene información relacionada a historia de instrumentos de música electrónica y nos pareció interesante (no es tan usual en sitios como este) 
+
+
+
+Link de acceso al tablero de Trello:
+https://trello.com/invite/b/Y7YqT6Bx/ATTI153d383668dacc47bb5ab26698e5e133B9EEF543/proyecto-integrador
