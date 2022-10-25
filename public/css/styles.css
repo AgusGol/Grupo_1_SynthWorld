@@ -1,0 +1,302 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+  /*  color: ; */ 
+
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    
+    font-family: 'Comfortaa', cursive;
+    color: #FFFFFF;
+    background-color: #282828;
+    font-size: 1.5rem;
+
+}
+
+.nav-bar-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 8px 0 8px;
+    align-content: center;
+    flex-wrap: nowrap;
+    color: #ffffff;
+
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.nav-bar-links {
+    display:none
+}
+header{ 
+    background-color: #212121 ;
+}
+header i {
+    font-size: 1.9rem;
+    align-self: center;
+    margin: 0 10px;
+    color:  #FFFFFF;
+}
+
+.cart-icon {
+    margin-top: 10px;
+}
+header img {
+    width: 35x;
+    height: 35px;
+}
+h1 {
+    font-size: 1.8rem;
+    align-self: center;
+    font-weight: 300;
+
+}
+
+.logo-and-name {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.search-bar{
+    display: flex;
+    padding-bottom: 5px;
+}
+.search-bar input{
+    width: 95%;
+    margin: auto;
+    background-color: #FFFFFF;
+    border: solid 1px #d9d9d9;
+    text-align: center;
+}
+
+.carrousell img {
+    margin: 0;
+    width: 100%;
+}
+
+.categories {
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.categories h2 { 
+    padding-top: 15px;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.img-categories article img {
+    
+    height: 10vh;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.img-categories article {
+    position: relative;
+    text-align: center;
+}
+
+.img-categories article p {
+        font-weight: 700;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+.container-banner{
+    text-align: center;
+    display: none;
+    margin-top:10px;
+}
+.cables-banner {
+    width: 95vw;
+    height: 8vh;
+    margin: 0 auto;
+
+}
+.info-dropdown {
+    background-color: #000000;
+}
+
+.info-dropdown article {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    border-bottom: 1px solid white;
+    flex-wrap: wrap;
+    
+}
+
+.info-dropdown h2 {
+    font-size: 1.4rem;
+    align-self: center;
+}
+
+.btn-dropdown {
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.company .btn-dropdown { 
+    width: 40.5%;
+}
+
+.latest-news .btn-dropdown {
+    width: 37.5%;
+}
+
+.sponsored-artists-dd .btn-dropdown {
+    width: 31.5%;
+}
+
+.btn-dropdown i {
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+.social-links {
+    background-color: #000000;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links i {
+    margin: 0 5px;
+}
+
+.about-us-home {
+    display: none;
+}
+.sponsored-artists {
+    display: none;
+}
+.links-footer {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .categories article img {
+        width: 30vw;
+    }
+    .img-categories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .search-bar {
+        width: 50vw;
+        margin: auto
+    }
+    .burger-menu {
+        display: none;
+    }
+
+    .nav-bar-links {
+        display: flex;
+        margin-right: 20%;
+    }
+
+    .nav-bar-links h2{
+        font-size: 1.2rem;
+    align-self: center;
+    font-weight: 300;
+    margin-left: 20px;
+
+    }
+
+    .nav-bar-top i {
+        margin-top: 10px;
+    }
+    .container-banner {
+        display: block;
+    }
+    .about-us-home{
+        display: block;
+        margin-top: 35px; 
+        text-align: center;
+        background-color: #232323;
+        padding: 20px;
+    }
+    .about-us-home h2 {
+        margin-top:20px;
+        font-weight: 300;
+    }
+    .short-description {
+        font-weight: 200;
+        width: 50vw;
+        margin: auto;
+        margin-top: 20px;
+        
+    }
+    .about-us-home .learn-more{ 
+        color: #FFFFFF;
+        border: 1px solid #FFFFFF;
+        border-radius: 10%;
+        padding:5px;
+        font-size: 1rem;
+        display: block;
+        width: 10%;
+        margin: auto;
+        margin-top: 20px;
+
+    }
+    .about-us-home img {
+        width:50vw;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .sponsored-artists {
+        display: block;
+        margin-top: 35px; 
+        text-align: center;
+    }
+    .description-sponsored {
+        font-weight: 200;
+        width: 80vw;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .sponsored-artist h2{
+        font-weight: 300;
+    }
+    .info-dropdown {
+        display: none;
+    }
+    .img-artists {
+        display: flex;
+        width: 40vw;
+        
+        margin: auto;
+        justify-content: space-between;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    .img-artists img {
+        width: 50px;
+        height: 50px;
+        border-radius: 100px;
+    }
+    .links-footer {
+        background-color: #000000;
+        margin-top: 50px;
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+}
