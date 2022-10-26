@@ -26,7 +26,12 @@ body {
     align-content: center;
     flex-wrap: nowrap;
     color: #ffffff;
+    position: relative;
 
+}
+
+.user-icon {
+    display: none;
 }
 
 a {
@@ -127,6 +132,7 @@ h1 {
 }
 .info-dropdown {
     background-color: #000000;
+    position: relative;
 }
 
 .info-dropdown article {
@@ -141,6 +147,9 @@ h1 {
 .info-dropdown h2 {
     font-size: 1.4rem;
     align-self: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -0%);
 }
 
 .btn-dropdown {
@@ -208,6 +217,10 @@ h1 {
     .nav-bar-links {
         display: flex;
         margin-right: 20%;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, 0%);
     }
 
     .nav-bar-links h2{
@@ -220,6 +233,11 @@ h1 {
 
     .nav-bar-top i {
         margin-top: 10px;
+    }
+
+    .user-icon {
+        display: inline-block;
+        font-weight: 100;
     }
     .container-banner {
         display: block;
