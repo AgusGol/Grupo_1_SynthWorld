@@ -224,7 +224,9 @@ h1 {
     }
 
     .nav-bar-links {
+        width:40%;
         display: flex;
+        justify-content: space-between;
         margin-right: 20%;
         position: absolute;
         top: 40%;
@@ -326,4 +328,31 @@ h1 {
 
     }
 
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 11px;
+    }
+
+    .nav-bar-links {
+        width: 50%;
+        margin:auto;
+        position: absolute;
+        top: 40%;
+        left: 51%;
+        transform: translate(-50%, 0%);
+    }
+}
+
+@media (min-width: 1650px) {
+    .nav-bar-links{
+        left: 52%;
+    }
+}
+
+@media (min-width: 2560px) {
+    .nav-bar-links{
+        left: 52.5%;
+    }
 }
