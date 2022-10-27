@@ -131,7 +131,7 @@ h1 {
 
 }
 .info-dropdown {
-    background-color: #000000;
+    background-color: #232323;
     position: relative;
 }
 
@@ -157,6 +157,15 @@ h1 {
     display: flex;
     flex-direction: column;
 }
+.info-dropdown-text {
+    background-color: #232323;
+    text-align: justify;
+    
+}
+.info-dropdown-text p {
+    width: 90%;
+    margin: auto;
+}
 
 .company .btn-dropdown { 
     width: 40.5%;
@@ -176,7 +185,7 @@ h1 {
 }
 
 .social-links {
-    background-color: #000000;
+    background-color: #171717;
     height: 50px;
     display: flex;
     align-items: center;
@@ -309,7 +318,7 @@ h1 {
         border-radius: 100px;
     }
     .links-footer {
-        background-color: #000000;
+        background-color: #171717;
         margin-top: 50px;
         padding-top: 10px;
         display: flex;
