@@ -1,8 +1,13 @@
+
+/* mb means mobile
+   tb means tablet
+   dt means desktop */
+
+
 *{
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-  /*  color: ; */ 
 
 }
 
@@ -118,7 +123,13 @@ h1 {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        text-shadow: 2px 2px 2px #000000;
+        transition: all 350ms;
+
       }
+.img-categories article:hover { 
+    color:#b30d0d
+}
 .container-banner{
     text-align: center;
     display: none;
@@ -190,6 +201,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
 }
 
 .social-links i {
@@ -342,17 +355,33 @@ h1 {
         top: 40%;
         left: 51%;
         transform: translate(-50%, 0%);
+    }   
+    .carrousell {
+        overflow: hidden;
+        height: 450px;
+        position: relative;
     }
+    .carrousell img {
+       position: absolute;
+       bottom: -10%;
+        }
 }
 
 @media (min-width: 1650px) {
     .nav-bar-links{
         left: 52%;
     }
+    .carrousell img {
+        position: absolute;
+        bottom: -20%;
+         }
 }
 
 @media (min-width: 2560px) {
     .nav-bar-links{
         left: 52.5%;
+    }
+    .categories article img {
+        width: 15vw;
     }
 }
