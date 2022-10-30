@@ -103,18 +103,22 @@ h1 {
     padding-top: 15px;
     font-size: 1.4rem;
     margin-bottom: 10px;
+    
 }
 
 .img-categories article img {
     
     height: 10vh;
-    width: 90%;
     margin: 10px auto;
+    width: 100%;
 }
 
 .img-categories article {
     position: relative;
     text-align: center;
+    margin: auto;
+    overflow: hidden;
+    width: 90vw;
 }
 
 .img-categories article p {
@@ -209,7 +213,7 @@ h1 {
     margin: 0 5px;
 }
 
-.about-us-home {
+.info-home {
     display: none;
 }
 .sponsored-artists {
@@ -220,13 +224,21 @@ h1 {
 }
 
 @media (min-width: 768px) {
-    .categories article img {
+    .img-categories article {
+        position: relative;
+        text-align: center;
+        margin: auto;
+        overflow: hidden;
         width: 30vw;
+
     }
     .img-categories {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+    }
+    .img-categories article img {
+        width: 100%;
     }
     .search-bar {
         width: 50vw;
@@ -266,37 +278,37 @@ h1 {
     .container-banner {
         display: block;
     }
-    .about-us-home{
+    .info-home{
         display: block;
         margin-top: 35px; 
         text-align: center;
         background-color: #232323;
-        padding: 20px;
+        padding: 20px; 
+        align-items: center;
     }
-    .about-us-home h2 {
+    .info-home h2 {
         margin-top:20px;
         font-weight: 300;
+        margin: auto;
     }
     .short-description {
         font-weight: 200;
-        width: 50vw;
-        margin: auto;
         margin-top: 20px;
         
     }
-    .about-us-home .learn-more{ 
+    .info-home .learn-more{ 
         color: #FFFFFF;
         border: 1px solid #FFFFFF;
         border-radius: 10%;
         padding:5px;
         font-size: 1rem;
         display: block;
-        width: 10%;
+        width: 100px;
         margin: auto;
         margin-top: 20px;
 
     }
-    .about-us-home img {
+    .info-home img {
         width:50vw;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -340,7 +352,19 @@ h1 {
         justify-content: space-around;
 
     }
-
+    .home-news-dt {
+        display: none;
+        margin: auto;
+        margin-top:0px;
+        background-color:#FFFFFF;
+        color: #000000;
+    }
+    .info-home .learn-more-news-dt {
+            color: #000000;
+            border: 1px solid #000000;
+    
+        
+    }
 }
 
 @media (min-width: 1024px) {
@@ -365,6 +389,26 @@ h1 {
        position: absolute;
        bottom: -10%;
         }
+    .info-home {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .info-home img {
+        width: 35vw;
+    }
+    .info-home-titulo-boton {
+        width: 35vw;
+        text-align: center;
+    }
+    .info-home p { 
+        width: auto;
+
+    }
+    .short-description {
+        width: 50vw;
+    }
+    
 }
 
 @media (min-width: 1650px) {
@@ -383,5 +427,9 @@ h1 {
     }
     .categories article img {
         width: 15vw;
+    }
+    .img-categories article {
+        width: 15vw;
+
     }
 }
