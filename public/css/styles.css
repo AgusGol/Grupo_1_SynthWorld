@@ -49,7 +49,15 @@ a {
 }
 header{ 
     background-color: #212121 ;
+    display: block;
+    width: 100%;
+    position:fixed;
+    top: 0px;
+    z-index: 100;
+    padding-bottom: 3px;
+    
 }
+
 header i {
     font-size: 1.9rem;
     align-self: center;
@@ -276,6 +284,11 @@ h1 {
     }
     .container-banner {
         display: block;
+    }
+    .container-banner img {
+        margin-top:30px;
+        margin-bottom: 20px;
+        padding-top: 20px;
     }
     .info-home{
         display: block;
