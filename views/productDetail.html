@@ -4,9 +4,130 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>SynthWorld</title>
+
+    <!-- normalize -->
+    <link href="css/normalize.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <section class="nav-bar-top">
+            <i class="fas fa-bars burger-menu"></i>
+            <div class="logo-and-name">
+                <img src="img/Logo.PNG" class="">
+                <h1>SynthWorld</h1>
+            </div>
+                <article class="nav-bar-links">
+                    <h2><a href="">Shop</a></h2>
+                    <h2><a href="">News</a></h2>
+                    <h2><a href="">About</a></h2>
+                    <h2><a href="">Support</a></h2>
+                </article>
+                <article class="icons-navbar">
+                    <i class="fas fa-shopping-cart cart-icon"></i>
+                    <i class="fas fa-user user-icon"></i> 
+                </article>
+        </section>
+        <section class="search-bar">
+        <input type="text" placeholder="Search...">
+    </section>
+</header>
+
+<!--Inicio productDetail-->
+<main>
+    <section>
+        <article class="carrousell">
+            <img src="img/octatrack-mkii.webp">
+        </article>
+        <article class="product-title">
+        <h2>Título del producto</h2>
+        </article>
+        <article class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </article>
+            
+            <article class="price">
+                <p>$1350</p>
+            </article>
+        <article class="buttons">
+            <button type="submit" class="btn-wishlist">
+                Add to wishlist
+            </button>
+            <button type="submit" class="btn-cart">
+                Add to cart
+            </button>
+        </article>
+    </section>
+    
+
+
+<!--dropdown section mobile-->
+<section class="info-dropdown">
+    <article class="description">
+        <h2>Description</h2>
+        <div class="btn-dropdown">
+            <i class="fas fa-caret-down"></i>
+        </div>  
+    </article>
+    <article class="includes">
+        <h2>Includes</h2>
+        <div class="btn-dropdown">
+            <i class="fas fa-caret-down"></i>
+        </div> 
+    </article>
+    <article class="specifications">
+        <h2>Specifications</h2>
+        <div class="btn-dropdown">
+            <i class="fas fa-caret-down"></i>
+        </div> 
+    </article>
+    <article class="sample">
+        <h2>Sample 1</h2>
+    </article>
+</section>
+<!-- fin dropdown section -->
+
+<section class="similar-products">
+    <h3>Similar/Related products</h3>
+</section>
+<section class="related">
+    <article class="synth">
+    <img src="img/synth.jpg">
+    
+    </article>
+
+    <img src="img/headphones.jpg">        
+</section>
+
+</main>
+
+<footer>
+    <article class="links-footer">
+        <a>Community</a>
+        <a>Blog</a>
+        <a>Resources</a>
+    </article>
+    <article class="social-links">
+        <i class="fas fa-at"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+    </article>
+</footer>
 </body>
 </html>
