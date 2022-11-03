@@ -55,6 +55,7 @@ header{
     top: 0px;
     z-index: 100;
     padding-bottom: 3px;
+    height: 75px;
     
 }
 
@@ -95,7 +96,9 @@ h1 {
     border: solid 1px #d9d9d9;
     text-align: center;
 }
-
+.carrousell {
+    margin-top:75px;
+}
 .carrousell img {
     margin: 0;
     width: 100%;
@@ -115,18 +118,19 @@ h1 {
 }
 
 .img-categories article img {
-    
-    height: 10vh;
-    margin: 10px auto;
     width: 100%;
+   position: absolute;
+   bottom: -30%;
+   right: 0;
 }
 
 .img-categories article {
     position: relative;
     text-align: center;
-    margin: auto;
     overflow: hidden;
     width: 90vw;
+    height: 90px;
+    margin: 10px auto;
 }
 
 .img-categories article p {
@@ -140,17 +144,17 @@ h1 {
 
       }
 .img-categories article:hover { 
-    color:#b30d0d
+    color:#ff2020;
+    
 }
 .container-banner{
     text-align: center;
     display: none;
-    margin-top:10px;
 }
 .cables-banner {
     width: 95vw;
-    height: 8vh;
-    margin: 0 auto;
+    margin: auto;
+    opacity: 0.7;
 
 }
 .info-dropdown {
@@ -232,14 +236,25 @@ h1 {
     display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 816px) {
+    header {
+        height:75px;
+    }
     .img-categories article {
         position: relative;
         text-align: center;
-        margin: auto;
+        margin: 10px auto;
         overflow: hidden;
         width: 30vw;
 
+    }
+    .img-categories article img {
+        width: 100%;
+       position: absolute;
+       top: -50%;
+       right: 0;
+        /* top:-130%;
+        right: 0;*/
     }
     .img-categories {
         display: flex;
@@ -286,9 +301,8 @@ h1 {
         display: block;
     }
     .container-banner img {
-        margin-top:30px;
-        margin-bottom: 20px;
-        padding-top: 20px;
+        margin-top:10px;
+        margin-bottom: 10px;
     }
     .info-home{
         display: block;
@@ -326,9 +340,11 @@ h1 {
         margin-bottom: 20px;
     }
     .sponsored-artists {
+        padding: 4fc0px;
         display: block;
         margin-top: 35px; 
         text-align: center;
+        background-color: #232323;
     }
     .description-sponsored {
         font-weight: 200;
@@ -345,20 +361,22 @@ h1 {
     .img-artists {
         display: flex;
         width: 40vw;
-        
         margin: auto;
         justify-content: space-between;
         margin-top: 40px;
         margin-bottom: 20px;
     }
-    .img-artists img {
-        width: 50px;
+    .container-img-sponsored{
         height: 50px;
-        border-radius: 100px;
+        width: 50px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+    .img-artists img {
+        width:100%;
     }
     .links-footer {
         background-color: #171717;
-        margin-top: 50px;
         padding-top: 10px;
         display: flex;
         justify-content: space-around;
@@ -368,20 +386,23 @@ h1 {
         display: none;
         margin: auto;
         margin-top:0px;
-        background-color:#FFFFFF;
-        color: #000000;
+        background-color:#282828;
+        color: #FFFFFF;
     }
     .info-home .learn-more-news-dt {
-            color: #000000;
-            border: 1px solid #000000;
+            color: #FFFFFF;
+            border: 1px solid #FFFFFF;
     
         
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1092px) {
     html {
         font-size: 11px;
+    }
+    header {
+        height: 80px;
     }
 
     .nav-bar-links {
@@ -389,18 +410,24 @@ h1 {
         margin:auto;
         position: absolute;
         top: 40%;
-        left: 51%;
+        left: 49.5%;
         transform: translate(-50%, 0%);
     }   
     .carrousell {
-        overflow: hidden;
+       overflow: hidden;
+       height:600px;
         height: 450px;
-        position: relative;
+        position: relative; 
+        margin-top: 80px;
     }
     .carrousell img {
        position: absolute;
-       bottom: -10%;
+       bottom: -20%; 
+       
         }
+    .container-banner {
+        margin-top: 15px;
+    }
     .info-home {
         display: flex;
         justify-content: space-around;
@@ -420,25 +447,36 @@ h1 {
     .short-description {
         width: 50vw;
     }
+    .img-categories article img {
+        top: -100%;
+    }
     
 }
 
 @media (min-width: 1650px) {
-    .nav-bar-links{
-        left: 52%;
-    }
-    .carrousell img {
+ /*   .carrousell img {
         position: absolute;
         bottom: -20%;
+         } */
+    .img-categories article img {
+            width: 100%;
+           position: absolute;
+           bottom: -50%;
+           right: 0;
+            /* top:-130%;
+            right: 0;*/
+        }
+        .carrousell {
+            
+             height: 500px;
+             position: relative; 
+             margin-top: 80px;
          }
 }
 
 @media (min-width: 2560px) {
-    .nav-bar-links{
-        left: 52.5%;
-    }
-    .categories article img {
-        width: 15vw;
+    .carrousell {
+        height: 700px;
     }
     .img-categories article {
         width: 15vw;
