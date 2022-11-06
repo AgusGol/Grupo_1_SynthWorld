@@ -340,7 +340,8 @@ h1 {
         margin-bottom: 20px;
     }
     .sponsored-artists {
-        padding: 4fc0px;
+
+        padding: 40px;
         display: block;
         margin-top: 35px; 
         text-align: center;
