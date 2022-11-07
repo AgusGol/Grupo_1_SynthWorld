@@ -37,7 +37,7 @@ h2 {
     color:#FFFFFF;
     font-size: 1.4rem;
 }
-.bellow-inputs-login{
+.bellow-inputs-login{      /*dónde se implementa esto?*/
     display: flex;
     align-items: center;
     height: 20px;
@@ -79,7 +79,7 @@ p {
 }
 
 .btn-register-with-facebook {
-    background-color: #576b95;
+    background-color: var(--color--facebook); /*agregué el mismo código de color para fb*/
 }
 
 .btn-register-with-google {

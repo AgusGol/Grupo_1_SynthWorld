@@ -46,37 +46,45 @@
 </header>
 
 <!-- Register form -->
-    
-<section class="register-workflow">
-    <div class="container-register">
-        <form action="register" method="POST">
-            <h1>Ready to join our community?</h1>
-            <h2>Create your account</h2>
-            <input type="email" name="userEmail" placeholder="Email address" required>
-            <div class="input-password">
-                <input type="password" name="userPassword" placeholder="Password" required>
-                <input type="password" name="userPasswordValidation" placeholder="Confirm password" required>
-            </div>
-    </div>
 
-    <p class="paragraph">
-        Personal information
-    </p>
-    <div class="second-Container">
-        <input type="text" name="userFirstName" placeholder="First name" required>
-        <input type="text" name="userLastName" placeholder="Last name" required>
-    </div>
-    <div class="user-birth">   
-        <input type="text" name="userDateOfBirth" placeholder="Day" required>
-        <input type="text" name="userMonthOfBirth" placeholder="Month" required>
-        <input type="text" name="userYearOfBirth" placeholder="Year" required>
-    </div>
-    <button type="submit" class="btn-register">
-        Register
-    </button>
-    <p class="paragraph">
-        Or
-    </p>
+<main>
+    <form action="register" method="POST" class="register-form">
+        <h1>Ready to join our community?</h1>
+        <h2>Create your account</h2>
+        <div class="container-inputs">
+            <label for="userEmail">Email address</label>
+            <input type="email" name="userEmail" placeholder="Email address" class="email-input-login" required>
+
+            <label for="userpassword">Password</label>
+            <input type="password" name="userPassword" placeholder="Password" required>
+            <label for="userpasswordValidation">Confirm password</label>
+            <input type="password" name="userPasswordValidation" placeholder="Confirm password" required>
+        </div>
+        <h1>Personal information</h1>
+
+        <div class="second-container-inputs">
+            <label for="userFirstName">First name</label>
+            <input type="text" name="userFirstName" placeholder="First name" required>
+            <label for="userLastName">Last name</label>
+            <input type="text" name="userLastName" placeholder="Last name" required>
+        </div>
+
+        <div class="third-container-inputs">
+            <label for="userDateOfBirth">Day</label>
+            <input type="text" name="userDateOfBirth" placeholder="Day" required>
+            <label for="userMonthOfBirth">Month</label>
+            <input type="text" name="userMonthOfBirth" placeholder="Month" required>
+            <label for="userYearOfBirth">Year</label>
+            <input type="text" name="userYearOfBirth" placeholder="Year" required>
+        </div>
+        <button type="submit" class="btn-register">
+            Register
+        </button>
+        <p class="paragraph">
+            Or
+        </p>
+
+
 <!--FB and Gmail buttons-->
 <div class="container-btn-register-with">
         <button class="btn-register-with-facebook"><i class="fab fa-facebook"></i>
@@ -84,14 +92,12 @@ Register with Facebook</button>
     </div>
     
     <div class="container-btn-register-with">
-        <button class="btn-register-with-google"><i class="fab fa-google"></i>Register with Google</button>
+        <button class="btn-register-with-google"><i class="fab fa-google"></i><span>  Register with Google</span></button>
     </div>
 
-
-    <p class="create-account">Already have an account?<a href="#"> Sign in</a></p>    <!--Linkear al login-->
+    <p class="create-account">Already have an account?<a href="/login"> Sign in</a></p>
     </form>
-</section>
-
+</main>
 
 
 <footer>
