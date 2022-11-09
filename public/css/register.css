@@ -131,3 +131,9 @@ p {
 .btn-register-with-google i {
     color: #000000;
 }
+
+@media (min-width:630px) {
+    .btn-register {
+        max-width: 300px;
+    }
+}
