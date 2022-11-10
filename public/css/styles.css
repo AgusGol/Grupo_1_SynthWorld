@@ -349,9 +349,9 @@ main {
     .sponsored-artists {
         padding: 40px;
         display: block;
-        margin-top: 35px; 
+        margin-top: 20px; 
         text-align: center;
-        background-color: #232323;
+        background-color: #282828;
     }
     .description-sponsored {
         font-weight: 200;
@@ -431,6 +431,7 @@ main {
        position: absolute;
        bottom: -20%; 
        
+    
         }
     .container-banner {
         margin-top: 15px;
@@ -457,7 +458,10 @@ main {
     .img-categories article img {
         top: -100%;
     }
-    
+    .sponsored-artists {
+        background-color: #232323;
+
+}
 }
 
 @media (min-width: 1650px) {
