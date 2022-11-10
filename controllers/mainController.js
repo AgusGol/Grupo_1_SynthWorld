@@ -1,4 +1,4 @@
-const path = require ("path")
+const path = require ("path");
 
 const mainController={
 
@@ -19,6 +19,6 @@ productCart: (req, res) => {
 productDetail:(req, res) => {
     res.sendFile(path.resolve("./views/productdetail.html"))
 }
-}
+};
 
-module.exports =mainController
+module.exports =mainController;
