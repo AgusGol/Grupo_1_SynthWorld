@@ -4,9 +4,151 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SynthWorld</title>
+    <link rel="icon" href="/img/Logo .ico">
+
+    <!-- normalize -->
+    <link href="css/normalize.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/productCart.css" rel="stylesheet">
 </head>
 <body>
-    
+    <header>
+        <section class="nav-bar-top">
+            <i class="fas fa-bars burger-menu"></i>
+            <div class="logo-and-name">
+                <img src="img/Logo.PNG" class="">
+                <h1>SynthWorld</h1>
+            </div>
+                <article class="nav-bar-links">
+                    <h2><a href="">Shop</a></h2>
+                    <h2><a href="">News</a></h2>
+                    <h2><a href="">About</a></h2>
+                    <h2><a href="">Support</a></h2>
+                </article>
+                <article class="icons-navbar">
+                    <i class="fas fa-shopping-cart cart-icon"></i>
+                    <i class="fas fa-user user-icon"></i> 
+                </article>
+        </section>
+        <section class="search-bar">
+            <input type="text" placeholder="Search...">
+        </section>
+    </header>
+    <main>
+        <section class="list-art">
+            <article class="card">
+                <section class="card-art-header">
+                <div class="img-contain">
+                <img src="/img/modular-categories.jpg" alt="modular-categories" class="imgArtc">
+                </div>
+                <div class="art-info">
+                    <h4 class="precio">$6.770</h4>
+                    <h3 class="descripcion">Cafetera Moulinex</h3>   
+                </div>
+                </section>
+                <section class="card-art-end">
+                    <section class="stars-review">
+                        <div class="stars-review-title">
+                            <H5>Review Title</H5>
+                        </div>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </section>
+                <section class="item-cart-button">
+                    <div class="buttons-quantity">
+                        <button class="buttons-quantity-subtraction">-</button>
+                        <input type="numeric" name= "quantity" value="1" class="buttons-quantity-input">
+                        <button class="buttons-quantity-adition">+</button>
+                    </div>
+                    <button class="item-cart-button-ToWishlist">Move to Wishlist</button>
+                    <button class="item-cart-button-remove">Remove</button>
+                </section>
+                </section>
+            </article>
+            <article class="card">
+                <section class="card-art-header">
+                <div class="img-contain">
+                <img src="/img/modular-categories.jpg" alt="modular-categories" class="imgArtc">
+                </div>
+                <div class="art-info">
+                    <h4 class="precio">$6.770</h4>
+                    <h3 class="descripcion">Cafetera Moulinex</h3>   
+                </div>
+                </section>
+                <section class="card-art-end">
+                    <section class="stars-review">
+                        <div class="stars-review-title">
+                            <H5>Review Title</H5>
+                        </div>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </section>
+                <section class="item-cart-button">
+                    <div class="buttons-quantity">
+                        <button class="buttons-quantity-subtraction">-</button>
+                        <input type="numeric" name= "quantity" value="1" class="buttons-quantity-input">
+                        <button class="buttons-quantity-adition">+</button>
+                    </div>
+                    <button class="item-cart-button-ToWishlist">Move to Wishlist</button>
+                    <button class="item-cart-button-remove">Remove</button>
+                </section>
+                </section>
+            </article>
+        </section>
+        <section class="summary-contain">
+            <article class="summary">
+                <h2 class="summary-contain-title">Order Summary</h2>
+                    <section class="sumatory-contain">
+                        <div class="subtotal-contain">
+                            <p class="subtotal">Subtotal</p>
+                            <p class="subtotal-amount">$6.770</p>
+                        </div>
+                        <div class="discount-contain">
+                            <p class="discount">Discount</p>
+                            <p class="discount-amount">$6.770</p>
+                        </div>
+                        </section>
+                <section class="order-summary-total-contain">
+                    <h3 class="total-title">Total</h3>
+                    <h4 class="total-amount">$9,99</h4>
+                </section>
+                <section class="order-summary-button">
+                    <button type="submit" class="button-checkout">Checkout now</button>
+                    <button class="button-shopping">Continue shopping</button>
+                </section>
+                </div>
+            </article>
+        </section>
+    </main>    
+</body>
+<footer>
+    <article class="links-footer">
+        <a>Community</a>
+        <a>Blog</a>
+        <a>Resources</a>
+    </article>
+    <article class="social-links">
+        <i class="fas fa-at"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+    </article>
+</footer>
 </body>
 </html>

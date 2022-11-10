@@ -21,6 +21,10 @@ h1 {
 h2 {
     text-align: center;
 }
+.age {
+    text-align: center;
+    margin: none;
+}
 .container-inputs {
     margin-bottom: 15px;
     width: 95%;
@@ -42,9 +46,9 @@ h2 {
 } 
 
 .second-container-inputs{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     width: 95%;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .second-container-inputs input{
@@ -54,6 +58,7 @@ h2 {
     padding: 3px;
     height: 35px;
     padding-left: 5px;
+    margin-top: 5px;
 }
 
 .second-container-inputs input::placeholder {
@@ -64,7 +69,7 @@ h2 {
 .third-container-inputs{
     margin-bottom: 15px;
     width: 95%;
-    margin-top: 15px;
+    /* margin-top: 15px; */
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -91,6 +96,7 @@ p {
     font-size: 1.2rem;
     justify-self: flex-end;
     font-weight: 500;
+    margin-bottom: 15px;
 }
 
 /*general buttons styles*/
@@ -102,6 +108,7 @@ p {
     color: #FFFFFF;
     border: 0;
     font-size: 1.7rem;
+    margin-top: 15px;
 }
 
 .container-btn-register-with button{
@@ -127,4 +134,10 @@ p {
 }
 .btn-register-with-google i {
     color: #000000;
+}
+
+@media (min-width:630px) {
+    .btn-register {
+        max-width: 300px;
+    }
 }
