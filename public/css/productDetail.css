@@ -3,7 +3,6 @@ body {
     color: #FFFFFF;
     background-color: #282828;
     font-size: 1.5rem;
-    padding:15px;
     /* width: 100vw; */
 
 }
@@ -30,7 +29,7 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 20px 30px 50px 20px;
-    font-size: 2rem;
+    
 }
 
 .btn-wishlist {
@@ -40,12 +39,17 @@ body {
     border-radius: 5px;
     height:35px;
     width:55%;
+    font-size: 1.2;
+    padding: 3px;
 }
 
 .btn-cart {
     background-color: #8a8a8a;
+    color: white;
     border: solid white 1px;
     border-radius: 5px;
+    font-size: 1.8rem;
+    padding: 5px 10px;
 }
 
 .sample h2{

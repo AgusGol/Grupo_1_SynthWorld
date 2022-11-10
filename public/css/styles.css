@@ -9,11 +9,6 @@
     --color--blk-background: #171717;
 }
 
-:root {
-    --color--background: #282828;
-    --color--facebook: #3b5998; 
-}   
-
 *{
     margin: 0%;
     padding: 0%;
