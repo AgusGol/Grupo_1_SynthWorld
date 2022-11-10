@@ -82,7 +82,7 @@ body {
 }
 
 /*Revisar desde media queries en adelante. NO está responsive*/
-@media (max width :768px) {
+@media (max-width :768px) {
     .categories article img {
         width: 10vw;
     }

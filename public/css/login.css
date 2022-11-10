@@ -27,6 +27,7 @@ h2 {
     margin-top: 5px;
     background-color: #282828;
     border: 1px #FFFFFF solid;
+    color: #FFFFFF;
     width: 100%;
     padding: 3px;
     height: 35px;
@@ -34,7 +35,7 @@ h2 {
 }
 
 .container-inputs input::placeholder {
-    color:#FFFFFF;
+    color:#b9b9b9;
     font-size: 1.4rem;
 }
 .bellow-inputs-login{      /*dónde se implementa esto?*/
@@ -70,7 +71,7 @@ p {
 }
 
 .container-btn-register-with button{
-    width: 300px;
+    width: 240px;
     height: 35px;
     border-radius: 20px;
     color: #FFFFFF;
@@ -91,5 +92,30 @@ p {
 }
 .btn-register-with-google i {
     color: #000000;
+}
+@media (min-width: 320px) {
+    .container-btn-register-with button{
+        width: 300px;
+    }
+}
+@media (min-width: 768px) {
+    main {
+        height: 95vh;
+    }
+    .login-form {
+        width: 50vw;
+    }
+}
+
+@media (min-width: 1092px) {
+    .login-form {
+        width: 40vw;
+    }
+}
+
+@media (min-width: 1650px) {
+    .login-form {
+        width: 20vw;
+    }
 }
 
