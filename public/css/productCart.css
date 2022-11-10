@@ -88,7 +88,8 @@ display: flex;
 }
 .summary-contain{
     width: 90%;
-    margin: 25px 10px;
+    margin: auto;
+    margin-bottom: 30px;
 }
 .summary {
     display: flex;
