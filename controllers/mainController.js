@@ -22,12 +22,17 @@ productDetail:(req, res) => {
 
 shop:(req, res) => {
     res.sendFile(path.resolve("./views/shop.html"));
-}
-};
+},
 
-shop:(req, res) => {
+productCreation:(req, res) => {
+    res.sendFile(path.resolve("./views/productCreation.html"));
+},
+productEdition:(req, res) => {
+    res.sendFile(path.resolve("./views/productEdition.html"));
+},
+
+/*shop:(req, res) => {
     res.sendFile(path.resolve("./views/shop.html"))
-}
-
-
+}*/
+};
 module.exports =mainController;
