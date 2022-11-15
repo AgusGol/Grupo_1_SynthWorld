@@ -78,10 +78,17 @@ p {
         padding: 0 10px 0 0;
     }
     .img-categories article {
-        width: 20vw;
+        width: 16.666666vw;
         margin: 0;
+        height: 90px;
     }
-    .product-article {
-        width: 30%;
+.img-categories article img {
+   top: 0;
+   right: 0;
+    /* top:-130%;
+    right: 0;*/
+}
+.product-article {
+    width: 20%;
 }
 }
