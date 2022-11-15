@@ -3,21 +3,21 @@ const path = require ("path");
 const mainController={
 
 index:(req, res) => {
-        res.sendFile(path.resolve("./views/index.html"));    
+        res.render('index');
         },
 login:(req, res) => {
-    res.sendFile(path.resolve("./views/login.html"));   
+        res.render('login');
     },
 register:(req, res) => {
-    res.sendFile(path.resolve("./views/register.html"));   
+        res.render('register');
     },      
 
 productCart: (req, res) => {
-    res.sendFile(path.resolve("./views/productCart.html"));
+        res.render('productCart');
 },
 
 productDetail:(req, res) => {
-    res.sendFile(path.resolve("./views/productdetail.html"));
+        res.render('productDetail');
 },
 
 shop:(req, res) => {

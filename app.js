@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const mainRouters = require("./routers/mainRouters")
 
-
+app.set("view engine", "ejs");
 
 app.listen(3031, () => {
     console.log('Servidor arriba en el puerto 3031');
