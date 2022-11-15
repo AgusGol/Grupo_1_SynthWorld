@@ -9,6 +9,8 @@ router.get("/register", mainController.register);
 router.get('/productCart', mainController.productCart);
 router.get('/productDetail', mainController.productDetail);
 router.get('/shop', mainController.shop);
+router.get('/productCreation', mainController.productCreation);
+router.get('/productEdition', mainController.productEdition);
 /*router.get('/home',mainController.index)*/
 
 module.exports=router;

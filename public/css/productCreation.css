@@ -1,12 +1,9 @@
-label{
-    display:none;
-}
-main{
-    height: 95%;
+.newProduct-Section{
+    padding-top: 15px;
+    width: 100%;
 }
 
-.register-form{
-    padding-top: 15px;
+.register-form-New-Product{
     width: 95%;
     margin: auto;
     display: flex;
@@ -14,18 +11,15 @@ main{
     align-items: center;
 }
 
-h1 {
-    text-align: center;
-}
 h2 {
     text-align: center;
     margin-bottom: 30px;
 }
-.age {
-    text-align: center;
-    margin: none;
-}
+
 .container-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     margin-bottom: 30px;
     width: 95%;
     margin-top: 15px;
@@ -98,6 +92,13 @@ p {
     font-weight: 500;
     margin-bottom: 15px;
 }
+.productImages{
+    display: flex;
+
+}
+.imgMini{
+    width: 80px;
+}
 
 /*general buttons styles*/
 .btn-register {
@@ -120,21 +121,7 @@ p {
     margin-bottom: 20px;
 }
 
-/*facebook and google buttons styles*/
-.btn-register-with-facebook {
-    background-color: var(--color--facebook);
-}
-.btn-register-with-google {
-    background-color: #FFFFFF;
-    color:black
-}
 
-.btn-register-with-google span {
-    color: #000000;
-}
-.btn-register-with-google i {
-    color: #000000;
-}
 
 /*@media (min-width:630px) {
     .btn-register {
@@ -143,9 +130,8 @@ p {
 } ---------- Antiguo media queri ----*/
 @media (min-width: 320px) {
     .container-btn-register-with button{
-        width: 240px;
+        width: 300px;
     }
-    
 }
 @media (min-width: 768px) {
     footer {
@@ -153,6 +139,7 @@ p {
         bottom: 0px;
         width: 100%;
     } 
+    
     .login-form {
         width: 50vw;
     }

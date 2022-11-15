@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SynthWorld</title>
+    <link rel="icon" href="/img/Logo .ico">
+
+    <!-- normalize -->
+    <link href="css/normalize.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/productCreation.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <section class="nav-bar-top">
+            <i class="fas fa-bars burger-menu"></i>
+            <div class="logo-and-name">
+                <img src="img/Logo.PNG" class="">
+                <h1>SynthWorld</h1>
+            </div>
+                <article class="nav-bar-links">
+                    <h2><a href="">Shop</a></h2>
+                    <h2><a href="">News</a></h2>
+                    <h2><a href="">About</a></h2>
+                    <h2><a href="">Support</a></h2>
+                </article>
+                <article class="icons-navbar">
+                    <i class="fas fa-shopping-cart cart-icon"></i>
+                    <i class="fas fa-user user-icon"></i> 
+                </article>
+        </section>
+        <section class="search-bar">
+        <input type="text" placeholder="Search...">
+    </section>
+</header>
+
+<!-- Register form -->
+
+<main>
+    <section class="newProduct-Section">
+        <h2>Create a new listing</h2>
+        <form action="register" method="POST" class="register-form-New-Product">
+            <div class="container-inputs">
+                <label for="productName">Product Name</label>
+                    <input type="text" name="productName" class="productName" required>
+                <label for="productDescription">Description</label>
+                    <textarea name="productDescription" required></textarea>
+                <label for="productIncludes">Includes</label>
+                    <textarea type="text" name="productIncludes" required></textarea>
+                <label for="productSpecification">Specification</label>
+                    <textarea name="productSpecification" required></textarea>
+            </div>
+            <div class="second-container-inputs">
+                <label for="productPrice">Price</label>
+                    <input type="text" name="productPrice" required>
+                <label for="product-Categories">Categories</label>
+                    <Select class="product-Categories" name="product-Categories" required>
+                        <option value="Modules&Cases">Modules & Cases</option>
+                        <option value="Senquencers">Senquencers</option>
+                        <option value="Accesories">Accesories</option>
+                        <option value="Effects">Effects</option>
+                        <option value="WeirdGear">Weird Gear</option>
+                        <option value="NewReleases">New Releases</option>
+                    </Select>
+            </div>
+            <section>
+                <div class="productImages">
+                    <label for="Load-files">Images</label>
+                        <input type="file" name="Load-files" id="">
+                </div>
+                <div>
+                    <img src="img/new-releases1.jpeg"class="imgMini">
+                    <img src="img/weird-gear2.jpeg" class="imgMini">
+                    <img src="img/Drum-Seq.jpeg"class="imgMini">
+                    <img src="img/modular-categories.jpg"class="imgMini">
+                </div>
+            </section>
+                <button type="submit" class="btn-register-product">
+            Create product
+        </button>
+        </form>
+    </section>
+
+</main>
+
+
+<footer>
+    <article class="links-footer">
+        <a>Community</a>
+        <a>Blog</a>
+        <a>Resources</a>
+    </article>
+    <article class="social-links">
+        <i class="fas fa-at"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+    </article>
+</footer>
+</body>
+</html>
