@@ -21,18 +21,16 @@ productDetail:(req, res) => {
 },
 
 shop:(req, res) => {
-    res.sendFile(path.resolve("./views/shop.html"));
+    res.render("shop");
 },
 
 productCreation:(req, res) => {
-    res.sendFile(path.resolve("./views/productCreation.html"));
+    res.render("productCreation");
 },
 productEdition:(req, res) => {
-    res.sendFile(path.resolve("./views/productEdition.html"));
+    res.render("productEdition");
 },
 
-/*shop:(req, res) => {
-    res.sendFile(path.resolve("./views/shop.html"))
-}*/
+
 };
 module.exports =mainController;
