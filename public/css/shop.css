@@ -1,6 +1,7 @@
 .img-categories {
     display: flex;
     flex-wrap: wrap;
+    width: 100vw;
 }
 
 
