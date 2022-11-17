@@ -1,50 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SynthWorld</title>
-    <link rel="icon" href="/img/Logo .ico">
-
-    <!-- normalize -->
-    <link href="css/normalize.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link href="css/styles.css" rel="stylesheet">
+    <%- include('./partials/head') %>
     <link href="css/productEdition.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <section class="nav-bar-top">
-            <i class="fas fa-bars burger-menu"></i>
-            <div class="logo-and-name">
-                <img src="img/Logo.PNG" class="">
-                <h1>SynthWorld</h1>
-            </div>
-                <article class="nav-bar-links">
-                    <h2><a href="">Shop</a></h2>
-                    <h2><a href="">News</a></h2>
-                    <h2><a href="">About</a></h2>
-                    <h2><a href="">Support</a></h2>
-                </article>
-                <article class="icons-navbar">
-                    <i class="fas fa-shopping-cart cart-icon"></i>
-                    <i class="fas fa-user user-icon"></i> 
-                </article>
-        </section>
-        <section class="search-bar">
-        <input type="text" placeholder="Search...">
-    </section>
-</header>
+    <%- include('./partials/header') %>
 
 <!-- Register form -->
 
