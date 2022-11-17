@@ -53,43 +53,55 @@
         <h2>Create a new listing</h2>
         <form action="register" method="POST" class="register-form-New-Product">
             <div class="container-inputs">
+                <article class="productNameContainer">
                 <label for="productName">Product Name</label>
                     <input type="text" name="productName" class="productName" required>
-                <label for="productDescription">Description</label>
+                </article>
+                <article class="productDescriptionConteiner">
+                    <label for="productDescription">Description</label>
                     <textarea name="productDescription" required></textarea>
-                <label for="productIncludes">Includes</label>
+                </article>
+                <article class="productIncludesConteiner">
+                    <label for="productIncludes">Includes</label>
                     <textarea type="text" name="productIncludes" required></textarea>
-                <label for="productSpecification">Specification</label>
+                </article>
+                <article class="productSpecificationConteiner">
+                    <label for="productSpecification">Specification</label>
                     <textarea name="productSpecification" required></textarea>
+                </article>
             </div>
             <div class="second-container-inputs">
-                <label for="productPrice">Price</label>
-                    <input type="text" name="productPrice" required>
-                <label for="product-Categories">Categories</label>
-                    <Select class="product-Categories" name="product-Categories" required>
-                        <option value="Modules&Cases">Modules & Cases</option>
-                        <option value="Senquencers">Senquencers</option>
-                        <option value="Accesories">Accesories</option>
-                        <option value="Effects">Effects</option>
-                        <option value="WeirdGear">Weird Gear</option>
-                        <option value="NewReleases">New Releases</option>
-                    </Select>
+                <article class="productPriceContainer" >
+                    <label for="productPrice">Price</label>
+                        <input type="text" name="productPrice" class="inputPrice" required>
+                </article>
+                <article class="product-Categories-Container">
+                    <label for="product-Categories">Categories</label>
+                        <Select class="product-Categories" name="product-Categories" required>
+                            <option value="Modules&Cases">Modules & Cases</option>
+                            <option value="Senquencers">Senquencers</option>
+                            <option value="Accesories">Accesories</option>
+                            <option value="Effects">Effects</option>
+                            <option value="WeirdGear">Weird Gear</option>
+                            <option value="NewReleases">New Releases</option>
+                        </Select>
+                </article>
             </div>
-            <section>
-                <div class="productImages">
+            <article class="product-Images-Container">
+                <section class="product-Images">
                     <label for="Load-files">Images</label>
-                        <input type="file" name="Load-files" id="">
-                </div>
-                <div>
+                        <input type="file" name="Load-files" class="btn-File-Select" multiple id="">
+                </section>
+                <section class="imagesToAdd">
                     <img src="img/new-releases1.jpeg"class="imgMini">
                     <img src="img/weird-gear2.jpeg" class="imgMini">
                     <img src="img/Drum-Seq.jpeg"class="imgMini">
                     <img src="img/modular-categories.jpg"class="imgMini">
-                </div>
-            </section>
-                <button type="submit" class="btn-register-product">
-            Create product
-        </button>
+                </section>
+            </article>
+            <button type="submit" class="btn-register-product">
+                Create product
+            </button>
         </form>
     </section>
 
