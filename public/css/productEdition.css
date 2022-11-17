@@ -1,0 +1,199 @@
+.newProduct-Section{
+    padding-top: 15px;
+    width: 100%;
+}
+
+.register-form-New-Product{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 95%;
+    margin-top: 15px;
+}
+.productNameContainer, .productDescriptionConteiner, .productIncludesConteiner, .productSpecificationConteiner{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+} 
+.container-inputs input {
+    margin-top: 5px;
+    background-color: #282828;
+    border: 1px #FFFFFF solid;
+    width: 100%;
+    padding: 3px;
+    height: 35px;
+    padding-left: 5px;
+}
+
+.container-inputs textarea {
+    margin-top: 5px;
+    background-color: #282828;
+    border: 1px #FFFFFF solid;
+    width: 100%;
+    padding: 3px;
+    height: 35px;
+    padding-left: 5px;
+    colo
+}
+
+.container-inputs input::placeholder {
+    color:#FFFFFF;
+    font-size: 1.4rem;
+} 
+
+.second-container-inputs{
+    display: flex;
+    margin-bottom: 10px;
+    width: 95%;
+    margin-top: 5px;
+}
+
+.second-container-inputs input{
+    background-color: #282828;
+    border: 1px #FFFFFF solid;
+    width: 100%;
+    padding: 3px;
+    height: 35px;
+    padding-left: 5px;
+    margin-top: 5px;
+    color: #FFFFFF;
+}
+
+.second-container-inputs input::placeholder {
+    color:#FFFFFF;
+    font-size: 1.4rem;
+} 
+
+
+.productPriceContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+}
+.product-Categories-Container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+.product-Categories{
+    padding: 8px;
+}
+p {
+    margin: 20px auto;
+}
+
+.create-account{
+    margin: 0;
+    font-size: 1.2rem;
+    justify-self: flex-end;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.product-Images-Container{
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+}
+.product-Images{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+.imagesToAdd{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+}
+.imgMini{
+    width: 40%;
+    margin: 10px;
+}
+.inputPrice{
+    width: 70%;
+}
+
+/*general buttons styles*/
+.btn-modify-product{
+    width: 50%;
+    height: 35px;
+    border-radius: 20px;
+    background-color: black;
+    color: #FFFFFF;
+    border: 0;
+    font-size: 1.7rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.btn-File-Select{
+    margin: 5px 0px;
+    
+}
+
+.container-btn-register-with button{
+    width: 240px;
+    height: 35px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    border: 0;
+    margin-bottom: 20px;
+}
+
+
+
+/*@media (min-width:630px) {
+    .btn-register {
+        max-width: 300px;
+    }
+} ---------- Antiguo media queri ----*/
+@media (min-width: 320px) {
+    .container-btn-register-with button{
+        width: 300px;
+    }
+}
+@media (min-width: 768px) {
+    footer {
+        position: static;
+        bottom: 0px;
+        width: 100%;
+    } 
+    
+    .login-form {
+        width: 50vw;
+    }
+}
+
+@media (min-width: 1092px) {
+    .login-form {
+        width: 40vw;
+    }
+    .container-inputs, .second-container-inputs, .third-container-inputs{
+        max-width: 810px;
+    }
+}
+
+@media (min-width: 1650px) {
+    .login-form {
+        width: 20vw;
+    }
+}
+

@@ -24,7 +24,22 @@ h2 {
     width: 95%;
     margin-top: 15px;
 }
+.productNameContainer, .productDescriptionConteiner, .productIncludesConteiner, .productSpecificationConteiner{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+} 
 .container-inputs input {
+    margin-top: 5px;
+    background-color: #282828;
+    border: 1px #FFFFFF solid;
+    width: 100%;
+    padding: 3px;
+    height: 35px;
+    padding-left: 5px;
+}
+
+.container-inputs textarea {
     margin-top: 5px;
     background-color: #282828;
     border: 1px #FFFFFF solid;
@@ -40,6 +55,7 @@ h2 {
 } 
 
 .second-container-inputs{
+    display: flex;
     margin-bottom: 10px;
     width: 95%;
     margin-top: 5px;
@@ -53,6 +69,7 @@ h2 {
     height: 35px;
     padding-left: 5px;
     margin-top: 5px;
+    color: #FFFFFF;
 }
 
 .second-container-inputs input::placeholder {
@@ -60,27 +77,23 @@ h2 {
     font-size: 1.4rem;
 } 
 
-.third-container-inputs{
-    margin-bottom: 30px;
-    width: 95%;
-    /* margin-top: 15px; */
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-.third-container-inputs input{
-    background-color: #282828;
-    border: 1px #FFFFFF solid;
-    width: 100%;
-    padding: 3px;
-    height: 35px;
-    padding-left: 5px;
-}
-.third-container-inputs input::placeholder {
-    color:#FFFFFF;
-    font-size: 1.4rem;
-} 
 
+.productPriceContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+}
+.product-Categories-Container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+.product-Categories{
+    padding: 8px;
+}
 p {
     margin: 20px auto;
 }
@@ -92,16 +105,34 @@ p {
     font-weight: 500;
     margin-bottom: 15px;
 }
-.productImages{
+.product-Images-Container{
     display: flex;
-
+    width: 95%;
+    flex-direction: column;
+}
+.product-Images{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+.imagesToAdd{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
 }
 .imgMini{
-    width: 80px;
+    width: 40%;
+    margin: 10px;
+}
+.inputPrice{
+    width: 70%;
 }
 
 /*general buttons styles*/
-.btn-register {
+.btn-register-product{
     width: 50%;
     height: 35px;
     border-radius: 20px;
@@ -110,6 +141,11 @@ p {
     border: 0;
     font-size: 1.7rem;
     margin-top: 15px;
+    margin-bottom: 15px;
+}
+.btn-File-Select{
+    margin: 5px 0px;
+    
 }
 
 .container-btn-register-with button{
@@ -135,7 +171,7 @@ p {
 }
 @media (min-width: 768px) {
     footer {
-        position: fixed;
+        position: static;
         bottom: 0px;
         width: 100%;
     } 

@@ -25,10 +25,10 @@ shop:(req, res) => {
 },
 
 productCreation:(req, res) => {
-    res.render('productCreation');
+    res.render("productCreation");
 },
 productEdition:(req, res) => {
-    res.render('productEdition');
+    res.render("productEdition");
 },
 };
 module.exports =mainController;
