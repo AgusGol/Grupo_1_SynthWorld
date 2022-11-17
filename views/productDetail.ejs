@@ -49,12 +49,17 @@
 <!--Inicio productDetail-->
 <main>
     <section>
-        <article class="carrousell">
+        <article class="product-title product-title-tb">
+            <h2>Octatrack MKII</h2>
+            <p class="description tb">fdsfasdfsdfasdfsadf asfasdf asd fasdf sadf sadf sdaf sdf as</p>
+            </article>
+        <article class="product-img">
             <img src="img/octatrack-mkii.webp">  <!--imagen de ejemplo. Cambiarla-->
         </article>
-        <article class="product-title">
-        <h2>Título del producto</h2>
+        <article class="product-title product-title-mb">
+        <h2>Octatrack MKII</h2>
         </article>
+       <div class="stars-and-quantity">
         <article class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -62,20 +67,35 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
         </article>
+            <div class="buttons-quantity">
+                <button class="buttons-quantity-subtraction">-</button>
+                <input type="numeric" name= "quantity" value="1" class="buttons-quantity-input">
+                <button class="buttons-quantity-adition">+</button>
+            </div>
+    </div>
             
             <article class="price">
                 <p>$1350</p>
             </article>
         <article class="buttons">
             <button type="submit" class="btn-wishlist">
-                Add to wishlist
+                + wishlist
             </button>
             <button type="submit" class="btn-cart">
                 Add to cart
             </button>
         </article>
     </section>
-    
+    <section class="includes-specs-tb">
+        <article class="specs-tb">
+            <h3>Specs</h3>
+            <p class="specs">-ffsdfs <br> -fsdfsdf <br>-sdfsdfs <br>-fsdfs</p>
+        </article>
+        <article class="includes-tb">
+            <h3>Includes</h3>
+            <p class="includes">-ffsdfs <br> -fsdfsdf<br>-sdfsdfs <br>-fsdfs</p>
+        </article>
+    </section>
 
 
 <!--dropdown section mobile-->
@@ -99,7 +119,10 @@
         </div> 
     </article>
     <article class="sample">
-        <h2>Sample 1</h2>
+        <h2>Samples</h2>
+        <div class="btn-dropdown">
+            <i class="fas fa-caret-down"></i>
+        </div> 
     </article>
 </section>
 <!-- fin dropdown section -->
@@ -110,9 +133,10 @@
     <div class="related-title">
     <h3>Similar/Related products</h3>
     </div>
-    <div class="related-items">
-        <div class="synth">
-            <img src="img/synth.png">
+    <div class="related-items-container">
+        <div class="related-item">
+        <div class="img-related-container">
+            <img src="img/octatrack-mkii.webp">
         </div>    
             <div class="product-name">
                 <p>Synthetizer UNO</p>
@@ -120,9 +144,10 @@
             <div class="product-price">
                 <p class="price">$5000</p>
             </div>
-
-        <div class="headphones">
-            <img src="img/headphones.jpg">
+            </div>
+            <div class="related-item">
+        <div class="img-related-container">
+            <img src="img/octatrack-mkii.webp">
         </div>    
         <div class="product-name">
                 <p>BOSE headphones</p>
@@ -130,8 +155,53 @@
         <div class="product-price">
                 <p class="price">$3000</p>
         </div>
-        </div>        
-    </div>    
+        </div> 
+        <div class="related-item">
+            <div class="img-related-container">
+                <img src="img/octatrack-mkii.webp">
+            </div>    
+            <div class="product-name">
+                    <p>BOSE headphones</p>
+            </div>
+            <div class="product-price">
+                    <p class="price">$3000</p>
+            </div>
+            </div> 
+            <div class="related-item">
+                <div class="img-related-container">
+                    <img src="img/octatrack-mkii.webp">
+                </div>    
+                <div class="product-name">
+                        <p>BOSE headphones</p>
+                </div>
+                <div class="product-price">
+                        <p class="price">$3000</p>
+                </div>
+                </div> 
+                <div class="related-item">
+                    <div class="img-related-container">
+                        <img src="img/octatrack-mkii.webp">
+                    </div>    
+                    <div class="product-name">
+                            <p>BOSE headphones</p>
+                    </div>
+                    <div class="product-price">
+                            <p class="price">$3000</p>
+                    </div>
+                    </div> 
+                    <div class="related-item">
+                        <div class="img-related-container">
+                            <img src="img/octatrack-mkii.webp">
+                        </div>    
+                        <div class="product-name">
+                                <p>BOSE headphones</p>
+                        </div>
+                        <div class="product-price">
+                                <p class="price">$3000</p>
+                        </div>
+                        </div> 
+        
+    </div>       
 </article>
 
 
