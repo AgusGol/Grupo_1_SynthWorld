@@ -13,3 +13,7 @@ app.listen(3031, () => {
 app.use(express.static( 'public'));
 
 app.use("/",mainRouters)
+
+app.use((req, res, next) => {
+    res.status(404).send('We are sorry, but the page you were looking for was not found');
+    })
