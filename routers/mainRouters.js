@@ -4,13 +4,12 @@ const mainController= require("../controllers/mainController");
 
 router.get("/", mainController.index);
 router.get("/home", mainController.index);
-router.get("/login", mainController.login);
-router.get("/register", mainController.register);
-router.get('/productCart', mainController.productCart);
-router.get('/productDetail', mainController.productDetail);
-router.get('/shop', mainController.shop);
-router.get('/productCreation', mainController.productCreation);
-router.get('/productEdition', mainController.productEdition);
-/*router.get('/home',mainController.index)*/
+router.get("/login", mainController.login); //users
+router.get("/register", mainController.register); //users
+router.get('/productCart', mainController.productCart); //users
+router.get('/productDetail', mainController.productDetail); //products
+router.get('/shop', mainController.shop); //products
+router.get('/productCreation', mainController.productCreation); //products
+router.get('/productEdition', mainController.productEdition); //products
 
 module.exports=router;
