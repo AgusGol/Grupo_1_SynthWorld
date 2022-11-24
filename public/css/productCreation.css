@@ -176,13 +176,13 @@ p {
         width: 100%;
     } 
     
-    .login-form {
+    .register-form-New-Product {
         width: 50vw;
     }
 }
 
 @media (min-width: 1092px) {
-    .login-form {
+    .register-form-New-Product {
         width: 40vw;
     }
     .container-inputs, .second-container-inputs, .third-container-inputs{
@@ -191,7 +191,7 @@ p {
 }
 
 @media (min-width: 1650px) {
-    .login-form {
+    .register-form-New-Product {
         width: 20vw;
     }
 }
