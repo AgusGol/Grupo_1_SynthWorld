@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('./partials/head') %>
-    <link href="css/productCreation.css" rel="stylesheet">
+    <link href="/css/productCreation.css" rel="stylesheet">
 </head>
 
 <body>
@@ -13,33 +13,33 @@
 <main>
     <section class="newProduct-Section">
         <h2>Create a new listing</h2>
-        <form action="register" method="POST" class="register-form-New-Product">
+        <form action="/products/create" method="POST" class="register-form-New-Product">
             <div class="container-inputs">
                 <article class="productNameContainer">
                 <label for="productName">Product Name</label>
-                    <input type="text" name="productName" class="productName" required>
+                    <input type="text" name="name" class="productName" required>
                 </article>
                 <article class="productDescriptionConteiner">
                     <label for="productDescription">Description</label>
-                    <textarea name="productDescription" required></textarea>
+                    <textarea name="description" required></textarea>
                 </article>
                 <article class="productIncludesConteiner">
                     <label for="productIncludes">Includes</label>
-                    <textarea type="text" name="productIncludes" required></textarea>
+                    <textarea type="text" name="includes" required></textarea>
                 </article>
                 <article class="productSpecificationConteiner">
                     <label for="productSpecification">Specification</label>
-                    <textarea name="productSpecification" required></textarea>
+                    <textarea name="specs" required></textarea>
                 </article>
             </div>
             <div class="second-container-inputs">
                 <article class="productPriceContainer" >
                     <label for="productPrice">Price</label>
-                        <input type="text" name="productPrice" class="inputPrice" required>
+                        <input type="text" name="price" class="inputPrice" required>
                 </article>
                 <article class="product-Categories-Container">
                     <label for="product-Categories">Categories</label>
-                        <Select class="product-Categories" name="product-Categories" required>
+                        <Select class="product-Categories" name="category" required>
                             <option value="Modules&Cases">Modules & Cases</option>
                             <option value="Senquencers">Senquencers</option>
                             <option value="Accesories">Accesories</option>

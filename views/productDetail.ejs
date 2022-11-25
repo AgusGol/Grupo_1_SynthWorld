@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('./partials/head') %>
-    <link href="css/productDetail.css" rel="stylesheet">
+    <link href="/css/productDetail.css" rel="stylesheet">
 </head>
 
 <body>
@@ -12,14 +12,14 @@
 <main>
     <section>
         <article class="product-title product-title-tb">
-            <h2>Octatrack MKII</h2>
-            <p class="description tb">fdsfasdfsdfasdfsadf asfasdf asd fasdf sadf sadf sdaf sdf as</p>
+            <h2><%= product.name %> </h2>
+            <p class="description tb"><%= product.description %> </p>
             </article>
         <article class="product-img">
-            <img src="img/octatrack-mkii.webp">  <!--imagen de ejemplo. Cambiarla-->
+            <img src="/img/<%= product.img %>">  <!--imagen de ejemplo. Cambiarla-->
         </article>
         <article class="product-title product-title-mb">
-        <h2>Octatrack MKII</h2>
+        <h2><%= product.name %></h2>
         </article>
        <div class="stars-and-quantity">
         <article class="stars">
@@ -37,7 +37,7 @@
     </div>
             
             <article class="price">
-                <p>$1350</p>
+                <p>$<%= product.price %></p>
             </article>
         <article class="buttons">
             <button type="submit" class="btn-wishlist">
@@ -51,11 +51,11 @@
     <section class="includes-specs-tb">
         <article class="specs-tb">
             <h3>Specs</h3>
-            <p class="specs">-ffsdfs <br> -fsdfsdf <br>-sdfsdfs <br>-fsdfs</p>
+            <p class="specs"><%= product.specs %></p>
         </article>
         <article class="includes-tb">
             <h3>Includes</h3>
-            <p class="includes">-ffsdfs <br> -fsdfsdf<br>-sdfsdfs <br>-fsdfs</p>
+            <p class="includes"><%= product.includes %></p>
         </article>
     </section>
 
@@ -98,7 +98,7 @@
     <div class="related-items-container">
         <div class="related-item">
         <div class="img-related-container">
-            <img src="img/octatrack-mkii.webp">
+            <img src="/img/octatrack-mkii.webp">
         </div>    
             <div class="product-name">
                 <p>Synthetizer UNO</p>
@@ -109,7 +109,7 @@
             </div>
             <div class="related-item">
         <div class="img-related-container">
-            <img src="img/octatrack-mkii.webp">
+            <img src="/img/octatrack-mkii.webp">
         </div>    
         <div class="product-name">
                 <p>BOSE headphones</p>
@@ -120,7 +120,7 @@
         </div> 
         <div class="related-item">
             <div class="img-related-container">
-                <img src="img/octatrack-mkii.webp">
+                <img src="/img/octatrack-mkii.webp">
             </div>    
             <div class="product-name">
                     <p>BOSE headphones</p>
@@ -131,7 +131,7 @@
             </div> 
             <div class="related-item">
                 <div class="img-related-container">
-                    <img src="img/octatrack-mkii.webp">
+                    <img src="/img/octatrack-mkii.webp">
                 </div>    
                 <div class="product-name">
                         <p>BOSE headphones</p>
@@ -142,7 +142,7 @@
                 </div> 
                 <div class="related-item">
                     <div class="img-related-container">
-                        <img src="img/octatrack-mkii.webp">
+                        <img src="/img/octatrack-mkii.webp">
                     </div>    
                     <div class="product-name">
                             <p>BOSE headphones</p>
@@ -153,7 +153,7 @@
                     </div> 
                     <div class="related-item">
                         <div class="img-related-container">
-                            <img src="img/octatrack-mkii.webp">
+                            <img src="/img/octatrack-mkii.webp">
                         </div>    
                         <div class="product-name">
                                 <p>BOSE headphones</p>

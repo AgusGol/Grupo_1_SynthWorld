@@ -41,7 +41,27 @@
     <section class="popular-products">
         <h2>Popular products</h2>
         <div class="product-list">
+        <% products.forEach((product) => { %>
+        
         <article class="product-article">
+            <a href = "/products/<%= product.id %>">
+            <img class="product-image" src="img/<%= product.img %> ">
+            <div class="price-name">
+            <p class="price">$<%= product.price %> </p>
+        <h6><%= product.name %> </h6>
+        </div>
+    </a>
+        </article>
+   <% }) %>  
+        <!-- <article class="product-article">
+            <img class="product-image" src="img/octatrack-mkii.webp">
+            <div class="price-name">
+            <p class="price">$6770</p>
+        <h6>Elektron Octatrack mkii</h6>
+        </div>
+        </article> -->
+
+        <!-- <article class="product-article">
             <img class="product-image" src="img/octatrack-mkii.webp">
             <div class="price-name">
             <p class="price">$6770</p>
@@ -110,21 +130,7 @@
             <p class="price">$6770</p>
         <h6>Elektron Octatrack mkii</h6>
         </div>
-        </article>
-        <article class="product-article">
-            <img class="product-image" src="img/octatrack-mkii.webp">
-            <div class="price-name">
-            <p class="price">$6770</p>
-        <h6>Elektron Octatrack mkii</h6>
-        </div>
-        </article>
-        <article class="product-article">
-            <img class="product-image" src="img/octatrack-mkii.webp">
-            <div class="price-name">
-            <p class="price">$6770</p>
-        <h6>Elektron Octatrack mkii</h6>
-        </div>
-        </article>
+        </article> -->
     </div>
        </section>
     
