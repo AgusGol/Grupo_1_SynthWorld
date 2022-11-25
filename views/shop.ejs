@@ -45,7 +45,9 @@
         
         <article class="product-article">
             <a href = "/products/<%= product.id %>">
-            <img class="product-image" src="img/<%= product.img %> ">
+            <div class="product-img-container">
+            <img class="product-image" src="img/products/<%= product.img %> ">
+        </div>
             <div class="price-name">
             <p class="price">$<%= product.price %> </p>
         <h6><%= product.name %> </h6>

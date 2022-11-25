@@ -133,5 +133,56 @@
 		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
 		"specs": "-sdasdasd, -dsasdasdas, -asdasd, -asdas",
 		"includes": "-sdasdasdasdasdasd, -asdasdasdasd"
+	},
+	{
+		"id": 16,
+		"name": "digitakt",
+		"price": "750",
+		"category": "Modules&Cases",
+		"description": "sdfvsdf\r\n",
+		"includes": "- sdfsf\r\n- sdfsd\r\n- dsfsdf",
+		"specs": "- dsfsdfs\r\n- sdfsdf\r\n- sdfsd\r\n- sdfsdf",
+		"img": "productImg-1669405004310.jpeg"
+	},
+	{
+		"id": 17,
+		"name": "digitakt",
+		"price": "750",
+		"category": "Modules&Cases",
+		"description": "sdfvsdf\r\n",
+		"includes": "- sdfsf\r\n- sdfsd\r\n- dsfsdf",
+		"specs": "- dsfsdfs\r\n- sdfsdf\r\n- sdfsd\r\n- sdfsdf",
+		"img": "productImg-1669405004310.jpeg"
+	},
+	{
+		"id": 18,
+		"name": "digitakt",
+		"price": "750",
+		"category": "Modules&Cases",
+		"description": "sdfvsdf\r\n",
+		"includes": "- sdfsf\r\n- sdfsd\r\n- dsfsdf",
+		"specs": "- dsfsdfs\r\n- sdfsdf\r\n- sdfsd\r\n- sdfsdf",
+		"img": "productImg-1669405004310.jpeg"
+	},
+	{
+		"id": 19,
+		"name": "digitakt",
+		"price": "750",
+		"category": "Modules&Cases",
+		"description": "sdfvsdf\r\n",
+		"includes": "- sdfsf\r\n- sdfsd\r\n- dsfsdf",
+		"specs": "- dsfsdfs\r\n- sdfsdf\r\n- sdfsd\r\n- sdfsdf",
+		"img": "productImg-1669405004310.jpeg"
+	},
+	{
+		"id": 20,
+		"name": "digitakt",
+		"price": "750",
+		"category": "Modules&Cases",
+		"description": "sdfvsdf\r\n",
+		"includes": "- sdfsf\r\n- sdfsd\r\n- dsfsdf",
+		"specs": "- dsfsdfs\r\n- sdfsdf\r\n- sdfsd\r\n- sdfsdf",
+		"img": "productImg-1669405004310.jpeg"
 	}
 ]
+

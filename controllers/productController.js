@@ -20,19 +20,20 @@ shop:(req, res) => {
 productCreation:(req, res) => {
     res.render("productCreation");
 },
-store: (req, res) => {
-    console.log(req.body);
+store: (req, res, next) => {
+    console.log("reqfile",req.file);
     let lastProductIndex = products.length -1;
     let newProduct = {};
     if (products == "") {
         newProduct = {
-            "id" : 1,
-            "name": req.body.name,
-            "price": req.body.price,
-            "category": req.body.category,
-            "description" : req.body.description,
-            "includes" : req.body.includes,
-            "specs" : req.body.specs
+            id : 1,
+            name: req.body.name,
+            price: req.body.price,
+            category: req.body.category,
+            description : req.body.description,
+            includes : req.body.includes,
+            specs : req.body.specs,
+            img : req.field.filename
         }
     }
     else { 
@@ -43,7 +44,8 @@ store: (req, res) => {
             category: req.body.category,
             description : req.body.description,
             includes : req.body.includes,
-            specs : req.body.specs
+            specs : req.body.specs,
+            img: req.file.filename,
     }
 }
 
@@ -52,6 +54,7 @@ store: (req, res) => {
     products.push(newProduct);
     let productsJSON = JSON.stringify(products, null, '\t');
     fs.writeFileSync(productsFilePath, productsJSON , "");
+    console.log(req.file);
     res.redirect('/shop');
 },
 productEdition:(req, res) => {

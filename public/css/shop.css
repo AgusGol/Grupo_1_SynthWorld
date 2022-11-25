@@ -35,7 +35,16 @@
     padding: 5px;
 }
 .product-image {
+    object-fit: fill;
+    max-width: 500px;
+    justify-self: center;
+}
+.product-img-container {
     width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 p {

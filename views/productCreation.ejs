@@ -13,32 +13,32 @@
 <main>
     <section class="newProduct-Section">
         <h2>Create a new listing</h2>
-        <form action="/products/create" method="POST" class="register-form-New-Product">
+        <form action="/products/create" method="POST" class="register-form-New-Product" enctype="multipart/form-data">
             <div class="container-inputs">
                 <article class="productNameContainer">
-                <label for="productName">Product Name</label>
+                <label for="name">Product Name</label>
                     <input type="text" name="name" class="productName" required>
                 </article>
                 <article class="productDescriptionConteiner">
-                    <label for="productDescription">Description</label>
+                    <label for="description">Description</label>
                     <textarea name="description" required></textarea>
                 </article>
                 <article class="productIncludesConteiner">
-                    <label for="productIncludes">Includes</label>
+                    <label for="includes">Includes</label>
                     <textarea type="text" name="includes" required></textarea>
                 </article>
                 <article class="productSpecificationConteiner">
-                    <label for="productSpecification">Specification</label>
+                    <label for="specs">Specification</label>
                     <textarea name="specs" required></textarea>
                 </article>
             </div>
             <div class="second-container-inputs">
                 <article class="productPriceContainer" >
-                    <label for="productPrice">Price</label>
+                    <label for="price">Price</label>
                         <input type="text" name="price" class="inputPrice" required>
                 </article>
                 <article class="product-Categories-Container">
-                    <label for="product-Categories">Categories</label>
+                    <label for="category">Categories</label>
                         <Select class="product-Categories" name="category" required>
                             <option value="Modules&Cases">Modules & Cases</option>
                             <option value="Senquencers">Senquencers</option>
@@ -51,8 +51,8 @@
             </div>
             <article class="product-Images-Container">
                 <section class="product-Images">
-                    <label for="Load-files">Images</label>
-                        <input type="file" name="Load-files" class="btn-File-Select" multiple accept=".jpg, .png">
+                    <label for="productImg">Images</label>
+                        <input type="file" name="productImg" class="btn-File-Select" multiple accept=".jpg, .jpeg, .png">
                 </section>
             </article>
             <button type="submit" class="btn-register-product">
