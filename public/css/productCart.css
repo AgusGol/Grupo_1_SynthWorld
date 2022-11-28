@@ -193,7 +193,27 @@ button {
 
 @media (min-width:769px) {
     .card {
-        width: 70%;
+        width: 80%;
+    }
+    main {
+        display: flex;
+    }
+    .summary-contain{
+        margin: auto;
+        display: flex;
+        width: 30%;
+    }
+    .summary{
+        display: flex;
+        width: 90%;
+    }
+    .list-art{
+        width: 65%;
+    }
+    footer{
+        position: fixed;
+        width: 100%;
+        bottom: 0;
     }
 }
 
