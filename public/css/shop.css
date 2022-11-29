@@ -38,11 +38,16 @@
     margin-bottom: 20px;
    /* background-color: #171717; */
     padding: 5px;
+    transition: all 0.5s;
+}
+.product-article:hover {
+    background-color: #171717;
 }
 .product-image {
     object-fit: cover;
     max-width: 500px;
     justify-self: center;
+    margin-bottom: 10px;
 }
 .product-img-container {
     width: 100%;
