@@ -183,6 +183,25 @@
 		"includes": "- sdfsf\r\n- sdfsd\r\n- dsfsdf",
 		"specs": "- dsfsdfs\r\n- sdfsdf\r\n- sdfsd\r\n- sdfsdf",
 		"img": "productImg-1669405004310.jpeg"
+	},
+	{
+		"id": 21,
+		"name": "gabi",
+		"price": "6000",
+		"category": "Effects",
+		"description": "le estoy mostrando la pagina",
+		"includes": "adfsd",
+		"specs": "asda",
+		"img": "productImg-1669500846262.png"
+	},
+	{
+		"id": 21,
+		"name": "gabi",
+		"price": "6000",
+		"category": "Effects",
+		"description": "le estoy mostrando la pagina",
+		"includes": "adfsd",
+		"specs": "asda",
+		"img": "productImg-1669500846262.png"
 	}
 ]
-
