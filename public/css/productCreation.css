@@ -24,7 +24,7 @@ h2 {
     width: 95%;
     margin-top: 15px;
 }
-.productNameContainer, .productDescriptionConteiner, .productIncludesConteiner, .productSpecificationConteiner{
+.productNameContainer, .productDescriptionConteiner, .productExtraInfoConteinerç{
     display: flex;
     flex-direction: column;
     margin-top: 10px;
@@ -37,12 +37,19 @@ h2 {
     padding: 3px;
     height: 35px;
     padding-left: 5px;
+    color: #ffffff;
+}
+input {
+    color: #ffffff;
+}
+textarea{
+    color: #FFFFFF;
 }
 
 .container-inputs textarea {
     margin-top: 5px;
     background-color: #282828;
-    border: 1px #FFFFFF solid;
+    border: 1px #FFFFFF s;
     width: 100%;
     padding: 3px;
     height: 35px;

@@ -12,11 +12,6 @@ h1 {
     width: 100%;
 }
 
-.stars i {
-    font-size: 1.2rem;
-    padding-left: 5px;
-}
-
 .price p{
     font-size: 2rem;
     padding-top: 15px;
@@ -24,13 +19,23 @@ h1 {
     
     
 }
-
+.product-details {
+    padding: 0 20px 0 10px;
+}
 .buttons {
     display: flex;
     justify-content: flex-end;
-    padding: 20px 15px 50px 20px;
+    padding: 20px 0;
     align-items: flex-end;
     
+}
+
+.buttons i {
+    font-size: 3.5rem;
+}
+
+.fa-heart {
+    margin-right: 20px;
 }
 
 .btn-wishlist {
@@ -111,7 +116,7 @@ h1 {
 .product-price {
     font-size: 2rem;
 }
-.stars-and-quantity {
+.price-and-quantity {
     display: flex;
     justify-content: space-between;
 }
@@ -171,12 +176,13 @@ h1 {
     html {
         font-size: 11px;
     }
-    .stars-and-quantity {
+    .price-and-quantity {
         padding-left: 0px;
         padding-right: 0px;
     }
     .buttons {
         padding-right: 0px;
+        justify-content: space-between;
     }
     .product-title-tb {
         display: block;
@@ -209,12 +215,12 @@ h1 {
     .includes-specs-tb article h3 {
         margin-bottom: 20px;
     }
-    .specs-tb {
+    .extraInfo-tb {
         width:50%;
-    }
-    .includes-tb {
-        width: 50%;
         background-color: #525252;
+    }
+    .description-tb {
+        width: 50%;
     }
     .product-title-mb {
         display: none;

@@ -24,7 +24,7 @@ h2 {
     width: 95%;
     margin-top: 15px;
 }
-.productNameContainer, .productDescriptionConteiner, .productIncludesConteiner, .productSpecificationConteiner{
+.productNameContainer, .productDescriptionConteiner, .productExtraInfoConteiner, .productSpecificationConteiner{
     display: flex;
     flex-direction: column;
     margin-top: 10px;

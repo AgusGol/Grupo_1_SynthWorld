@@ -31,8 +31,7 @@ store: (req, res, next) => {
             price: req.body.price,
             category: req.body.category,
             description : req.body.description,
-            includes : req.body.includes,
-            specs : req.body.specs,
+            extraInfo : req.body.extraInfo,
             img : req.field.filename
         }
     }
@@ -43,8 +42,7 @@ store: (req, res, next) => {
             price: req.body.price,
             category: req.body.category,
             description : req.body.description,
-            includes : req.body.includes,
-            specs : req.body.specs,
+            extraInfo : req.body.extraInfo,
             img: req.file.filename,
     }
 }

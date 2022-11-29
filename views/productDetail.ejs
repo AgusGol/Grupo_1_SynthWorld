@@ -13,21 +13,17 @@
     <section>
         <article class="product-title product-title-tb">
             <h2><%= product.name %> </h2>
-            <p class="description tb"><%= product.description %> </p>
             </article>
         <article class="product-img">
             <img src="/img/products/<%= product.img %>">  <!--imagen de ejemplo. Cambiarla-->
         </article>
+        <div class="product-details">
         <article class="product-title product-title-mb">
         <h2><%= product.name %></h2>
         </article>
-       <div class="stars-and-quantity">
-        <article class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+       <div class="price-and-quantity">
+        <article class="price">
+            <p>$<%= product.price %></p>
         </article>
             <div class="buttons-quantity">
                 <button class="buttons-quantity-subtraction">-</button>
@@ -36,26 +32,28 @@
             </div>
     </div>
             
-            <article class="price">
-                <p>$<%= product.price %></p>
-            </article>
+            
         <article class="buttons">
-            <button type="submit" class="btn-wishlist">
+           <button type="submit" class="btn-wishlist">
                 + wishlist
             </button>
+            <!-- <i class="far fa-heart"></i>
+            <i class="fas fa-cart-plus"></i> -->
             <button type="submit" class="btn-cart">
                 Add to cart
-            </button>
+            </button> 
+
         </article>
+    </div>
     </section>
     <section class="includes-specs-tb">
-        <article class="specs-tb">
-            <h3>Specs</h3>
-            <p class="specs"><%= product.specs %></p>
+        <article class="description-tb">
+            <h3>Description</h3>
+            <p class="description tb"><%= product.description %></p>
         </article>
-        <article class="includes-tb">
-            <h3>Includes</h3>
-            <p class="includes"><%= product.includes %></p>
+        <article class="extraInfo-tb">
+            <h3>Extra Info</h3>
+            <p class="extra-info-tb"><%= product.extraInfo %></p>
         </article>
     </section>
 
@@ -68,14 +66,8 @@
             <i class="fas fa-caret-down"></i>
         </div>  
     </article>
-    <article class="includes">
-        <h2>Includes</h2>
-        <div class="btn-dropdown">
-            <i class="fas fa-caret-down"></i>
-        </div> 
-    </article>
-    <article class="specifications">
-        <h2>Specifications</h2>
+    <article class="extra-info">
+        <h2>Extra info</h2>
         <div class="btn-dropdown">
             <i class="fas fa-caret-down"></i>
         </div> 
