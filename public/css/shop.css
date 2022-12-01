@@ -27,14 +27,9 @@
     flex-wrap: wrap;
     
 }
-.product-article:last-child{
-   /* margin-left: 0;
-    padding-left: 5px;
-     aca codigo (?? para que los ultimo items queden en la grilla si son*/
-}
 .product-article {
     width: 50%;
-    margin: auto;
+    margin: 0;
     margin-bottom: 20px;
    /* background-color: #171717; */
     padding: 5px;
@@ -83,7 +78,7 @@ p {
         margin: 0;
     }
     .product-article {
-        width: 30%;
+        width: 33.333333333333%;
 }
 }
 

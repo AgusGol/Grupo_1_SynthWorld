@@ -96,7 +96,7 @@ h1 {
 
 .related-item {
     width: 50%;
-    padding: 10px;
+    padding: 5px;
 }
 
 .img-related-container {
@@ -119,6 +119,7 @@ h1 {
 .price-and-quantity {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 }
 .buttons-quantity {
     display: flex;

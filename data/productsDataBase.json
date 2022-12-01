@@ -189,5 +189,14 @@
 		"description": "Probando a ver si anda",
 		"extraInfo": "-Aca va la extra info\r\n-Como specs: 110v\r\n-Includes: 1 synth.",
 		"img": "productImg-1669739933107.jpeg"
+	},
+	{
+		"id": 24,
+		"name": "hola",
+		"price": "59000",
+		"category": "Effects",
+		"description": "como estas",
+		"extraInfo": "sssss",
+		"img": "productImg-1669850568269.png"
 	}
 ]
