@@ -60,7 +60,8 @@
             <button type="submit" class="btn-modify-product">
                 Modify listing
             </button> <!--Agregué estas dos líneas de abajo. Chequear-->
-            <form action="/products/delete/<%= products[i].id %>?_method=DELETE :id" method="POST" style="display: inline-flex"></form>
+            <!-- ACÁ ROMPE LA VISTA -->
+                <form action="/products/delete/<%= products[i].id %>?_method=DELETE/:id" method="POST" style="display: inline-flex"></form>
             <button type="submit" class="btn-modify-product">
                 Delete product
             </button>

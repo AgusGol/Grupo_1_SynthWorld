@@ -66,7 +66,7 @@ delete: (req, res) => {
     let id = req.params.id;
     let productToDelete = product.filter(product => product.id != id)
     fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
-    res-redirect('/');
+    res.redirect('/');
 }
 };
 module.exports = productController;
