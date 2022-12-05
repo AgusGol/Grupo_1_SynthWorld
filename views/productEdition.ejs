@@ -17,25 +17,25 @@
             <div class="container-inputs">
                 <article class="productNameContainer">
                 <label for="productName">Product Name</label>
-                    <input type="text" name="productName" class="productName" required>
+                    <input type="text" name="productName" class="productName" placeholder= <%= product.name %>>
                 </article>
                 <article class="productDescriptionConteiner">
                     <label for="productDescription">Description</label>
-                    <textarea name="productDescription" required></textarea>
+                    <textarea name="productDescription" placeholder= <%= product.description %> ></textarea>
                 </article>
                 <article class="productExtraInfoConteiner">
                     <label for="extraInfo">Extra Info</label>
-                    <textarea type="text" name="extraInfo" required></textarea>
+                    <textarea type="text" name="extraInfo" placeholder= <%= product.extraInfo %> ></textarea>
                 </article>
             </div>
             <div class="second-container-inputs">
                 <article class="productPriceContainer" >
                     <label for="productPrice">Price</label>
-                        <input type="text" name="productPrice" class="inputPrice" value="$15.000" required>
+                        <input type="text" name="productPrice" class="inputPrice" placeholder= <%= product.price %> >
                 </article>
                 <article class="product-Categories-Container">
                     <label for="product-Categories">Categories</label>
-                        <Select class="product-Categories" name="product-Categories" required>
+                        <Select class="product-Categories" name="product-Categories" placeholder= <%= product.category %> >
                             <option value="Modules&Cases">Modules & Cases</option>
                             <option value="Senquencers">Senquencers</option>
                             <option value="Accesories">Accesories</option>
@@ -59,7 +59,12 @@
             </article>
             <button type="submit" class="btn-modify-product">
                 Modify listing
+            </button> <!--Agregué estas dos líneas de abajo. Chequear-->
+            <form action="/products/delete/<%= products[i].id %>?_method=DELETE :id" method="POST" style="display: inline-flex"></form>
+            <button type="submit" class="btn-modify-product">
+                Delete product
             </button>
+            </form>
         </form>
     </section>
 

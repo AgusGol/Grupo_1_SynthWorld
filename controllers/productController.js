@@ -55,8 +55,18 @@ store: (req, res, next) => {
     console.log(req.file);
     res.redirect('/shop');
 },
+
 productEdition:(req, res) => {
-    res.render("productEdition");
+    let product = products.find(product => product.id == req.params.id)   //agregué esta línea y el product de la que sigue
+    res.render("productEdition", {product});
+    res.redirect('/');
 },
+
+delete: (req, res) => {
+    let id = req.params.id;
+    let productToDelete = product.filter(product => product.id != id)
+    fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
+    res-redirect('/');
+}
 };
 module.exports = productController;
