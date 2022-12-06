@@ -16,6 +16,12 @@ h2 {
     margin-bottom: 30px;
 }
 
+input {
+    color: #FFFFFF;
+}
+textarea {
+    color: #FFFFFF;
+}
 .container-inputs {
     display: flex;
     flex-wrap: wrap;
@@ -140,6 +146,7 @@ p {
     color: #FFFFFF;
     border: 0;
     font-size: 1.7rem;
+    margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;
 }

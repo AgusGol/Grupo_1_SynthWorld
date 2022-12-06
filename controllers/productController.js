@@ -70,23 +70,41 @@ delete: (req, res) => {
 },
 update: (req,res) => {
     let product = products.find(product => product.id == req.params.id);
-    let updateInfoProduct = {
+    console.lo
+    let updateInfoProduct = {}
+    console.log("body", req.body);
+    if (req.file != undefined) {
+        updateInfoProduct = {
+            id : product.id,
+            name: req.body.name,
+            price: req.body.price,
+            category: req.body.category,
+            description : req.body.description,
+            extraInfo : req.body.extraInfo,
+            img: req.file.filename
+    };
+    }
+    else { 
+        updateInfoProduct = {
         id : product.id,
         name: req.body.name,
         price: req.body.price,
         category: req.body.category,
         description : req.body.description,
         extraInfo : req.body.extraInfo,
-        img: req.file.filename,
+        img: product.img
+    }
 };
+console.log("product to edit", updateInfoProduct)
+
     let productToEdit = products.map(product =>{
-        if(updateInfoProduct.id==product.is){
+        if(updateInfoProduct.id==product.id){
             return product = updateInfoProduct
         }
-            return product
+        else {return product}
     })
     fs.writeFileSync(productsFilePath, JSON.stringify(productToEdit, null, '\t'));
-    res.redirect("/products");
+    res.redirect("/shop");
 }
 };
 module.exports = productController;
