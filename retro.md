@@ -35,3 +35,34 @@ Participantes: Agus, Mati, Vicky
 - Start doing:
     Pulir detalles
     Iterar sobre lo hecho y ver como mejorar el código
+
+
+*****************************
+Retro tercer sprint
+Dinámica: estrella de mar
+Participantes: Agus, Mati, Vicky
+
+- Keep doing:
+    Comunicación
+    Buena onda
+    Trabajar el proyecto en clase
+    Trabajo en equipo y ayudarnos entre todos
+    Confianza
+    Buena organización de las tareas
+    Iterar sobre lo hecho y ver como mejorar el código
+
+- More of:
+    Compartir buenas prácticas
+    Reuniones
+    Aprovechar las clases para trabajar el proyecto
+
+- Stop doing:
+    Agregar cosas nuevas sin haber terminado lo anterior
+
+- Start doing:
+    Pulir detalles
+    Mejorar vistas
+    Mejorar configuración del proyecto
+
+- Less Of:
+    Dejar las cosas para último momento
