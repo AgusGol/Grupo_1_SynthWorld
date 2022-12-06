@@ -59,7 +59,6 @@ store: (req, res, next) => {
 productEdition:(req, res) => {
     let product = products.find(product => product.id == req.params.id)   //agregué esta línea y el product de la que sigue
     res.render("productEdition", {product});
-    res.redirect('/');
 },
 
 delete: (req, res) => {

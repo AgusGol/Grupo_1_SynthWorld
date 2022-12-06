@@ -8,11 +8,7 @@
 	},
 	{
 		"id": 3,
-		"name": "3electron OKT MKII",
-		"price": "1300",
-		"img": "octatrack-mkii.webp",
-		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
-		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
+		"img": "octatrack-mkii.webp"
 	},
 	{
 		"id": 4,
