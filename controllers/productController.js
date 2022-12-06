@@ -69,10 +69,11 @@ delete: (req, res) => {
     res.redirect('/shop');
 },
 update: (req,res) => {
-    let product = products.find(product => product.id == req.params.id);
+    /* let id = req.params.id; */
+    let product = products.find(product => product.id ==req.params.id);
     console.lo
     let updateInfoProduct = {}
-    console.log("body", req.body);
+    console.log("Body",req.body);
     if (req.file != undefined) {
         updateInfoProduct = {
             id : product.id,

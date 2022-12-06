@@ -3,6 +3,7 @@
 		"id": 5,
 		"name": "55electron OKT MKII",
 		"price": "1300",
+		"category": "Acesories",
 		"img": "octatrack-mkii.webp",
 		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
 		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
@@ -11,6 +12,7 @@
 		"id": 6,
 		"name": "6electron OKT MKII",
 		"price": "1300",
+		"category": "Acesories",
 		"img": "octatrack-mkii.webp",
 		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
 		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
@@ -19,6 +21,7 @@
 		"id": 7,
 		"name": "7electron OKT MKII",
 		"price": "1300",
+		"category": "Modules&Cases",
 		"img": "octatrack-mkii.webp",
 		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
 		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
@@ -27,6 +30,7 @@
 		"id": 8,
 		"name": "8electron OKT MKII",
 		"price": "1300",
+		"category": "Modules&Cases",
 		"img": "octatrack-mkii.webp",
 		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
 		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
@@ -35,6 +39,7 @@
 		"id": 9,
 		"name": "9electron OKT MKII",
 		"price": "1300",
+		"category": "Acesories",
 		"img": "octatrack-mkii.webp",
 		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
 		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
@@ -43,6 +48,7 @@
 		"id": 10,
 		"name": "10electron OKT MKII",
 		"price": "1300",
+		"category": "Acesories",
 		"img": "octatrack-mkii.webp",
 		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
 		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
@@ -51,6 +57,7 @@
 		"id": 11,
 		"name": "11electron OKT MKII",
 		"price": "1300",
+		"category": "Modules&Cases",
 		"img": "octatrack-mkii.webp",
 		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
 		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
@@ -59,6 +66,7 @@
 		"id": 12,
 		"name": "12electron OKT MKII",
 		"price": "1300",
+		"category": "Effects",
 		"img": "octatrack-mkii.webp",
 		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
 		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
@@ -67,6 +75,7 @@
 		"id": 13,
 		"name": "13electron OKT MKII",
 		"price": "1300",
+		"category": "Modules&Cases",
 		"img": "octatrack-mkii.webp",
 		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
 		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
@@ -75,6 +84,7 @@
 		"id": 14,
 		"name": "14electron OKT MKII",
 		"price": "1300",
+		"category": "Effects",
 		"img": "octatrack-mkii.webp",
 		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
 		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
@@ -83,6 +93,7 @@
 		"id": 15,
 		"name": "15electron OKT MKII",
 		"price": "1300",
+		"category": "Modules&Cases",
 		"img": "octatrack-mkii.webp",
 		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
 		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"

@@ -11,31 +11,31 @@
 <!-- Register form -->
 
 <main>
-    <section class="editproduct-Section">
+    <section class="editProduct-Section">
         <h2>Edit listing</h2>
-        <form method="POST" action="/products/edit/<%= product.id %>?_method=PUT"  class="register-form-New-Product" enctype="multipart/form-data">
+        <form action="/products/edit/<%= product.id %>/?_method=PUT" method="POST" class="register-form-Edit-Product" enctype="multipart/form-data">
             <div class="container-inputs">
                 <article class="productNameContainer">
                 <label for="name">Product Name</label>
-                    <input type="text" name="name" class="productName" value="<%= product.name %>">
+                    <input type="text" name="name" class="productName" value="<%= product.name %>" required>
                 </article>
                 <article class="productDescriptionConteiner">
                     <label for="description">Description</label>
-                    <textarea name="description" placeholder=" <%= product.description %>"> <%= product.description %></textarea>
+                    <textarea name="description" placeholder=" <%= product.description %>" required> <%= product.description %></textarea>
                 </article>
                 <article class="productExtraInfoConteiner">
                     <label for="extraInfo">Extra Info</label>
-                    <textarea type="text" name="extraInfo" placeholder=" <%= product.extraInfo %>"><%= product.extraInfo %></textarea>
+                    <textarea type="text" name="extraInfo" placeholder=" <%= product.extraInfo %>" required><%= product.extraInfo %></textarea>
                 </article>
             </div>
             <div class="second-container-inputs">
                 <article class="productPriceContainer" >
                     <label for="price">Price</label>
-                        <input type="text" name="productPrice" class="inputPrice" value="<%= product.price %>" placeholder="<%= product.price %>" >
+                        <input type="text" name="productPrice" class="inputPrice" value="<%= product.price %>" placeholder="<%= product.price %>" required>
                 </article>
                 <article class="product-Categories-Container">
                     <label for="product-Categories">Categories</label>
-                        <Select class="product-Categories" name="categorie" value="<%= product.category %>">
+                        <Select class="product-Categories" name="categorie" value="<%= product.category %>" required>
                             <option value="Modules&Cases">Modules & Cases</option>
                             <option value="Senquencers">Senquencers</option>
                             <option value="Accesories">Accesories</option>
