@@ -20,7 +20,7 @@ router.post('/products/create', upload.single('productImg'), productController.s
 router.get('/products/:id', productController.productDetail); //products
 router.get('/shop', productController.shop);
 router.get('/products/edit/:id', productController.productEdition); //products
-router.post('/products/edit/:id', productController.update);
+router.put('/products/:id', productController.update);
 router.post('/products/delete/:id', productController.delete);
 
 module.exports=router;

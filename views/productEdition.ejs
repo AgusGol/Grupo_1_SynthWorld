@@ -13,7 +13,7 @@
 <main>
     <section class="editproduct-Section">
         <h2>Edit listing</h2>
-        <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" class="register-form-New-Product" enctype="multipart/form-data">
+        <form method="POST" action="/products/<%= product.id %>?_method=PUT"  class="register-form-New-Product" enctype="multipart/form-data">
             <div class="container-inputs">
                 <article class="productNameContainer">
                 <label for="productName">Product Name</label>

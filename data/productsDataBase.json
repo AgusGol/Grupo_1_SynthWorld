@@ -1,24 +1,5 @@
 [
 	{
-		"id": 1,
-		"img": "octatrack-mkii.webp"
-	},
-	{
-		"id": 2
-	},
-	{
-		"id": 3,
-		"img": "octatrack-mkii.webp"
-	},
-	{
-		"id": 4,
-		"name": "4electron OKT MKII",
-		"price": "1300",
-		"img": "octatrack-mkii.webp",
-		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
-		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
-	},
-	{
 		"id": 5,
 		"name": "55electron OKT MKII",
 		"price": "1300",
