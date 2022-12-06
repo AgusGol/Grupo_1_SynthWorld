@@ -65,6 +65,7 @@ delete: (req, res) => {
     let id = req.params.id;
     let productToDelete = products.filter(product => product.id != id);
     fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
+    
     res.redirect('/shop');
 },
 update: (req,res) => {
@@ -94,7 +95,7 @@ update: (req,res) => {
         img: product.img
     }
 };
-console.log("product to edit", updateInfoProduct)
+console.log("updateinfoproduct", updateInfoProduct)
 
     let productToEdit = products.map(product =>{
         if(updateInfoProduct.id==product.id){

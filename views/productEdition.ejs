@@ -13,14 +13,14 @@
 <main>
     <section class="editproduct-Section">
         <h2>Edit listing</h2>
-        <form method="POST" action="/products/<%= product.id %>?_method=PUT"  class="register-form-New-Product" enctype="multipart/form-data">
+        <form method="POST" action="/products/edit/<%= product.id %>?_method=PUT"  class="register-form-New-Product" enctype="multipart/form-data">
             <div class="container-inputs">
                 <article class="productNameContainer">
-                <label for="productName">Product Name</label>
+                <label for="name">Product Name</label>
                     <input type="text" name="name" class="productName" value="<%= product.name %>">
                 </article>
                 <article class="productDescriptionConteiner">
-                    <label for="productDescription">Description</label>
+                    <label for="description">Description</label>
                     <textarea name="description" placeholder=" <%= product.description %>"> <%= product.description %></textarea>
                 </article>
                 <article class="productExtraInfoConteiner">
@@ -30,12 +30,12 @@
             </div>
             <div class="second-container-inputs">
                 <article class="productPriceContainer" >
-                    <label for="productPrice">Price</label>
+                    <label for="price">Price</label>
                         <input type="text" name="productPrice" class="inputPrice" value="<%= product.price %>" placeholder="<%= product.price %>" >
                 </article>
                 <article class="product-Categories-Container">
                     <label for="product-Categories">Categories</label>
-                        <Select class="product-Categories" name="product-Categories" value="<%= product.category %>">
+                        <Select class="product-Categories" name="categorie" value="<%= product.category %>">
                             <option value="Modules&Cases">Modules & Cases</option>
                             <option value="Senquencers">Senquencers</option>
                             <option value="Accesories">Accesories</option>
