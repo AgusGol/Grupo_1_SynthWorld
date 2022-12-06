@@ -198,14 +198,5 @@
 		"description": "como estas",
 		"extraInfo": "sssss",
 		"img": "productImg-1669850568269.png"
-	},
-	{
-		"id": 25,
-		"name": "Matias",
-		"price": "2333",
-		"category": "Modules&Cases",
-		"description": "PRUEBA MATI",
-		"extraInfo": "DONDE SE ALOJA",
-		"img": "productImg-1670237577913.jpeg"
 	}
 ]

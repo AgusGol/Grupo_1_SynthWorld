@@ -64,9 +64,29 @@ productEdition:(req, res) => {
 
 delete: (req, res) => {
     let id = req.params.id;
-    let productToDelete = product.filter(product => product.id != id)
+    let productToDelete = products.filter(product => product.id != id);
     fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
-    res.redirect('/');
+    res.redirect('/shop');
+},
+update: (req,res) => {
+    let product = products.find(product => product.id == req.params.id);
+    let updateInfoProduct = {
+        id : product.id,
+        name: req.body.name,
+        price: req.body.price,
+        category: req.body.category,
+        description : req.body.description,
+        extraInfo : req.body.extraInfo,
+        img: req.file.filename,
+};
+    let productToEdit = products.map(product =>{
+        if(updateInfoProduct.id==product.is){
+            return product = updateInfoProduct
+        }
+            return product
+    })
+    fs.writeFileSync(productsFilePath, JSON.stringify(productToEdit, null, '\t'));
+    res.redirect("/products");
 }
 };
 module.exports = productController;

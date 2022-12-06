@@ -21,7 +21,7 @@
         <article class="product-title product-title-mb">
         <h2><%= product.name %></h2>
         </article>
-       <div class="price-and-quantity">
+        <div class="price-and-quantity">
         <article class="price">
             <p>$<%= product.price %></p>
         </article>
@@ -34,7 +34,7 @@
             
             
         <article class="buttons">
-           <button type="submit" class="btn-wishlist">
+            <button type="submit" class="btn-wishlist">
                 + wishlist
             </button>
             <!-- <i class="far fa-heart"></i>
@@ -44,6 +44,20 @@
             </button> 
 
         </article>
+    </div>
+    <div>
+        <form action="/products/edit/<%= product.id %>" method="get">
+            <button type="submit" class="btn-to-edition">
+                Edit Product
+            </button>
+        </form>
+    </div>
+    <div>
+        <form action="/products/delete/<%= product.id %>/?_method=DELETE" method="POST">
+            <button type="submit" class="btn-delete-product" style="display: inline-flex">
+                Delete product
+            </button>
+        </form>    
     </div>
     </section>
     <section class="includes-specs-tb">
