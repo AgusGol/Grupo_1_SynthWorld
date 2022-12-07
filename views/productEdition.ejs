@@ -13,7 +13,7 @@
 <main>
     <section class="editProduct-Section">
         <h2>Edit listing</h2>
-        <form action="/products/edit/<%= product.id %>/?_method=PUT" method="POST" class="register-form-Edit-Product" enctype="multipart/form-data">
+        <form action="/products/edit/<%=product.id%>?_method=PUT" method="POST" class="register-form-Edit-Product" enctype="multipart/form-data">
             <div class="container-inputs">
                 <article class="productNameContainer">
                 <label for="name">Product Name</label>
@@ -31,11 +31,11 @@
             <div class="second-container-inputs">
                 <article class="productPriceContainer" >
                     <label for="price">Price</label>
-                        <input type="text" name="productPrice" class="inputPrice" value="<%= product.price %>" placeholder="<%= product.price %>" required>
+                        <input type="text" name="price" class="inputPrice" value="<%= product.price %>" placeholder="<%= product.price %>" required>
                 </article>
                 <article class="product-Categories-Container">
-                    <label for="product-Categories">Categories</label>
-                        <Select class="product-Categories" name="categorie" value="<%= product.category %>" required>
+                    <label for="category">Categories</label>
+                        <Select class="product-Categories" name="category" value="<%= product.category %>" required>
                             <option value="Modules&Cases">Modules & Cases</option>
                             <option value="Senquencers">Senquencers</option>
                             <option value="Accesories">Accesories</option>
@@ -47,14 +47,13 @@
             </div>
             <article class="product-Images-Container">
                 <section class="product-Images">
-                    <label for="Load-files">Images</label>
-                        <input type="file" name="Load-files" class="btn-File-Select" multiple accept=".jpg, .png" >
+                    <label for="images">Images</label>
+                        <input type="file" name="images" class="btn-File-Select" multiple accept=".jpg, .png" >
                             <img src="/img/products/<%= product.img %>">
-
                 </section>
             <button type="submit" class="btn-modify-product">
                 Modify listing
-            </button> <!--Agregué estas dos líneas de abajo. Chequear-->
+            </button>
             </form>
     </section>
 

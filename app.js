@@ -19,10 +19,11 @@ app.use(express.static( 'public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use("/",mainRouters)
-
 //para put y delete
 app.use(methodOverride('_method'));
+app.use("/",mainRouters)
+
+
 
 app.use((req, res, next) => {
     res.status(404).send('We are sorry, but the page you were looking for was not found');

@@ -61,20 +61,14 @@ productEdition:(req, res) => {
     res.render("productEdition", {product});
 },
 
-delete: (req, res) => {
-    let id = req.params.id;
-    let productToDelete = products.filter(product => product.id != id);
-    fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
-    
-    res.redirect('/shop');
-},
 update: (req,res) => {
-    /* let id = req.params.id; */
+    /*let id = req.params.id;*/
     let product = products.find(product => product.id ==req.params.id);
-    console.lo
+    /*console.log("req",req)*/
     let updateInfoProduct = {}
     console.log("Body",req.body);
-    if (req.file != undefined) {
+    console.log("file",req.file);
+    if (req.body) {
         updateInfoProduct = {
             id : product.id,
             name: req.body.name,
@@ -82,10 +76,10 @@ update: (req,res) => {
             category: req.body.category,
             description : req.body.description,
             extraInfo : req.body.extraInfo,
-            img: req.file.filename
+            img: req.file ? req.file.filename : product.img 
     };
     }
-    else { 
+    /*else { 
         updateInfoProduct = {
         id : product.id,
         name: req.body.name,
@@ -95,7 +89,7 @@ update: (req,res) => {
         extraInfo : req.body.extraInfo,
         img: product.img
     }
-};
+};*/
 console.log("updateinfoproduct", updateInfoProduct)
 
     let productToEdit = products.map(product =>{
@@ -105,7 +99,14 @@ console.log("updateinfoproduct", updateInfoProduct)
         else {return product}
     })
     fs.writeFileSync(productsFilePath, JSON.stringify(productToEdit, null, '\t'));
-    res.redirect("/shop");
-}
+    res.redirect("/shop",);
+},
+delete: (req, res) => {
+    let id = req.params.id;
+    let productToDelete = products.filter(product => product.id != id);
+    fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
+    
+    res.redirect('/shop',);
+},
 };
 module.exports = productController;
