@@ -66,3 +66,32 @@ Participantes: Agus, Mati, Vicky
 
 - Less Of:
     Dejar las cosas para último momento
+
+
+*****************************
+Retro cuarto sprint
+Dinámica: estrella de mar
+Participantes: Agus, Mati, Vicky
+
+- Keep doing:
+    Trabajo coordinado y en equipo
+    Brainstorming
+    Ayudarnos
+    Comunicarnos, intercambiar ideas
+
+- More of:
+    Organizar mejor las tareas
+    Resolver en conjunto
+    Mantener el tablero actualizado
+
+- Stop doing:
+    
+
+- Start doing:
+   Trabajos pendientes
+   Pair programming
+   Priorizar trabajo del sprint
+   Chequear los flujos enteros
+   Pensar en flujos desde historias de usuarios 
+- Less Of:
+    Dejar para último momento 
