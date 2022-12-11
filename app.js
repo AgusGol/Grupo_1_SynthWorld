@@ -13,7 +13,7 @@ app.listen(3031, () => {
 });
 
 //para decirle al server en que carpeta estan ubicados los elementos estaticos (fotos y style)
-app.use(express.static( 'public'));
+app.use(express.static('public'));
 
 //para poder usar metodo POST
 app.use(express.urlencoded({ extended: false }));
