@@ -1,12 +1,12 @@
 [
 	{
 		"id": 5,
-		"name": "55electron OKT MKII",
+		"name": "55electron OKT MKII555",
 		"price": "1300",
-		"category": "Acesories",
-		"img": "octatrack-mkii.webp",
-		"description": "asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
-		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas"
+		"category": "Modules&Cases",
+		"description": " asda sd asd asd asdasdas dasdasd asd asd asd asd asd asd asd asdasd",
+		"extraInfo": "-sdasdasd, -dsasdasdas, -asdasd, -asdas",
+		"img": "octatrack-mkii.webp"
 	},
 	{
 		"id": 6,

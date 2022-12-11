@@ -79,17 +79,6 @@ update: (req,res) => {
             img: req.file ? req.file.filename : product.img 
     };
     }
-    /*else { 
-        updateInfoProduct = {
-        id : product.id,
-        name: req.body.name,
-        price: req.body.price,
-        category: req.body.category,
-        description : req.body.description,
-        extraInfo : req.body.extraInfo,
-        img: product.img
-    }
-};*/
 console.log("updateinfoproduct", updateInfoProduct)
 
     let productToEdit = products.map(product =>{
