@@ -18,3 +18,14 @@ Temas tratados en la reunión:
 - Revisión de tareas a entregar en el sprint 4 (obligatorias y opcionales)
 - Priorización de tareas
 - División de responsabilidades
+
+****************************
+Weekly sprint 5: Middlewares + AUTH
+Asistentes: Agus, Mati, Vicky
+
+Temas tratados en la reunión:
+- Revisión de tablero. Actualizamos el estado de las tareas
+- Definimos que necesitamos entregar para el sprint y que queda en un backlog para mejorar a medida que nos vayamos quedando sin tareas
+- Entre todos incorporarmos la carpeta source y movimos los archivos
+- Definimos prioridades
+- Tuvimos la retro
