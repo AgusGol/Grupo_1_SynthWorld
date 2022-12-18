@@ -177,5 +177,14 @@
     "password": "25wRrHx51Z",
     "category": false,
     "image": "http://dummyimage.com/247x100.png/5fa2dd/ffffff"
+  },
+  {
+    "id": 21,
+    "name": "agustin",
+    "last_name": "golberg",
+    "email": "agustingolberg@gmail.com",
+    "password": "$2a$10$i.k.YeEPugMymoJc/CsR7.fQhIy5uPc44jD0/vxMJ0tervxp3K8Ua",
+    "category": false,
+    "image": "http://dummyimage.com/247x100.png/5fa2dd/ffffff"
   }
 ]
