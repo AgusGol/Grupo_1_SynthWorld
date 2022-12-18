@@ -5,11 +5,14 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const bcrypt = require('bcryptjs');
 const session = require('express-session');
 const { validationResult } = require('express-validator');
+const cookieParser = require("cookie-parser");
 
 const userController={
 
 login:(req, res) => {
+    console.log("cookieee", req.cookies.userEmail);
         res.render('login');
+        
     },
 register:(req, res) => {
         res.render('register');
@@ -26,7 +29,7 @@ loginRequest: (req, res) => {
     if(foundUser != undefined) {
          let passCheck = bcrypt.compareSync(req.body.userPassword, foundUser.password);
          if (passCheck == true) {
-            req.session.id = foundUser.id
+             req.session.id = foundUser.id;
              req.session.email = foundUser.email;
              req.session.name = foundUser.name;
              req.session.lastName = foundUser.last_name;
@@ -34,7 +37,8 @@ loginRequest: (req, res) => {
              console.log("session", req.session);
 
             if(req.body.rememberMe != undefined && req.body.rememberMe == "on"){
-                res.cookie("savedUsedId", req.session.id, {maxAge: 604800000})
+                res.cookie("userEmail", req.session.email, {maxAge: 604800000});
+                
             } 
              res.redirect("/home");
          }
