@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <link href="css/shop.css" rel="stylesheet">
+</head>
+<body>
+    <%- include('./partials/header') %>
+<main>
+
+    <!-- product list -->
+    <section class="popular-products">
+        <h2>Users List</h2>
+        <div class="product-list">
+        <% products.forEach((product) => { %>
+        
+        <article class="product-article">
+            <a href = "/products/<%= product.id %>">
+            <div class="product-img-container">
+            <img class="product-image" src="img/products/<%= product.img %> ">
+        </div>
+            <div class="price-name">
+            <p class="price">$<%= product.price %> </p>
+        <h6><%= product.name %> </h6>
+        </div>
+    </a>
+        </article>
+    <% }) %>  
+        <!-- <article class="product-article">
+            <img class="product-image" src="img/octatrack-mkii.webp">
+            <div class="price-name">
+            <p class="price">$6770</p>
+        <h6>Elektron Octatrack mkii</h6>
+        </div>
+        </article> -->
+
+        <!-- <article class="product-article">
+            <img class="product-image" src="img/octatrack-mkii.webp">
+            <div class="price-name">
+            <p class="price">$6770</p>
+        <h6>Elektron Octatrack mkii</h6>
+        </div>
+        </article>
+        <article class="product-article">
+            <img class="product-image" src="img/octatrack-mkii.webp">
+            <div class="price-name">
+            <p class="price">$6770</p>
+        <h6>Elektron Octatrack mkii</h6>
+        </div>
+        </article>
+        <article class="product-article">
+            <img class="product-image" src="img/octatrack-mkii.webp">
+            <div class="price-name">
+            <p class="price">$6770</p>
+        <h6>Elektron Octatrack mkii</h6>
+        </div>
+        </article>
+        <article class="product-article">
+            <img class="product-image" src="img/octatrack-mkii.webp">
+            <div class="price-name">
+            <p class="price">$6770</p>
+        <h6>Elektron Octatrack mkii</h6>
+        </div>
+        </article>
+        <article class="product-article">
+            <img class="product-image" src="img/octatrack-mkii.webp">
+            <div class="price-name">
+            <p class="price">$6770</p>
+        <h6>Elektron Octatrack mkii</h6>
+        </div>
+        </article>
+        <article class="product-article">
+            <img class="product-image" src="img/octatrack-mkii.webp">
+            <div class="price-name">
+            <p class="price">$6770</p>
+        <h6>Elektron Octatrack mkii</h6>
+        </div>
+        </article>
+        <article class="product-article">
+            <img class="product-image" src="img/octatrack-mkii.webp">
+            <div class="price-name">
+            <p class="price">$6770</p>
+        <h6>Elektron Octatrack mkii</h6>
+        </div>
+        </article>
+        <article class="product-article">
+            <img class="product-image" src="img/octatrack-mkii.webp">
+            <div class="price-name">
+            <p class="price">$6770</p>
+        <h6>Elektron Octatrack mkii</h6>
+        </div>
+        </article>
+        <article class="product-article">
+            <img class="product-image" src="img/octatrack-mkii.webp">
+            <div class="price-name">
+            <p class="price">$6770</p>
+        <h6>Elektron Octatrack mkii</h6>
+        </div>
+        </article>
+        <article class="product-article">
+            <img class="product-image" src="img/octatrack-mkii.webp">
+            <div class="price-name">
+            <p class="price">$6770</p>
+        <h6>Elektron Octatrack mkii</h6>
+        </div>
+        </article> -->
+    </div>
+       </section>
+    
+       
+    </main>
+
+<!--Footer partials-->
+<%- include('./partials/footer') %>
+
+</body>
+</html>
