@@ -11,7 +11,7 @@ router.get("/home", mainController.index);
 // router.get("/register", mainController.register); //users
 router.get('/productCart', mainController.productCart); //users
 router.use('/', productRouters);
-router.use('/', userRouters);
+router.use('/user', userRouters);
 // router.get('/productDetail', mainController.productDetail); //products
 // router.get('/shop', mainController.shop); //products
 // router.get('/productCreation', mainController.productCreation); //products

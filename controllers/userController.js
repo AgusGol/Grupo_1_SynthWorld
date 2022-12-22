@@ -6,8 +6,12 @@ const bcrypt = require('bcryptjs');
 const session = require('express-session');
 const { validationResult } = require('express-validator');
 const cookieParser = require("cookie-parser");
+const { render } = require("ejs");
 
 const userController={
+userIndex:(req,res) =>{
+    res.render("user",{users})
+},
 
 login:(req, res) => {
     console.log("cookieee", req.cookies.userEmail);

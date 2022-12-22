@@ -5,7 +5,7 @@
     "email": "cosharkey0@mashable.com",
     "password": "ul9M9Anv9",
     "category": true,
-    "image": "http://dummyimage.com/142x100.png/dddddd/000000"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 2,
@@ -14,7 +14,7 @@
     "email": "dvaller1@deliciousdays.com",
     "password": "Cnux0EL1",
     "category": false,
-    "image": "http://dummyimage.com/176x100.png/dddddd/000000"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 3,
@@ -23,7 +23,7 @@
     "email": "tfisbburne2@simplemachines.org",
     "password": "CVr3ebRX9T",
     "category": true,
-    "image": "http://dummyimage.com/151x100.png/dddddd/000000"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 4,
@@ -32,7 +32,7 @@
     "email": "llabone3@deviantart.com",
     "password": "BYIlnysH8",
     "category": true,
-    "image": "http://dummyimage.com/225x100.png/5fa2dd/ffffff"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 5,
@@ -41,7 +41,7 @@
     "email": "xstopforth4@gmpg.org",
     "password": "3ajvwsQz1fT",
     "category": false,
-    "image": "http://dummyimage.com/118x100.png/cc0000/ffffff"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 6,
@@ -50,7 +50,7 @@
     "email": "sslowgrove5@weebly.com",
     "password": "EdHHJRz78",
     "category": true,
-    "image": "http://dummyimage.com/248x100.png/5fa2dd/ffffff"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 7,
@@ -59,7 +59,7 @@
     "email": "jsatcher6@jalbum.net",
     "password": "lydFZzAB",
     "category": true,
-    "image": "http://dummyimage.com/157x100.png/dddddd/000000"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 8,
@@ -68,7 +68,7 @@
     "email": "mmeth7@mtv.com",
     "password": "FOaNm736zVl1",
     "category": true,
-    "image": "http://dummyimage.com/113x100.png/dddddd/000000"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 9,
@@ -77,7 +77,7 @@
     "email": "rdigance8@about.me",
     "password": "cTBMWFO4Z3c",
     "category": true,
-    "image": "http://dummyimage.com/211x100.png/cc0000/ffffff"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 10,
@@ -86,7 +86,7 @@
     "email": "iyoull9@discuz.net",
     "password": "PVP7rbXBF",
     "category": true,
-    "image": "http://dummyimage.com/218x100.png/cc0000/ffffff"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 11,
@@ -95,7 +95,7 @@
     "email": "ddullaghana@multiply.com",
     "password": "CPrNMiNB",
     "category": true,
-    "image": "http://dummyimage.com/204x100.png/ff4444/ffffff"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 12,
@@ -104,7 +104,7 @@
     "email": "dplanb@livejournal.com",
     "password": "iQCH8J",
     "category": true,
-    "image": "http://dummyimage.com/212x100.png/ff4444/ffffff"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 13,
@@ -113,7 +113,7 @@
     "email": "asertinc@unblog.fr",
     "password": "8jRwcKef",
     "category": false,
-    "image": "http://dummyimage.com/238x100.png/cc0000/ffffff"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 14,
@@ -122,7 +122,7 @@
     "email": "jyglesiad@ebay.co.uk",
     "password": "VjoHOE",
     "category": false,
-    "image": "http://dummyimage.com/111x100.png/5fa2dd/ffffff"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 15,
@@ -131,7 +131,7 @@
     "email": "nfleische@mlb.com",
     "password": "ibACZwl",
     "category": true,
-    "image": "http://dummyimage.com/216x100.png/dddddd/000000"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 16,
@@ -140,7 +140,7 @@
     "email": "ltottemf@ebay.com",
     "password": "SX615P7Gcc",
     "category": true,
-    "image": "http://dummyimage.com/161x100.png/dddddd/000000"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 17,
@@ -149,7 +149,7 @@
     "email": "telgieg@php.net",
     "password": "HOBAzt4gIhO6",
     "category": false,
-    "image": "http://dummyimage.com/162x100.png/dddddd/000000"
+    "image": "defaultAvatar.png"
   },
   {
     "id": 18,
@@ -158,33 +158,6 @@
     "email": "lsayesh@digg.com",
     "password": "UgnQyT5gDQso",
     "category": false,
-    "image": "http://dummyimage.com/105x100.png/5fa2dd/ffffff"
-  },
-  {
-    "id": 19,
-    "name": "Hedvig",
-    "last_name": "Huby",
-    "email": "hhubyi@pbs.org",
-    "password": "8BcjT4dgJ",
-    "category": false,
-    "image": "http://dummyimage.com/240x100.png/cc0000/ffffff"
-  },
-  {
-    "id": 20,
-    "name": "Jenny",
-    "last_name": "Wilden",
-    "email": "jwildenj@wix.com",
-    "password": "25wRrHx51Z",
-    "category": false,
-    "image": "http://dummyimage.com/247x100.png/5fa2dd/ffffff"
-  },
-  {
-    "id": 21,
-    "name": "agustin",
-    "last_name": "golberg",
-    "email": "agustingolberg@gmail.com",
-    "password": "$2a$10$i.k.YeEPugMymoJc/CsR7.fQhIy5uPc44jD0/vxMJ0tervxp3K8Ua",
-    "category": false,
-    "image": "http://dummyimage.com/247x100.png/5fa2dd/ffffff"
+    "image": "defaultAvatar.png"
   }
-]
+  ]
