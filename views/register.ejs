@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('./partials/head') %>
-    <link href="css/register.css" rel="stylesheet">
+    <link href="/css/register.css" rel="stylesheet">
 </head>
 
 <body>
@@ -11,57 +11,61 @@
 <!-- Register form -->
 
 <main>
-    <form action="register" method="POST" class="register-form">
+    <section class="new-user-section">
         <h1>Ready to join our community?</h1>
         <h2>Create your account</h2>
-        <div class="container-inputs">
-            <label for="userEmail">Email address</label>
-            <input type="email" name="userEmail" placeholder="Email address" class="email-input-login" required>
+        <form action="/users/register" method="POST" class="register-form" enctype="multipart/form-data">
+            <div class="container-inputs">
+                <label for="email">Email address</label>
+                <input type="email" name="email" placeholder="Email address" class="email-input-login" required>
 
-            <label for="userpassword">Password</label>
-            <input type="password" name="userPassword" placeholder="Password" required>
-            <label for="userpasswordValidation">Confirm password</label>
-            <input type="password" name="userPasswordValidation" placeholder="Confirm password" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Password" required>
+                <label for="password2">Confirm password</label>
+                <input type="password" name="password2" placeholder="Confirm password" required>
+            </div>
+            <h1>Personal information</h1>
+
+            <div class="second-container-inputs">
+                <label for="name">First name</label>
+                <input type="text" name="name" placeholder="First name" required>
+                <label for="Last_Name">Last name</label>
+                <input type="text" name="Last_Name" placeholder="Last name" required>
+            </div>
+            <div class="age">
+            <p>When where you born?</p>
+            </div>
+            <div class="third-container-inputs">
+                <label for="userBirth">BirthDay</label>
+                <input type="date" name="userBirth" required>
+            </div>
+            <article class="product-Images-Container">
+                <section class="product-Images">
+                    <label for="userAvatar">Images</label>
+                        <input type="file" name="userAvatar" class="btn-File-Select" multiple accept=".jpg, .jpeg, .png">
+                </section>
+            </article>
+            <button type="submit" class="btn-register">
+                Register
+            </button>
+            <p class="paragraph">
+                Or
+            </p>
+
+
+    <!--FB and Gmail buttons-->
+        <div class="container-btn-register-with">
+            <button class="btn-register-with-facebook"><i class="fab fa-facebook"></i>
+    Register with Facebook</button>
         </div>
-        <h1>Personal information</h1>
-
-        <div class="second-container-inputs">
-            <label for="userFirstName">First name</label>
-            <input type="text" name="userFirstName" placeholder="First name" required>
-            <label for="userLastName">Last name</label>
-            <input type="text" name="userLastName" placeholder="Last name" required>
+        
+        <div class="container-btn-register-with">
+            <button class="btn-register-with-google"><i class="fab fa-google"></i><span>  Register with Google</span></button>
         </div>
-        <div class="age">
-        <p>When where you born?</p>
-        </div>
-        <div class="third-container-inputs">
-            <label for="userDateOfBirth">Day</label>
-            <input type="text" name="userDateOfBirth" placeholder="Day" required>
-            <label for="userMonthOfBirth">Month</label>
-            <input type="text" name="userMonthOfBirth" placeholder="Month" required>
-            <label for="userYearOfBirth">Year</label>
-            <input type="text" name="userYearOfBirth" placeholder="Year" required>
-        </div>
-        <button type="submit" class="btn-register">
-            Register
-        </button>
-        <p class="paragraph">
-            Or
-        </p>
 
-
-<!--FB and Gmail buttons-->
-<div class="container-btn-register-with">
-        <button class="btn-register-with-facebook"><i class="fab fa-facebook"></i>
-Register with Facebook</button>
-    </div>
-    
-    <div class="container-btn-register-with">
-        <button class="btn-register-with-google"><i class="fab fa-google"></i><span>  Register with Google</span></button>
-    </div>
-
-    <p class="create-account">Already have an account?<a href="/login"> Sign in</a></p>
-    </form>
+        <p class="create-account">Already have an account?<a href="/login"> Sign in</a></p>
+        </form>
+</section>
 </main>
 
 

@@ -1,5 +1,9 @@
-label{
-    display:none;
+label {
+    display: none;
+}
+.new-user-section{
+    padding-top: 15px;
+    width: 100%;
 }
 
 .register-form{

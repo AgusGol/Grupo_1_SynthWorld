@@ -18,8 +18,44 @@ login:(req, res) => {
         res.render('login');
         
     },
-register:(req, res) => {
-        res.render('register');
+userCreate:(req, res) => {
+    res.render("register");
+},
+register:(req, res, next) => {
+        console.log("reqfile",req.file);
+        let lastUserIndex = users.length -1;
+        let newUser = {};
+        if (users == "") {
+            newUser = {
+                id : 1,
+                name: req.body.name,
+                last_name: req.body.last_name,
+                email: req.body.email,
+                password : req.body.password,
+                category : req.body.category,
+                image: req.file.filename,
+            }
+        }
+        else { 
+            newUser = {
+                id : users[lastUserIndex].id + 1,
+                name: req.body.name,
+                last_name: req.body.last_name,
+                email: req.body.email,
+                password : req.body.password,
+                category : req.body.category,
+                image: req.file.filename,
+        }
+    }
+    
+    
+        console.log("ESTO ES newProduct", newUser);
+        users.push(newUser);
+        let usersJSON = JSON.stringify(users, null, '\t');
+        fs.writeFileSync(usersFilePath, usersJSON , "");
+        console.log(req.file);
+        res.redirect('/users');
+    
     },
 loginRequest: (req, res) => {
 

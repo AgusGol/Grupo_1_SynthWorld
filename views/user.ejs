@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('./partials/head') %>
-    <link href="css/shop.css" rel="stylesheet">
+    <link href="/css/shop.css" rel="stylesheet">
 </head>
 <body>
     <%- include('./partials/header') %>
@@ -16,7 +16,7 @@
         <article class="product-article">
             <a href = "/users/<%= user.id %>">
             <div class="product-img-container">
-                <img class="product-image" src="img/users/<%= user.image %> ">
+                <img class="product-image" src="/img/users/<%= user.image %> ">
             </div>
             <div class="price-name">
                 <p class="price">$<%= user.email %> </p>
