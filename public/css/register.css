@@ -40,6 +40,7 @@ h2 {
     padding: 3px;
     height: 35px;
     padding-left: 5px;
+    color: #FFFFFF;
 }
 
 .container-inputs input::placeholder {
@@ -61,6 +62,7 @@ h2 {
     height: 35px;
     padding-left: 5px;
     margin-top: 5px;
+    color: #FFFFFF;
 }
 
 .second-container-inputs input::placeholder {
@@ -83,6 +85,7 @@ h2 {
     padding: 3px;
     height: 35px;
     padding-left: 5px;
+    color: #FFFFFF;
 }
 .third-container-inputs input::placeholder {
     color:#FFFFFF;

@@ -163,13 +163,19 @@
 	},
 	{
 		"id": 19,
-		"image": "userAvatar-1671750087404.png"
+		"name": "Juan",
+		"last_name": "Memes",
+		"email": "juancito@memes.com",
+		"password": "1234567",
+		"image": "userAvatar-1671797008399.png"
 	},
 	{
 		"id": 20,
-		"name": "Matias",
-		"email": "matiasrobertone87@gmail.com",
-		"password": "12345678",
-		"image": "userAvatar-1671751055556.png"
+		"name": "Maria",
+		"last_name": "La del Barrio",
+		"email": "marialadelbarrio@tvnovelas.com",
+		"password": "1234",
+		"category": "false",
+		"image": "userAvatar-1671798070378.png"
 	}
 ]

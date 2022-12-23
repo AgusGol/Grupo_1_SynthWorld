@@ -29,8 +29,20 @@
             <div class="second-container-inputs">
                 <label for="name">First name</label>
                 <input type="text" name="name" placeholder="First name" required>
-                <label for="Last_Name">Last name</label>
-                <input type="text" name="Last_Name" placeholder="Last name" required>
+                <label for="last_name">Last name</label>
+                <input type="text" name="last_name" placeholder="Last name" required>
+            </div>
+            <div class="userCategory">
+                <p>which type of user are you?</p>
+                <article class="user-Categories-Container">
+                    <label for="category">Categories</label>
+                        <Select class="user-Categories" name="category"  required>
+                            <option value= 'none' disabled selected>Choose one</option>
+                            <option value= 'true' disabled>Administrator</option>
+                            <option value= 'false'>Customer</option>
+                        </Select>
+                </article>
+                <label for=""></label>
             </div>
             <div class="age">
             <p>When where you born?</p>
