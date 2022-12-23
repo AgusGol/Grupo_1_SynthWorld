@@ -2,26 +2,26 @@
 <html lang="en">
 <head>
     <%- include('./partials/head') %>
-    <link href="/css/shop.css" rel="stylesheet">
+    <link href="/css/user.css" rel="stylesheet">
 </head>
 <body>
     <%- include('./partials/header') %>
 <main>
 <!-- product list -->
-    <section class="popular-products">
+    <section class="users-list-container">
         <h2>Users List</h2>
-        <div class="product-list">
+        <div class="users-list">
         <% users.forEach((user) => { %>
         
-        <article class="product-article">
+        <article class="user-card">
             <a href = "/users/<%= user.id %>">
-            <div class="product-img-container">
-                <img class="product-image" src="/img/users/<%= user.image %> ">
+            <div class="user-img-container">
+                <img class="user-image" src="/img/users/<%= user.image %> ">
             </div>
-            <div class="price-name">
-                <p class="price"><%= user.email %> </p>
-            <h6><%= user.name %> </h6>
-        </div>
+            <div class="user-name-email">
+                <p class="user-email"><%= user.email %> </p>
+                <h6 class="user-name" ><%= user.name %> </h6>
+            </div>
             </a>
         </article>
         <% }) %>  

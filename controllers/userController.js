@@ -44,7 +44,7 @@ register:(req, res, next) => {
                 email: req.body.email,
                 password : req.body.password,
                 category : req.body.category,
-                image: req.file.filename,
+                image: req.file ? req.file.filename : "defaultAvatar.png" , 
         }
     }
     

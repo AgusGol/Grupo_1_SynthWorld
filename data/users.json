@@ -177,5 +177,14 @@
 		"password": "1234",
 		"category": "false",
 		"image": "userAvatar-1671798070378.png"
+	},
+	{
+		"id": 21,
+		"name": "gabriela",
+		"last_name": "recovery",
+		"email": "gabriela@recovery.com",
+		"password": "abcd",
+		"category": "false",
+		"image": "defaultAvatar.png"
 	}
 ]
