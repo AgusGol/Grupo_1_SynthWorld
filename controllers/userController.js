@@ -31,7 +31,7 @@ register:(req, res, next) => {
                 name: req.body.name,
                 last_name: req.body.last_name,
                 email: req.body.email,
-                password : req.body.password,
+                password : bcrypt.hashSync(req.body.password,10),
                 category : req.body.category,
                 image: req.file.filename,
             }
@@ -42,7 +42,7 @@ register:(req, res, next) => {
                 name: req.body.name,
                 last_name: req.body.last_name,
                 email: req.body.email,
-                password : req.body.password,
+                password : bcrypt.hashSync(req.body.password,10),
                 category : req.body.category,
                 image: req.file ? req.file.filename : "defaultAvatar.png" , 
         }
