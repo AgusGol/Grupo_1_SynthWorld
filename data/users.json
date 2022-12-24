@@ -186,5 +186,14 @@
 		"password": "abcd",
 		"category": "false",
 		"image": "defaultAvatar.png"
+	},
+	{
+		"id": 22,
+		"name": "florencia",
+		"last_name": "rodriguez",
+		"email": "florencia@lol.com",
+		"password": "$2a$10$YttnZ3g7FiQVOoiewE90keQoGt34QJh2DBOPYb5djDR1xke7bB4eG",
+		"category": "false",
+		"image": "userAvatar-1671902484732.png"
 	}
 ]
