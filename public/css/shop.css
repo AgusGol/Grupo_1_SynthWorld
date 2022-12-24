@@ -50,19 +50,9 @@
     display: flex;
     justify-content: center;
 }
-
 p {
     font-size: 1.4rem;
 }
-
-/* .price-name {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px 0 0;
-}
- */ 
-
 
 @media (max-width: 320px) {
     .img-categories article  {
