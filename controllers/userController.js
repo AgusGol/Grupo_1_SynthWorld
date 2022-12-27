@@ -65,8 +65,9 @@ loginRequest: (req, res) => {
 
     let encryptedPass = bcrypt.hashSync(req.body.userPassword, 10);
     let foundUser = users.find(user => user.email == req.body.userEmail)
-
+    console.log("fouuund", foundUser)
     if(foundUser != undefined) {
+       
          let passCheck = bcrypt.compareSync(req.body.userPassword, foundUser.password);
          if (passCheck == true) {
              req.session.id = foundUser.id;
@@ -82,9 +83,9 @@ loginRequest: (req, res) => {
             } 
              res.redirect("/home");
          }
-         else res.redirect("/login")
+         else res.redirect("/users/login")
      }
-     else {res.redirect("/login")}
+     else {res.redirect("/users/login")}
 
     
 }      

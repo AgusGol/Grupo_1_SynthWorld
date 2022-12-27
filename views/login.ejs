@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('./partials/head') %>
-    <link href="css/login.css" rel="stylesheet">
+    <link href="/css/login.css" rel="stylesheet">
 </head>
 <body>
     <%- include('./partials/header') %>
@@ -10,7 +10,7 @@
 <!-- login form -->
     
 <main>
-        <form action="/login" method="POST" class="login-form">
+        <form action="/users/login" method="POST" class="login-form">
             
             <h1>Welcome back!</h1>
             <h2>Please login</h2>
@@ -42,7 +42,7 @@ Login with Facebook</button>
     </div>
 
 
-    <p class="create-account">Don't have an account?<a href="/register"><strong> Register</strong></a></p>    <!--Linkear al register-->
+    <p class="create-account">Don't have an account?<a href="/users/register"><strong> Register</strong></a></p>    <!--Linkear al register-->
     </form>
 
 </main>

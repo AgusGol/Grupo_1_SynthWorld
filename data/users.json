@@ -195,5 +195,23 @@
 		"password": "$2a$10$YttnZ3g7FiQVOoiewE90keQoGt34QJh2DBOPYb5djDR1xke7bB4eG",
 		"category": "false",
 		"image": "userAvatar-1671902484732.png"
+	},
+	{
+		"id": 23,
+		"name": "agustin",
+		"last_name": "golberg",
+		"email": "agusgol@gmail.com",
+		"password": "$2a$10$GjxI5OkC.QyBp64/YC92RuM5xuA/gXQrQZc1XYfSiYTb3BaXDxZ1m",
+		"category": "false",
+		"image": "userAvatar-1672141635079.png"
+	},
+	{
+		"id": 24,
+		"name": "agustin",
+		"last_name": "golberg",
+		"email": "agustingolberg@gmail.com",
+		"password": "$2a$10$TwoLtB6Q1yFnL8PqRVNjq.mVe7Nqc3xuNIC.1B3GZAtIkrm1bu9.y",
+		"category": "false",
+		"image": "defaultAvatar.png"
 	}
 ]
