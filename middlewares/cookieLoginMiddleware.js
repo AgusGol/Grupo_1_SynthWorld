@@ -7,7 +7,6 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 module.exports = (req, res, next) => {
     if(!session.locals){
         if (req.cookies.userEmail != undefined) {
-            console.log('cocokie', req.cookies.userEmail)
             let foundUser = users.find(user => user.email == req.cookies.userEmail)
             if(foundUser != undefined) {
              req.session.id = foundUser.id;

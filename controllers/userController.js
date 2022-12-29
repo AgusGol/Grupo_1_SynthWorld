@@ -58,16 +58,18 @@ register:(req, res, next) => {
     
     },
 loginRequest: (req, res) => {
-
-    //falta la validacion de errores
-    //falta la cookie para recordar usuario
     console.log(req.body);
+    //guarda los errores, nose porque llegan vacios.
+    let errors = validationResult(req);
+    console.log('errorss', errors);
 
+    //si no hay errores que llegan desde el validator
+    if (errors.isEmpty()) {
     let encryptedPass = bcrypt.hashSync(req.body.userPassword, 10);
     let foundUser = users.find(user => user.email == req.body.userEmail)
     console.log("fouuund", foundUser)
+
     if(foundUser != undefined) {
-       
          let passCheck = bcrypt.compareSync(req.body.userPassword, foundUser.password);
          if (passCheck == true) {
              req.session.id = foundUser.id;
@@ -83,9 +85,25 @@ loginRequest: (req, res) => {
             } 
              res.redirect("/home");
          }
-         else res.redirect("/users/login")
+         else {
+            errors = [{msg:"Inocrrect password"}];
+            console.log('errorss', errors);
+            res.render('login', {errors});
+     }} 
+     else {
+        errors = [{msg: "That email address is not registered"}];
+        
+            res.render('login', {errors: errors});
      }
-     else {res.redirect("/users/login")}
+    }
+    //si hay errores q llegan desde el validator
+     else {
+        let eror = errors.array();
+        console.log("errooooors", eror)
+        res.render('login', { errors: errors.array(), old: req.body});
+
+        }
+       
 
     
 }      
