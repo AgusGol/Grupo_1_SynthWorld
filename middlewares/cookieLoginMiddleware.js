@@ -5,9 +5,7 @@ const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 module.exports = (req, res, next) => {
-    console.log('cocokie', req.cookies.userEmail)
-    if(session.locals){
-        console.log('cocokie', req.cookies.userEmail)
+    if(!session.locals){
         if (req.cookies.userEmail != undefined) {
             console.log('cocokie', req.cookies.userEmail)
             let foundUser = users.find(user => user.email == req.cookies.userEmail)
