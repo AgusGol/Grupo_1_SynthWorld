@@ -86,7 +86,7 @@ loginRequest: (req, res) => {
              res.redirect("/home");
          }
          else {
-            errors = [{msg:"Inocrrect password"}];
+            errors = [{msg:"Incorrect password"}];
             console.log('errorss', errors);
             res.render('login', {errors});
      }} 
