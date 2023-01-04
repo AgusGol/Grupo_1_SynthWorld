@@ -29,6 +29,7 @@ const validateRegister = [
         .custom()
     ];
 
+// Multer //
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
     cb(null, path.join(__dirname,'../public/img/users'));
@@ -40,10 +41,12 @@ const storage = multer.diskStorage({
     
     const upload = multer({ storage })
 
+const guestMiddleware = require('../middlewares/guestMiddleware');
+
 router.get("/", userController.userIndex);
 router.get("/login", userController.login); //users
 router.post("/login",validateLogin ,userController.loginRequest);
-router.get("/register", userController.userCreate); //users
+router.get("/register", guestMiddleware, userController.userCreate); //users
 router.post("/register",upload.single('userAvatar'),validateRegister,userController.register)
 
 module.exports=router;

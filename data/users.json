@@ -213,5 +213,23 @@
 		"password": "$2a$10$TwoLtB6Q1yFnL8PqRVNjq.mVe7Nqc3xuNIC.1B3GZAtIkrm1bu9.y",
 		"category": "false",
 		"image": "defaultAvatar.png"
+	},
+	{
+		"id": 25,
+		"name": "Vicky",
+		"last_name": "1",
+		"email": "mvictoriaripa@gmail.com",
+		"password": "$2a$10$dHJdkRMRYv1KgBBMVfih8uJS0EnkNnDVCTmrjWg2WSBQ/AhyRxzBC",
+		"category": "false",
+		"image": "defaultAvatar.png"
+	},
+	{
+		"id": 26,
+		"name": "Test",
+		"last_name": "Admin",
+		"email": "admin@admin.com",
+		"password": "$2a$10$mXtxYiDy920I2Tt1cy.29eIS1KLq39ZeHfu66YDs/82JUNVPY93du",
+		"category": "false",
+		"image": "defaultAvatar.png"
 	}
 ]

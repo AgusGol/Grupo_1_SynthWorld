@@ -2,8 +2,12 @@ const express = require("express");
 const router= express.Router();
 const path = require ("path");
 const multer = require ('multer');
+// const admin = require('../middlewares/adminMiddleware') => para implementar los permisos del admin
+
+// Controller require //
 const productController= require("../controllers/productController");
 
+// Multer //
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
     cb(null, path.join(__dirname,'../public/img/products'));
@@ -15,12 +19,24 @@ const storage = multer.diskStorage({
     
     const upload = multer({ storage })
 
-router.get('/products/create', productController.productCreation); //products
+const adminMiddleware = require('../middlewares/adminMiddleware');
+
+
+// Create one product //
+router.get('/products/create', adminMiddleware, productController.productCreation); ////agregar más adelante acá el middleware admin
 router.post('/products/create', upload.single('productImg'), productController.store); //products
+
+// Get one product //
 router.get('/products/:id', productController.productDetail); //products
+
+// Get all products //
 router.get('/shop', productController.shop);
-router.get('/products/edit/:id', productController.productEdition); //products
+
+// Edit one product //
+router.get('/products/edit/:id', adminMiddleware, productController.productEdition); 
 router.put('/products/edit/:id',upload.single("images"), productController.update);
-router.delete('/products/delete/:id', productController.delete);
+
+// Delete one product //
+router.delete('/products/delete/:id', adminMiddleware, productController.delete); 
 
 module.exports=router;
