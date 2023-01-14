@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const cookieLoginMiddleware = require('./middlewares/cookieLoginMiddleware');
 
-
+app.set('views', path.resolve(__dirname, './views'));
 app.set("view engine", "ejs");
 
 app.listen(3031, () => {
