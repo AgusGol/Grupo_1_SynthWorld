@@ -7,7 +7,7 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 //este midd se va a encargar de chequear que el usuario no esté logueado 
 
 function guestMiddleware (req, res, next) {
-    if (req.session.foundUser == undefined) {
+    if (req.session.email == undefined) {
         next();
     } else {
         res.send('Esta página es sólo para invitados')

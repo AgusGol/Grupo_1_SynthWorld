@@ -3,7 +3,12 @@ const path = require ("path");
 const mainController={
 
 index:(req, res) => {
+        if(req.session != undefined ){
+        res.render('index', {session: req.session});
+        }
+        else {
         res.render('index');
+        }
         },
 login:(req, res) => {
         res.render('login');
