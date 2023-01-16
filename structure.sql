@@ -50,20 +50,20 @@ PRIMARY KEY (`id`)
 );
 
 
-
+-- VER DEFAULT
 
 CREATE TABLE `synthworld`.`products`
 (
  `id`                  INT NOT NULL AUTO_INCREMENT ,
- `name`                VARCHAR(45) NOT NULL ,
+ `name`                VARCHAR(100) NOT NULL ,
  `brand_id`            INT NULL ,
  `product_category_id` INT NOT NULL ,
- `price`               INT UNSIGNED NOT NULL ,
+ `price`               DECIMAL(10, 2) NOT NULL ,
  `discount`            decimal(4, 2) NULL ,
  `image`               VARCHAR(100) NOT NULL ,
- `description`         VARCHAR(300) NULL ,
- `extra_info`          VARCHAR(300) NULL ,
- `availability`        BINARY NULL ,
+ `description`         TEXT NULL ,
+ `extra_info`          TEXT NULL ,
+ `availability`        BINARY NOT NULL,
 
 PRIMARY KEY (`id`),
 KEY `product_category` (`product_category_id`),
