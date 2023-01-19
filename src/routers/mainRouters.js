@@ -6,6 +6,7 @@ const userRouters = require("./userRouters")
 
 router.get("/", mainController.index);
 router.get("/home", mainController.index);
+router.get("/aboutUs",mainController.about)
 // router.get("/login", mainController.login); //users
 // router.get("/register", mainController.register); //users
 router.get('/productCart', mainController.productCart); //users

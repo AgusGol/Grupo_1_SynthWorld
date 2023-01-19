@@ -10,6 +10,9 @@ index:(req, res) => {
         res.render('index');
         }
         },
+about:(req, res) => {
+        res.render('aboutUs');
+    },        
 login:(req, res) => {
         res.render('login');
     },
