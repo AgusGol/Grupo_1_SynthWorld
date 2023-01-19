@@ -12,6 +12,13 @@ const userController={
 userIndex:(req,res) =>{
     res.render("user",{users})
 },
+userDetail:(req,res) =>{
+    let userCo = users.filter((element) => {
+        return element.id == req.params.id
+        });
+    let user = userCo[0];
+    res.render("userDetail",{user})
+},
 
 login:(req, res) => {
     console.log("cookieee", req.cookies.userEmail);
