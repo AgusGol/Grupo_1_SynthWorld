@@ -1,18 +1,21 @@
-CREATE DATABASE `synthworld`;
+-- CREATE DATABASE `synthworld`;
 
 
-
+-- DROP TABLE IF EXISTS `order_products`;
+-- DROP TABLE IF EXISTS `orders`;
+-- DROP TABLE IF EXISTS `users`;
 
 
 CREATE TABLE `Synthworld`.`users`
 (
  `id`        INT NOT NULL AUTO_INCREMENT ,
- `name`      VARCHAR(45) NOT NULL ,
+ `first_name` VARCHAR(45) NOT NULL ,
  `last_name` VARCHAR(45) NULL ,
- `email`     VARCHAR(45) NOT NULL ,
+ `email`     VARCHAR(100) NOT NULL ,
  `password`  VARCHAR(100) NOT NULL ,
  `image`     VARCHAR(100) NULL ,
- `isAdmin`   BINARY NOT NULL ,
+ `is_admin`   BINARY(1) NOT NULL ,
+ `created_at` TIMESTAMP NOT NULL,
 
 PRIMARY KEY (`id`)
 );
@@ -20,7 +23,7 @@ PRIMARY KEY (`id`)
 
 CREATE TABLE `synthworld`.`categories`
 (
- `id`   int NOT NULL AUTO_INCREMENT ,
+ `id`   INT NOT NULL AUTO_INCREMENT ,
  `name` varchar(45) NOT NULL ,
 
 PRIMARY KEY (`id`)
@@ -53,6 +56,7 @@ CREATE TABLE `synthworld`.`products`
  `description`         TEXT NULL ,
  `extra_info`          TEXT NULL ,
  `availability`        BINARY NOT NULL,
+ `created_at` 		   TIMESTAMP NOT NULL,
 
 PRIMARY KEY (`id`),
 KEY `category` (`category_id`),
@@ -72,6 +76,9 @@ CREATE TABLE `synthworld`.`orders`
  `user_id` INT NOT NULL ,
  `date`    DATE NOT NULL ,
  `total`   INT NOT NULL ,
+ `checkout` BINARY NULL,
+ `created_at` TIMESTAMP NOT NULL,
+ `updated_at` TIMESTAMP NOT NULL,
 
 PRIMARY KEY (`id`),
 KEY `user` (`user_id`),
@@ -84,12 +91,13 @@ CONSTRAINT `user` FOREIGN KEY `user` (`user_id`) REFERENCES `Synthworld`.`users`
 
 
 
-CREATE TABLE `synthworld`.`order_products`
+CREATE TABLE `synthworld`.`cart`
 (
  `id`         INT NOT NULL AUTO_INCREMENT ,
  `product_id` INT NOT NULL ,
  `order_id`   INT NOT NULL ,
  `quantity`   INT NULL ,
+ `created_at` TIMESTAMP NOT NULL,
 
 PRIMARY KEY (`id`),
 KEY `product` (`product_id`),
