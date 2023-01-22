@@ -74,9 +74,9 @@ CREATE TABLE `synthworld`.`orders`
 (
  `id`      INT NOT NULL AUTO_INCREMENT ,
  `user_id` INT NOT NULL ,
- `date`    DATE NOT NULL ,
  `total`   INT NOT NULL ,
  `checkout` BINARY NULL,
+ `checkout_date` DATE NULL ,
  `created_at` TIMESTAMP NOT NULL,
  `updated_at` TIMESTAMP NOT NULL,
 
@@ -91,12 +91,12 @@ CONSTRAINT `user` FOREIGN KEY `user` (`user_id`) REFERENCES `Synthworld`.`users`
 
 
 
-CREATE TABLE `synthworld`.`cart`
+CREATE TABLE `synthworld`.`cart_products`
 (
  `id`         INT NOT NULL AUTO_INCREMENT ,
  `product_id` INT NOT NULL ,
  `order_id`   INT NOT NULL ,
- `quantity`   INT NULL ,
+ `quantity`   INT NOT NULL ,
  `created_at` TIMESTAMP NOT NULL,
 
 PRIMARY KEY (`id`),

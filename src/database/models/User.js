@@ -47,11 +47,10 @@ module.exports = (sequelize, dataTypes) => {
 
     
  User.associate = function(models){
-    
+
      User.hasMany(models.Order, {
          as: "order",
-         foreignKey: "actor_id",
-             timestamps: false,
+         foreignKey: "user_id",
         // onDelete: 'CASCADE',
        //  hooks: true
          })
