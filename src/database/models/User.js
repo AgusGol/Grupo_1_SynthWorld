@@ -46,14 +46,15 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config); 
 
     
-    // User.associate = function(models){
-    //     User.hasMany(models.Order, {
-    //         as: "order",
-    //         foreignKey: "actor_id",
-    //         timestamps: false,
-    //        // onDelete: 'CASCADE',
-    //       //  hooks: true
-    //     })
-    // }
+ User.associate = function(models){
+    
+     User.hasMany(models.Order, {
+         as: "order",
+         foreignKey: "actor_id",
+             timestamps: false,
+        // onDelete: 'CASCADE',
+       //  hooks: true
+         })
+     }
     return User
 };

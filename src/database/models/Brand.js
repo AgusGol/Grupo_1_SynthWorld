@@ -21,14 +21,15 @@ module.exports = (sequelize, dataTypes) => {
     const Brand = sequelize.define(alias, cols, config); 
 
     
-    // Brand.associate = function(models){
-    //     Brand.hasMany(models.Product, {
-    //         as: "product",
-    //         foreignKey: "brand_id",
-    //         timestamps: false,
-    //        // onDelete: 'CASCADE',
-    //       //  hooks: true
-    //     })
-    // }
+ Brand.associate = function(models){
+    
+     Brand.hasMany(models.Product, {
+         as: "product",
+         foreignKey: "brand_id",
+         timestamps: false,
+        // onDelete: 'CASCADE',
+       //  hooks: true
+     })
+ }
     return Brand;
 };

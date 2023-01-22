@@ -21,14 +21,15 @@ module.exports = (sequelize, dataTypes) => {
     const Category = sequelize.define(alias, cols, config); 
 
     
-    // Category.associate = function(models){
-    //     Category.hasMany(models.Product, {
-    //         as: "product",
-    //         foreignKey: "category_id",
-    //         timestamps: false,
-    //        // onDelete: 'CASCADE',
-    //       //  hooks: true
-    //     })
-    // }
+     Category.associate = function(models){
+        
+        Category.hasMany(models.Product, {
+            as: "product",
+            foreignKey: "category_id",
+            timestamps: false,
+            // onDelete: 'CASCADE',
+        //  hooks: true
+        })
+ }
     return Category;
 };
