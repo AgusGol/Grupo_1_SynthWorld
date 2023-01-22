@@ -1,4 +1,3 @@
-const e = require("express");
 
 module.exports = (sequelize, dataTypes) => {
     let alias = 'User';
@@ -6,7 +5,8 @@ module.exports = (sequelize, dataTypes) => {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         first_name: {
             type: dataTypes.STRING(45),

@@ -55,7 +55,7 @@ CREATE TABLE `synthworld`.`products`
  `image`               VARCHAR(100) NOT NULL ,
  `description`         TEXT NULL ,
  `extra_info`          TEXT NULL ,
- `availability`        BINARY NOT NULL,
+ `availability`        BINARY(1) NOT NULL,
  `created_at` 		   TIMESTAMP NOT NULL,
 
 PRIMARY KEY (`id`),
