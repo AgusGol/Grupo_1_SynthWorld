@@ -73,6 +73,14 @@ module.exports = (sequelize, dataTypes) => {
             // onDelete: 'CASCADE',
         //  hooks: true
         })
+
+        Product.hasMany(models.Cart, {
+            as: "product",
+            foreignKey: "product_id",
+            timestamps: false,
+            // onDelete: 'CASCADE',
+        //  hooks: true
+        })
     
      }
     return User
