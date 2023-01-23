@@ -1,9 +1,11 @@
 -- CREATE DATABASE `synthworld`;
 
-
--- DROP TABLE IF EXISTS `order_products`;
--- DROP TABLE IF EXISTS `orders`;
--- DROP TABLE IF EXISTS `users`;
+ DROP TABLE IF EXISTS `cart_products`;
+ DROP TABLE IF EXISTS `orders`;
+ DROP TABLE IF EXISTS `users`;
+ DROP TABLE IF EXISTS `products`;
+ DROP TABLE IF EXISTS `brands`;
+ DROP TABLE IF EXISTS `categories`;
 
 
 CREATE TABLE `Synthworld`.`users`
@@ -14,7 +16,7 @@ CREATE TABLE `Synthworld`.`users`
  `email`     VARCHAR(100) NOT NULL ,
  `password`  VARCHAR(100) NOT NULL ,
  `image`     VARCHAR(100) NULL ,
- `is_admin`   BINARY(1) NOT NULL ,
+ `is_admin`   TINYINT(1) NOT NULL ,
  `created_at` TIMESTAMP NOT NULL,
 
 PRIMARY KEY (`id`)
@@ -55,7 +57,7 @@ CREATE TABLE `synthworld`.`products`
  `image`               VARCHAR(100) NOT NULL ,
  `description`         TEXT NULL ,
  `extra_info`          TEXT NULL ,
- `availability`        BINARY(1) NOT NULL,
+ `availability`        TINYINT(1) NOT NULL,
  `created_at` 		   TIMESTAMP NOT NULL,
 
 PRIMARY KEY (`id`),
@@ -74,8 +76,8 @@ CREATE TABLE `synthworld`.`orders`
 (
  `id`      INT NOT NULL AUTO_INCREMENT ,
  `user_id` INT NOT NULL ,
- `total`   INT NOT NULL ,
- `checkout` BINARY NULL,
+ `total`   DECIMAL(10, 2) NOT NULL ,
+ `checkout` TINYINT(1) DEFAULT 0,
  `checkout_date` DATE NULL ,
  `created_at` TIMESTAMP NOT NULL,
  `updated_at` TIMESTAMP NOT NULL,

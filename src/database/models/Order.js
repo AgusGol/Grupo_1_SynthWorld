@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         checkout: {
-            type: dataTypes.BINARY(1),
+            type: dataTypes.TINYINT(1),
             allowNull: false
         },
         checkout_date: {

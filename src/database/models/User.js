@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true
         },
         is_admin: {
-            type: dataTypes.BINARY(1),
+            type: dataTypes.TINYINT(1),
             allowNull: false
         },
         created_at: dataTypes.TIMESTAMP,
