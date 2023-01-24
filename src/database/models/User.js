@@ -29,8 +29,8 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true
         },
         is_admin: {
-            type: dataTypes.TINYINT(1),
-            allowNull: false
+            type: dataTypes.TINYINT,
+            defaultValue: 0
         },
         created_at: dataTypes.TIMESTAMP,
 

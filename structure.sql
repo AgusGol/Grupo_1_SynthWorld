@@ -16,8 +16,8 @@ CREATE TABLE `Synthworld`.`users`
  `email`     VARCHAR(100) NOT NULL ,
  `password`  VARCHAR(100) NOT NULL ,
  `image`     VARCHAR(100) NULL ,
- `is_admin`   TINYINT(1) NOT NULL ,
- `created_at` TIMESTAMP NOT NULL,
+ `is_admin`   TINYINT DEFAULT 0 ,
+ `created_at` TIMESTAMP DEFAULT (current_date()),
 
 PRIMARY KEY (`id`)
 );
@@ -57,8 +57,8 @@ CREATE TABLE `synthworld`.`products`
  `image`               VARCHAR(100) NOT NULL ,
  `description`         TEXT NULL ,
  `extra_info`          TEXT NULL ,
- `availability`        TINYINT(1) NOT NULL,
- `created_at` 		   TIMESTAMP NOT NULL,
+ `availability`        TINYINT NOT NULL,
+ `created_at` 		   TIMESTAMP DEFAULT (current_date()),
 
 PRIMARY KEY (`id`),
 KEY `category` (`category_id`),
@@ -77,10 +77,10 @@ CREATE TABLE `synthworld`.`orders`
  `id`      INT NOT NULL AUTO_INCREMENT ,
  `user_id` INT NOT NULL ,
  `total`   DECIMAL(10, 2) NOT NULL ,
- `checkout` TINYINT(1) DEFAULT 0,
+ `checkout` TINYINT DEFAULT 0,
  `checkout_date` DATE NULL ,
- `created_at` TIMESTAMP NOT NULL,
- `updated_at` TIMESTAMP NOT NULL,
+ `created_at` TIMESTAMP DEFAULT (current_date()),
+ `updated_at` TIMESTAMP DEFAULT (current_date()),
 
 PRIMARY KEY (`id`),
 KEY `user` (`user_id`),
@@ -99,7 +99,7 @@ CREATE TABLE `synthworld`.`cart_products`
  `product_id` INT NOT NULL ,
  `order_id`   INT NOT NULL ,
  `quantity`   INT NOT NULL ,
- `created_at` TIMESTAMP NOT NULL,
+ `created_at` TIMESTAMP DEFAULT (current_date()),
 
 PRIMARY KEY (`id`),
 KEY `product` (`product_id`),

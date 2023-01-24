@@ -41,7 +41,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true
         },
         availability: {
-            type: dataTypes.TINYINT(1),
+            type: dataTypes.TINYINT,
             allowNull: false
         },
         created_at: dataTypes.TIMESTAMP,
