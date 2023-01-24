@@ -44,9 +44,9 @@ const storage = multer.diskStorage({
 const guestMiddleware = require('../middlewares/guestMiddleware');
 
 router.get("/", userController.userIndex);
-router.get("/:id", userController.userDetail);
 router.get("/login", userController.login); //users
 router.post("/login",validateLogin ,userController.loginRequest);
+router.get("/:id", userController.userDetail);
 router.get("/register", guestMiddleware, userController.userCreate); //users
 router.post("/register",upload.single('userAvatar'),validateRegister,userController.register)
 
