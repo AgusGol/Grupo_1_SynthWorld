@@ -26,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         image: {
             type: dataTypes.STRING(100),
-            allowNull: true
+            defaultValue: 'defaultAvatar.png'
         },
         is_admin: {
             type: dataTypes.TINYINT,

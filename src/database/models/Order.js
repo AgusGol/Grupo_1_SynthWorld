@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
 
         updated_at: dataTypes.TIMESTAMP
         
-    };
+    }
     let config = {
         
         timestamps: true,
@@ -50,7 +50,7 @@ module.exports = (sequelize, dataTypes) => {
         Order.belongsToMany(models.Product, {
             as: "product",
             through: "cart_products",
-            foreignKey: "user_id",
+            foreignKey: "product_id",
             otherKey: "order_id",
            // onDelete: 'CASCADE',
           //  hooks: true

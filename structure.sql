@@ -15,7 +15,7 @@ CREATE TABLE `Synthworld`.`users`
  `last_name` VARCHAR(45) NULL ,
  `email`     VARCHAR(100) NOT NULL ,
  `password`  VARCHAR(100) NOT NULL ,
- `image`     VARCHAR(100) NULL ,
+ `image`     VARCHAR(100) DEFAULT 'defaultAvatar.png' ,
  `is_admin`   TINYINT DEFAULT 0 ,
  `created_at` TIMESTAMP DEFAULT (current_date()),
 
@@ -53,7 +53,7 @@ CREATE TABLE `synthworld`.`products`
  `brand_id`            INT NULL ,
  `category_id`         INT NOT NULL ,
  `price`               DECIMAL(10, 2) NOT NULL ,
- `discount`            decimal(4, 2) NULL ,
+ `discount`            decimal(4, 2) DEFAULT 0 ,
  `image`               VARCHAR(100) NOT NULL ,
  `description`         TEXT NULL ,
  `extra_info`          TEXT NULL ,
