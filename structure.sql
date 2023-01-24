@@ -1,11 +1,11 @@
--- CREATE DATABASE `synthworld`;
+CREATE DATABASE `synthworld`;
 
- DROP TABLE IF EXISTS `cart_products`;
- DROP TABLE IF EXISTS `orders`;
- DROP TABLE IF EXISTS `users`;
- DROP TABLE IF EXISTS `products`;
- DROP TABLE IF EXISTS `brands`;
- DROP TABLE IF EXISTS `categories`;
+--  DROP TABLE IF EXISTS `cart_products`;
+--  DROP TABLE IF EXISTS `orders`;
+--  DROP TABLE IF EXISTS `users`;
+--  DROP TABLE IF EXISTS `products`;
+--  DROP TABLE IF EXISTS `brands`;
+--  DROP TABLE IF EXISTS `categories`;
 
 
 CREATE TABLE `Synthworld`.`users`
