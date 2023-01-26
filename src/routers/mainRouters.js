@@ -9,9 +9,10 @@ router.get("/home", mainController.index);
 router.get("/aboutUs",mainController.about)
 // router.get("/login", mainController.login); //users
 // router.get("/register", mainController.register); //users
-router.get('/productCart', mainController.productCart); //users
+router.get('/productCart', mainController.productCart);
+router.use('/users', userRouters);
 router.use('/', productRouters);
-router.use('/users', userRouters); 
+ 
 
 // router.get('/productDetail', mainController.productDetail); //products
 // router.get('/shop', mainController.shop); //products

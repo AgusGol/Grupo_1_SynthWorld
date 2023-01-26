@@ -19,12 +19,12 @@ module.exports = (sequelize, dataTypes) => {
         },
         created_at: {
             type: dataTypes.DATE,
-            default: DATE.NOW()
+            default: Date.now()
         },
 
         updated_at: {
             type: dataTypes.DATE,
-            default: DATE.NOW()
+            default: Date.now()
         }
         
     };

@@ -46,8 +46,13 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 router.get("/", userController.userIndex);
 router.get("/login", userController.login); //users
 router.post("/login",validateLogin ,userController.loginRequest);
-router.get("/:id", userController.userDetail);
 router.get("/register", guestMiddleware, userController.userCreate); //users
-router.post("/register",upload.single('userAvatar'),validateRegister,userController.register)
+router.post("/register",upload.single('userAvatar'),validateRegister,userController.register);
+
+
+// testeando coneccion a  y q los modelos esten bien
+router.get("/test", userController.sqltest);
+
+router.get("/:id", userController.userDetail);
 
 module.exports=router;

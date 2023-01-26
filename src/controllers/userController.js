@@ -7,6 +7,9 @@ const session = require('express-session');
 const { validationResult } = require('express-validator');
 const cookieParser = require("cookie-parser");
 const { render } = require("ejs");
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
 const userController={
 userIndex:(req,res) =>{
@@ -113,6 +116,12 @@ loginRequest: (req, res) => {
        
 
     
+},
+sqltest: (req, res) => {
+    db.User.findAll()
+        .then(data => {
+            res.json(data)
+        })
 }      
 };
 
