@@ -1,11 +1,13 @@
-CREATE DATABASE `synthworld`;
+-- CREATE DATABASE `synthworld`;
 
---  DROP TABLE IF EXISTS `cart_products`;
---  DROP TABLE IF EXISTS `orders`;
---  DROP TABLE IF EXISTS `users`;
---  DROP TABLE IF EXISTS `products`;
---  DROP TABLE IF EXISTS `brands`;
---  DROP TABLE IF EXISTS `categories`;
+  DROP TABLE IF EXISTS `cart_products`;
+  DROP TABLE IF EXISTS `product_category`;
+  DROP TABLE IF EXISTS `orders`;
+  DROP TABLE IF EXISTS `users`;
+  DROP TABLE IF EXISTS `products`;
+  DROP TABLE IF EXISTS `brands`;
+  DROP TABLE IF EXISTS `categories`;
+  
 
 
 CREATE TABLE `Synthworld`.`users`
@@ -18,6 +20,7 @@ CREATE TABLE `Synthworld`.`users`
  `image`     VARCHAR(100) DEFAULT 'defaultAvatar.png' ,
  `is_admin`   TINYINT DEFAULT 0 ,
  `created_at` TIMESTAMP DEFAULT (current_date()),
+ `updated_at` TIMESTAMP DEFAULT (current_date()),
 
 PRIMARY KEY (`id`)
 );
@@ -27,6 +30,8 @@ CREATE TABLE `synthworld`.`categories`
 (
  `id`   INT NOT NULL AUTO_INCREMENT ,
  `name` varchar(45) NOT NULL ,
+ `created_at` TIMESTAMP DEFAULT (current_date()),
+ `updated_at` TIMESTAMP DEFAULT (current_date()),
 
 PRIMARY KEY (`id`)
 );
@@ -39,6 +44,8 @@ CREATE TABLE `synthworld`.`brands`
 (
  `id`   INT NOT NULL AUTO_INCREMENT ,
  `name` VARCHAR(45) NOT NULL ,
+ `created_at` TIMESTAMP DEFAULT (current_date()),
+ `updated_at` TIMESTAMP DEFAULT (current_date()),
 
 PRIMARY KEY (`id`)
 );
@@ -51,7 +58,6 @@ CREATE TABLE `synthworld`.`products`
  `id`                  INT NOT NULL AUTO_INCREMENT ,
  `name`                VARCHAR(100) NOT NULL ,
  `brand_id`            INT NULL ,
- `category_id`         INT NOT NULL ,
  `price`               DECIMAL(10, 2) NOT NULL ,
  `discount`            decimal(4, 2) DEFAULT 0 ,
  `image`               VARCHAR(100) NOT NULL ,
@@ -59,15 +65,28 @@ CREATE TABLE `synthworld`.`products`
  `extra_info`          TEXT NULL ,
  `availability`        TINYINT NOT NULL,
  `created_at` 		   TIMESTAMP DEFAULT (current_date()),
+ `updated_at`          TIMESTAMP DEFAULT (current_date()),
 
 PRIMARY KEY (`id`),
-KEY `category` (`category_id`),
-CONSTRAINT `category` FOREIGN KEY `category` (`category_id`) REFERENCES `Synthworld`.`categories` (`id`),
 KEY `brand` (`brand_id`),
 CONSTRAINT `brand` FOREIGN KEY `brand` (`brand_id`) REFERENCES `Synthworld`.`brands` (`id`)
 );
 
 
+CREATE TABLE `synthworld`.`product_category`
+(
+ `id`         INT NOT NULL AUTO_INCREMENT ,
+ `product_id` INT NOT NULL ,
+ `category_id` INT NOT NULL ,
+ `created_at` TIMESTAMP DEFAULT (current_date()),
+ `updated_at` TIMESTAMP DEFAULT (current_date()),
+
+PRIMARY KEY (`id`),
+KEY `productC` (`product_id`),
+CONSTRAINT `productC` FOREIGN KEY `productC` (`product_id`) REFERENCES `Synthworld`.`products` (`id`),
+KEY `category` (`category_id`),
+CONSTRAINT `category` FOREIGN KEY `category` (`category_id`) REFERENCES `Synthworld`.`categories` (`id`)
+);
 
 
 
@@ -100,6 +119,7 @@ CREATE TABLE `synthworld`.`cart_products`
  `order_id`   INT NOT NULL ,
  `quantity`   INT NOT NULL ,
  `created_at` TIMESTAMP DEFAULT (current_date()),
+ `updated_at` TIMESTAMP DEFAULT (current_date()),
 
 PRIMARY KEY (`id`),
 KEY `product` (`product_id`),
