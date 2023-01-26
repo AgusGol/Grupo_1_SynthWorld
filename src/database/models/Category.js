@@ -12,20 +12,34 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(45),
             allowNull: false
         },
+        created_at: {
+            type: dataTypes.DATE,
+            default: DATE.NOW()
+        },
+
+        updated_at: {
+            type: dataTypes.DATE,
+            default: DATE.NOW()
+        }
         
     };
     let config = {
         
-        timestamps: false,
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: false
     }
     const Category = sequelize.define(alias, cols, config); 
 
     
      Category.associate = function(models){
 
-        Category.hasMany(models.Product, {
+        Category.belongsToMany(models.Product, {
             as: "product",
-            foreignKey: "category_id",
+            through: "product_category",
+            foreignKey: "product_id",
+            otherKey: "category_id",
             // onDelete: 'CASCADE',
         //  hooks: true
         })

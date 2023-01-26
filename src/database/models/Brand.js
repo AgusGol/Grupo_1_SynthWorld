@@ -12,11 +12,23 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(45),
             allowNull: false
         },
+        created_at: {
+            type: dataTypes.DATE,
+            default: DATE.NOW()
+        },
+
+        updated_at: {
+            type: dataTypes.DATE,
+            default: DATE.NOW()
+        }
         
     };
     let config = {
         
-        timestamps: false,
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: false
     }
     const Brand = sequelize.define(alias, cols, config); 
 

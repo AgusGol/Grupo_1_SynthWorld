@@ -1,6 +1,7 @@
+const { DATE } = require("sequelize");
 
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'CartProduct';
+    let alias = 'ProductCategory';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -12,15 +13,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false
         },
-        order_id: {
+        category_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
-        quantity: {
-            type: dataTypes.INTEGER,
-            allowNull: false
-        },
-
         created_at: {
             type: dataTypes.DATE,
             default: DATE.NOW()
@@ -39,23 +35,23 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: 'updated_at',
         deletedAt: false
     }
-    const CartProduct = sequelize.define(alias, cols, config); 
+    const ProductCategory = sequelize.define(alias, cols, config); 
 
     
-    CartProduct.associate = function(models){
+    ProductCategory.associate = function(models){
         
-        CartProduct.belongsTo(models.Order, {
-            as: "order",
-            foreignKey: "order_id",
-           // onDelete: 'CASCADE',
-          //  hooks: true
-            })
-        CartProduct.belongsTo(models.Product, {
+        ProductCategory.belongsTo(models.Product, {
             as: "product",
             foreignKey: "product_id",
            // onDelete: 'CASCADE',
           //  hooks: true
             })
+        ProductCategory.belongsTo(models.Category, {
+            as: "category",
+            foreignKey: "category_id",
+           // onDelete: 'CASCADE',
+          //  hooks: true
+            })
  }
-    return CartProduct;
+    return ProductCategory;
 };

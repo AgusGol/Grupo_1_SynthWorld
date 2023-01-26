@@ -24,11 +24,17 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DATE,
             allowNull: true
         },
-        created_at: dataTypes.TIMESTAMP,
+        created_at: {
+            type: dataTypes.DATE,
+            default: DATE.NOW()
+        },
 
-        updated_at: dataTypes.TIMESTAMP
+        updated_at: {
+            type: dataTypes.DATE,
+            default: DATE.NOW()
+        }
         
-    }
+    };
     let config = {
         
         timestamps: true,

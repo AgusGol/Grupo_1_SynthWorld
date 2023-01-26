@@ -32,17 +32,25 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TINYINT,
             defaultValue: 0
         },
-        created_at: dataTypes.TIMESTAMP,
+        created_at: {
+            type: dataTypes.DATE,
+            default: DATE.NOW()
+        },
 
-        // updated_at: dataTypes.TIMESTAMP, esta no es necesaria en users
+        updated_at: {
+            type: dataTypes.DATE,
+            default: DATE.NOW()
+        }
+        
     };
     let config = {
         
         timestamps: true,
         createdAt: 'created_at',
-        updatedAt: false,
+        updatedAt: 'updated_at',
         deletedAt: false
     }
+
     const User = sequelize.define(alias, cols, config); 
 
     

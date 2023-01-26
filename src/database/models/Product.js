@@ -44,15 +44,22 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TINYINT,
             allowNull: false
         },
-        created_at: dataTypes.TIMESTAMP,
+        created_at: {
+            type: dataTypes.DATE,
+            default: DATE.NOW()
+        },
 
-        updated_at: dataTypes.TIMESTAMP
+        updated_at: {
+            type: dataTypes.DATE,
+            default: DATE.NOW()
+        }
+        
     };
     let config = {
         
         timestamps: true,
         createdAt: 'created_at',
-        updatedAt: false,
+        updatedAt: 'updated_at',
         deletedAt: false
     }
     const Product = sequelize.define(alias, cols, config); 
@@ -67,19 +74,23 @@ module.exports = (sequelize, dataTypes) => {
         //  hooks: true
         })
 
-        Product.belongsTo(models.Category, {
+        Product.belongsToMany(models.Category, {
             as: "category",
+            through: "product_category",
             foreignKey: "category_id",
+            otherKey: "product_id",
             // onDelete: 'CASCADE',
         //  hooks: true
         })
 
         Product.belongsToMany(models.Order, {
-            as: "product",
-            foreignKey: "product_id",
-            // onDelete: 'CASCADE',
-        //  hooks: true
-        })
+            as: "order",
+            through: "cart_products",
+            foreignKey: "order_id",
+            otherKey: "product_id",
+           // onDelete: 'CASCADE',
+          //  hooks: true
+            })
     
      }
     return User
