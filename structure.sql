@@ -13,8 +13,8 @@
 CREATE TABLE `Synthworld`.`users`
 (
  `id`        INT NOT NULL AUTO_INCREMENT ,
- `first_name` VARCHAR(45) NOT NULL ,
- `last_name` VARCHAR(45) NULL ,
+ `first_name` VARCHAR(100) NOT NULL ,
+ `last_name` VARCHAR(100) NULL ,
  `email`     VARCHAR(100) NOT NULL ,
  `password`  VARCHAR(100) NOT NULL ,
  `image`     VARCHAR(100) DEFAULT 'defaultAvatar.png' ,
@@ -63,7 +63,7 @@ CREATE TABLE `synthworld`.`products`
  `image`               VARCHAR(100) NOT NULL ,
  `description`         TEXT NULL ,
  `extra_info`          TEXT NULL ,
- `availability`        TINYINT NOT NULL,
+ `is_active`          TINYINT NOT NULL,
  `created_at` 		   TIMESTAMP DEFAULT (current_date()),
  `updated_at`          TIMESTAMP DEFAULT (current_date()),
 

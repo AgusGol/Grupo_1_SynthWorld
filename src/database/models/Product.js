@@ -40,7 +40,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: true
         },
-        availability: {
+        is_active: {
             type: dataTypes.TINYINT,
             allowNull: false
         },
@@ -91,6 +91,10 @@ module.exports = (sequelize, dataTypes) => {
            // onDelete: 'CASCADE',
           //  hooks: true
             })
+      //  Product.hasMany(models.CartProduct, {
+       //     as: "CartProduct",
+       //     foreignKey: "product_id",
+      //  })
     
      }
     return Product
