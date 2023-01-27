@@ -98,6 +98,9 @@ p {
 .btn-register-with-google i {
     color: #000000;
 }
+#userEmail {
+    margin-bottom: 10px;
+}
 @media (min-width: 320px) {
     .container-btn-register-with button{
         width: 300px;
