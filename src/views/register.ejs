@@ -12,7 +12,7 @@
 
 <main>
     <section class="new-user-section">
-        <h1>Ready to join our community?</h1>
+        <h1 class="join-text">Ready to join our community?</h1>
         <h2>Create your account</h2>
         <form action="/users/register" method="POST" class="register-form" enctype="multipart/form-data">
             <div class="container-inputs">
@@ -32,8 +32,8 @@
                 <label for="last_name">Last name</label>
                 <input type="text" name="last_name" placeholder="Last name" required>
             </div>
-            <div class="userCategory">
-                <p>which type of user are you?</p>
+            <!--  <div class="userCategory">
+              <p>which type of user are you?</p>
                 <article class="user-Categories-Container">
                     <label for="category">Categories</label>
                         <Select class="user-Categories" name="category"  required>
@@ -43,7 +43,7 @@
                         </Select>
                 </article>
                 <label for=""></label>
-            </div>
+            </div>-->
             <div class="age">
             <p>When where you born?</p>
             </div>
@@ -51,9 +51,10 @@
                 <label for="userBirth">BirthDay</label>
                 <input type="date" name="userBirth" required>
             </div>
-            <article class="product-Images-Container">
-                <section class="product-Images">
+            <article class="image-container">
+                <section class="user-image">
                     <label for="userAvatar">Images</label>
+                    <p>Image</p>
                         <input type="file" name="userAvatar" class="btn-File-Select" multiple accept=".jpg, .jpeg, .png">
                 </section>
             </article>
@@ -75,7 +76,7 @@
             <button class="btn-register-with-google"><i class="fab fa-google"></i><span>  Register with Google</span></button>
         </div>
 
-        <p class="create-account">Already have an account?<a href="/login"> Sign in</a></p>
+        <p class="create-account">Already have an account?<a class="sing-in" href="/login"><strong> Sign in</strong></a></p>
         </form>
 </section>
 </main>

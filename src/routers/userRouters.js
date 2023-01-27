@@ -4,6 +4,7 @@ const path = require ("path");
 const multer = require ('multer');
 const userController= require("../controllers/userController");
 const { check } = require('express-validator');
+const guestMiddleware = require('../middlewares/guestMiddleware');
 
 const validateLogin = [
     check('userEmail')
@@ -41,11 +42,11 @@ const storage = multer.diskStorage({
     
     const upload = multer({ storage })
 
-const guestMiddleware = require('../middlewares/guestMiddleware');
+
 
 router.get("/", userController.userIndex);
-router.get("/login", userController.login); //users
-router.post("/login",validateLogin ,userController.loginRequest);
+router.get("/login", userController.login);
+router.post("/login", validateLogin, userController.loginRequest);
 router.get("/register", guestMiddleware, userController.userCreate); //users
 router.post("/register",upload.single('userAvatar'),validateRegister,userController.register);
 
