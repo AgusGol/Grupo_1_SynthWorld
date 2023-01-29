@@ -100,7 +100,7 @@ loginRequest: (req, res) => {
         })
         .then(foundUser =>{
             foundUser = foundUser[0];
-            console.log("fouuund", foundUser);
+            console.log("fouuund", foundUser.id);
 
         
             
@@ -113,12 +113,13 @@ loginRequest: (req, res) => {
     if(foundUser != undefined) {
          let passCheck = bcrypt.compareSync(req.body.userPassword, foundUser.password);
          if (passCheck == true) {
-             req.session.id = foundUser.id;
              req.session.email = foundUser.email;
+             req.session.userId = foundUser.id;
              req.session.name = foundUser.first_name;
              req.session.lastName = foundUser.last_name;
              req.session.category = foundUser.is_admin;
              req.session.image = foundUser.image;
+
              console.log("session", req.session);
 
             if(req.body.rememberMe != undefined && req.body.rememberMe == "on"){
@@ -150,6 +151,31 @@ loginRequest: (req, res) => {
   //  })
     
 },
+userEdit: (req, res) => {
+    db.User.findByPk(req.session.userId)
+        .then(user => {
+            res.render('userEdit', {user})
+        })
+        .catch(err =>  res.render(err))
+},
+userUpdate: (req,res) => {
+        console.log('boody', req.body);
+        db.User.update({
+            first_name: req.body.name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+            image: req.file ? req.file.filename : "defaultAvatar.png",
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(user => {
+            console.log("uuseeerr", user)
+            res.redirect('/users/detail/' + req.params.id)
+        })
+},
+
 sqltest: (req, res) => {
     db.User.findAll()
         .then(data => {

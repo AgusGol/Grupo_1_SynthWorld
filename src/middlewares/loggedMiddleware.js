@@ -4,12 +4,12 @@ const session = require("express-session");
 
 //este midd se va a encargar de chequear que el usuario no esté logueado 
 
-function guestMiddleware (req, res, next) {
-    if (req.session.email == undefined) {
+function loggedMiddleware (req, res, next) {
+    if (req.session.email != undefined) {
         next();
     } else {
-        res.send('Esta página es sólo para invitados')
+        res.send('Necesitas iniciar sesion para editar tu perfil')
     }                                   
 }
 
-module.exports = guestMiddleware;
+module.exports = loggedMiddleware;

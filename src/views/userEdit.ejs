@@ -12,25 +12,19 @@
 
 <main>
     <section class="new-user-section">
-        <h1 class="join-text">Ready to join our community?</h1>
-        <h2>Create your account</h2>
-        <form action="/users/register" method="POST" class="register-form" enctype="multipart/form-data">
+        <h1 class="join-text">Edit your details</h1>
+        <form action="/users/update/<%= user.id %> " method="POST" class="register-form"? enctype="multipart/form-data">
             <div class="container-inputs">
                 <label for="email">Email address</label>
-                <input type="email" name="email" placeholder="Email address" class="email-input-login" required>
-
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Password" required>
-                <label for="password2">Confirm password</label>
-                <input type="password" name="password2" placeholder="Confirm password" required>
+                <input type="email" name="email" placeholder="Email address" class="email-input-login" value='<%= user.email %>''  required>
             </div>
-            <h1>Personal information</h1>
 
+            <h1>Personal information</h1>
             <div class="second-container-inputs">
                 <label for="name">First name</label>
-                <input type="text" name="name" placeholder="First name" required>
+                <input type="text" name="name" placeholder="First name" value='<%= user.first_name %>' required>
                 <label for="last_name">Last name</label>
-                <input type="text" name="last_name" placeholder="Last name">
+                <input type="text" name="last_name" placeholder="Last name" value= '<%= user.last_name %>>'>
             </div>
             <!--  <div class="userCategory">
               <p>which type of user are you?</p>
@@ -44,13 +38,6 @@
                 </article>
                 <label for=""></label>
             </div>-->
-            <div class="age">
-            <p>When where you born?</p>
-            </div>
-            <div class="third-container-inputs">
-                <label for="userBirth">BirthDay</label>
-                <input type="date" name="userBirth">
-            </div>
             <article class="image-container">
                 <section class="user-image">
                     <label for="userAvatar">Images</label>
@@ -59,24 +46,8 @@
                 </section>
             </article>
             <button type="submit" class="btn-register">
-                Register
+                Update Details
             </button>
-            <p class="paragraph">
-                Or
-            </p>
-
-
-    <!--FB and Gmail buttons-->
-        <div class="container-btn-register-with">
-            <button class="btn-register-with-facebook"><i class="fab fa-facebook"></i>
-    Register with Facebook</button>
-        </div>
-        
-        <div class="container-btn-register-with">
-            <button class="btn-register-with-google"><i class="fab fa-google"></i><span>  Register with Google</span></button>
-        </div>
-
-        <p class="create-account">Already have an account?<a class="sing-in" href="/users/login"><strong> Sign in</strong></a></p>
         </form>
 </section>
 </main>
