@@ -1,6 +1,9 @@
 const { DATE } = require("sequelize");
 
+//creo que no es necesario este modelo ya q es una tabla pivot que lleva
+// solo los id de las otras tablas. se crea solo.
 module.exports = (sequelize, dataTypes) => {
+    
     let alias = 'ProductCategory';
     let cols = {
         id: {
@@ -29,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
         
     };
     let config = {
-        
+        tableName: "product_category",
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',

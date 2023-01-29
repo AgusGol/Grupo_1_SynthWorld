@@ -13,14 +13,20 @@ const { Op } = require("sequelize");
 
 const userController={
 userIndex:(req,res) =>{
-    res.render("user",{users})
+    db.User.findAll()
+        .then((users) =>  res.render("user",{users}))
 },
 userDetail:(req,res) =>{
-    let userCo = users.filter((element) => {
-        return element.id == req.params.id
-        });
-    let user = userCo[0];
-    res.render("userDetail",{user})
+    console.log(req.params.id);
+    db.User.findByPk(req.params.id)
+    .then(user => {
+        res.render('userDetail', {user});
+    });
+    // let userCo = users.filter((element) => {
+    //     return element.id == req.params.id
+    //     });
+    // let user = userCo[0];
+    // res.render("userDetail",{user})
 },
 
 login:(req, res) => {
@@ -33,38 +39,50 @@ userCreate:(req, res) => {
 },
 register:(req, res, next) => {
         console.log("reqfile",req.file);
-        let lastUserIndex = users.length -1;
-        let newUser = {};
-        if (users == "") {
-            newUser = {
-                id : 1,
-                name: req.body.name,
-                last_name: req.body.last_name,
-                email: req.body.email,
-                password : bcrypt.hashSync(req.body.password,10),
-                category : req.body.category,
-                image: req.file.filename,
-            }
+
+        db.User.create({
+            first_name: req.body.name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+            password : bcrypt.hashSync(req.body.password,10),
+            image: req.file ? req.file.filename : "defaultAvatar.png",
+            isAdmin : 0,
         }
-        else { 
-            newUser = {
-                id : users[lastUserIndex].id + 1,
-                name: req.body.name,
-                last_name: req.body.last_name,
-                email: req.body.email,
-                password : bcrypt.hashSync(req.body.password,10),
-                category : req.body.category,
-                image: req.file ? req.file.filename : "defaultAvatar.png" , 
-        }
-    }
+        )
+        .then(() => res.redirect('/'));
+
+    //     let lastUserIndex = users.length -1;
+    //     let newUser = {};
+    //     if (users == "") {
+    //         newUser = {
+    //             id : 1,
+    //             name: req.body.name,
+    //             last_name: req.body.last_name,
+    //             email: req.body.email,
+    //             password : bcrypt.hashSync(req.body.password,10),
+    //             category : req.body.category,
+    //             image: req.file.filename,
+    //         }
+    //     }
+    //     else { 
+    //         newUser = {
+    //             id : users[lastUserIndex].id + 1,
+    //             name: req.body.name,
+    //             last_name: req.body.last_name,
+    //             email: req.body.email,
+    //             password : bcrypt.hashSync(req.body.password,10),
+    //             category : req.body.category,
+    //             image: req.file ? req.file.filename : "defaultAvatar.png" , 
+    //     }
+    // }
     
     
-        console.log("ESTO ES newProduct", newUser);
-        users.push(newUser);
-        let usersJSON = JSON.stringify(users, null, '\t');
-        fs.writeFileSync(usersFilePath, usersJSON , "");
-        console.log(req.file);
-        res.redirect('/users');
+    //     console.log("ESTO ES newProduct", newUser);
+    //     users.push(newUser);
+    //     let usersJSON = JSON.stringify(users, null, '\t');
+    //     fs.writeFileSync(usersFilePath, usersJSON , "");
+    //     console.log(req.file);
+        
     
     },
 loginRequest: (req, res) => {
@@ -73,20 +91,34 @@ loginRequest: (req, res) => {
     let errors = validationResult(req);
     console.log('errorss', errors);
 
-    //si no hay errores que llegan desde el validator
-    if (errors.isEmpty()) {
-    let encryptedPass = bcrypt.hashSync(req.body.userPassword, 10);
-    let foundUser = users.find(user => user.email == req.body.userEmail)
-    console.log("fouuund", foundUser)
 
+    
+        db.User.findAll({
+            where: {
+                email: req.body.userEmail
+            }
+        })
+        .then(foundUser =>{
+            foundUser = foundUser[0];
+            console.log("fouuund", foundUser);
+
+        
+            
+       if (errors.isEmpty()) {
+
+    // let foundUser = users.find(user => user.email == req.body.userEmail)
+    // console.log("fouuund", foundUser)
+    
+    //si no hay errores que llegan desde el validator
     if(foundUser != undefined) {
          let passCheck = bcrypt.compareSync(req.body.userPassword, foundUser.password);
          if (passCheck == true) {
              req.session.id = foundUser.id;
              req.session.email = foundUser.email;
-             req.session.name = foundUser.name;
+             req.session.name = foundUser.first_name;
              req.session.lastName = foundUser.last_name;
-             req.session.category = foundUser.category;
+             req.session.category = foundUser.is_admin;
+             req.session.image = foundUser.image;
              console.log("session", req.session);
 
             if(req.body.rememberMe != undefined && req.body.rememberMe == "on"){
@@ -105,16 +137,17 @@ loginRequest: (req, res) => {
         
             res.render('login', {errors: errors});
      }
-    }
+       }
     //si hay errores q llegan desde el validator
-     else {
-        let eror = errors.array();
-        console.log("errooooors", eror)
-        res.render('login', { errors: errors.array(), old: req.body});
+      else {
+         let eror = errors.array();
+       console.log("errooooors", eror)
+         res.render('login', { errors: errors.array(), old: req.body});
 
         }
+    })
        
-
+  //  })
     
 },
 sqltest: (req, res) => {
