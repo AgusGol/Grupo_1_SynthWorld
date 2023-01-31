@@ -99,9 +99,11 @@ loginRequest: (req, res) => {
             }
         })
         .then(foundUser =>{
+            
             foundUser = foundUser[0];
+            if(foundUser != undefined){
             console.log("fouuund", foundUser.id);
-
+            }
         
             
        if (errors.isEmpty()) {
@@ -160,19 +162,22 @@ userEdit: (req, res) => {
 },
 userUpdate: (req,res) => {
         console.log('boody', req.body);
-        db.User.update({
+        db.User.findByPk(req.session.userId)
+        .then(user =>  {
+            db.User.update({
             first_name: req.body.name,
             last_name: req.body.last_name,
             email: req.body.email,
-            image: req.file ? req.file.filename : "defaultAvatar.png",
-        }, {
-            where: {
+            image: req.file ? req.file.filename : user.image,
+            }, {
+             where: {
                 id: req.params.id
-            }
-        })
+                }
+        }) 
         .then(user => {
             console.log("uuseeerr", user)
             res.redirect('/users/detail/' + req.params.id)
+        })
         })
 },
 
