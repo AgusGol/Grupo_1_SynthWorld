@@ -101,11 +101,23 @@ console.log("updateinfoproduct", updateInfoProduct)
 },
 delete: (req, res) => {
     let id = req.params.id;
-    let productToDelete = products.filter(product => product.id != id);
-    fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
-    db.Product.destroy({
-        where: id=req.params.id})
-    res.redirect('/shop',);
+    console.log(id)
+  //  let productToDelete = products.filter(product => product.id != id);
+   // fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
+   db.ProductCategory.destroy({
+    where : {
+        product_id: id
+    }
+   })
+   .then(data => { db.Product.destroy({
+        where:{
+             id : req.params.id
+            }
+        })
+    .then(() => res.redirect('/shop',))
+    .catch(err => res.send(err));
+    })
+    .catch(err => res.send(err));
 },
 };
 module.exports = productController;

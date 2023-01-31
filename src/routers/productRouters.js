@@ -37,6 +37,6 @@ router.get('/products/edit/:id', productController.productEdition);
 router.put('/products/edit/:id',upload.single("images"), productController.update);
 
 // Delete one product //
-router.delete('/products/delete/:id', adminMiddleware, productController.delete); 
+router.delete('/products/delete/:id', productController.delete); 
 
 module.exports=router;
