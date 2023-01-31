@@ -63,9 +63,11 @@ store: (req, res, next) => {
     res.redirect('/shop');
 },
 
-productEdition:(req, res) => {
-    let product = products.find(product => product.id == req.params.id)   
-    res.render("productEdition", {product});
+productEdition:(req, res) => { 
+    db.Product.findByPk(req.params.id)
+    .then((product) =>  res.render("productEdition", {product}));
+
+   ;
 },
 
 update: (req,res) => {

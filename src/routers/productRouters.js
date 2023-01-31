@@ -33,7 +33,7 @@ router.get('/products/:id', productController.productDetail); //products
 router.get('/shop', productController.shop);
 
 // Edit one product //
-router.get('/products/edit/:id', adminMiddleware, productController.productEdition); 
+router.get('/products/edit/:id', productController.productEdition); 
 router.put('/products/edit/:id',upload.single("images"), productController.update);
 
 // Delete one product //
