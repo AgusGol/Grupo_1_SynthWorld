@@ -67,7 +67,7 @@ productEdition:(req, res) => {
     db.Product.findByPk(req.params.id)
     .then((product) =>  res.render("productEdition", {product}));
 
-   ;
+   
 },
 
 update: (req,res) => {
