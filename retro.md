@@ -95,3 +95,38 @@ Participantes: Agus, Mati, Vicky
    Pensar en flujos desde historias de usuarios 
 - Less Of:
     Dejar para último momento 
+
+
+*****************************
+Retro quinto sprint
+Dinámica: estrella de mar
+Participantes: Agus, Mati, Vicky
+
+- Keep doing:
+    Trabajo coordinado y en equipo
+    Brainstorming
+    Ayudarnos
+    Comunicarnos, intercambiar ideas
+
+- More of:
+    Organizar mejor las tareas
+    Resolver en conjunto
+    Mantener el tablero actualizado
+    Pensar soluciones juntos
+    Estudio
+
+- Stop doing:
+    Problemas con SQL
+
+- Start doing:
+   Trabajos y mejoras pendientes
+   Pair programming
+   Pensar en flujos desde historias de usuarios 
+
+- Less Of:
+   Dejar para último momento 
+
+
+
+
+
