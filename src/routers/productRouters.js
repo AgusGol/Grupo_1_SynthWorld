@@ -23,7 +23,7 @@ const adminMiddleware = require('../middlewares/adminMiddleware');
 
 
 // Create one product //
-router.get('/products/create', adminMiddleware, productController.productCreation); ////agregar más adelante acá el middleware admin
+router.get('/products/create', productController.productCreation); ////agregar más adelante acá el middleware admin
 router.post('/products/create', upload.single('productImg'), productController.store); //products
 
 // Get one product //
