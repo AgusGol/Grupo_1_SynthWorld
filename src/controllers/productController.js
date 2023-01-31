@@ -1,22 +1,29 @@
 const path = require ("path");
 const fs = require('fs');
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+// const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const db = require('../database/models');
+const sequelize = db.sequelize;
 const productController={
 
+// productDetail:(req, res) => {
+//     let productM = products.filter((element) => {
+//         return element.id == req.params.id
+//         });
+//     let product = productM[0];
+//     res.render('productDetail',{product});
+// },
 productDetail:(req, res) => {
-    let productM = products.filter((element) => {
-        return element.id == req.params.id
-        });
-    let product = productM[0];
-    res.render('productDetail',{product});
-},
+    db.Product.findByPk(req.params.id)
+    .then((product) => res.render('productDetail',{product}));
+    },
 
-shop:(req, res) => {
-    res.render('shop', {products});
+// shop:(req, res) => {
+//     res.render('shop', {products});
+// },
+shop: (req, res) => {
+    db.Product.findAll().then((products) => res.render('shop', {products}));
 },
-
 productCreation:(req, res) => {
     res.render("productCreation");
 },
@@ -94,7 +101,8 @@ delete: (req, res) => {
     let id = req.params.id;
     let productToDelete = products.filter(product => product.id != id);
     fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
-    
+    db.Product.destroy({
+        where: id=req.params.id})
     res.redirect('/shop',);
 },
 };

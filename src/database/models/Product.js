@@ -16,10 +16,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: true
         },
-        category_id: {
-            type: dataTypes.INTEGER,
-            allowNull: false
-        },
+        // category_id: {
+        //     type: dataTypes.INTEGER,
+        //     allowNull: false
+        // },
         price: {
             type: dataTypes.DECIMAL(10, 2),
             allowNull: false
