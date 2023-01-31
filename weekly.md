@@ -29,3 +29,13 @@ Temas tratados en la reunión:
 - Entre todos incorporarmos la carpeta source y movimos los archivos
 - Definimos prioridades
 - Tuvimos la retro
+
+
+*****************************
+Weekly sprint 6: Bases de datos
+Asistentes: Agus, Mati, Vicky
+
+Temas tratados en la reunión:
+- Al igual que en los sprints anteriores, lo primero que hicimos fue la revisión de consignas y crear las tareas en Trello
+- Revisamos las tareas pendientes de sprints anteriores y mejoras que fuimos detectando
+- Durante la semana previa a la reunión, fuimos armando el DER en conjunto y en la weekly directamente revisamos lo que se fue bosquejando. Decidimos en conjunto que cosas agregar/sacar teniendo en cuenta nuestro desarrollo
