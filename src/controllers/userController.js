@@ -39,7 +39,7 @@ userCreate:(req, res) => {
 },
 register:(req, res, next) => {
         console.log("reqfile",req.file);
-
+        
         db.User.create({
             first_name: req.body.name,
             last_name: req.body.last_name,

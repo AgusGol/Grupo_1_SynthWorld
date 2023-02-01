@@ -186,6 +186,9 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+UPDATE products
+SET image = 'octatrack-mkii.webp';
+
 --
 -- Dumping data for table `products`
 --

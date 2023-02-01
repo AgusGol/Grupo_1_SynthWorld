@@ -32,42 +32,89 @@ shop: (req, res) => {
     Product.findAll().then((products) => res.render('shop', {products}));
 },
 productCreation:(req, res) => {
-    res.render("productCreation");
+    let categoryP = Category.findAll();  
+    let brandP = Brand.findAll();
+    Promise
+        .all([categoryP, brandP])
+        .then(([categories, brands]) => { res.render('productCreation', {brands, categories})})
+        .catch(error => res.send(error))
 },
 store: (req, res, next) => {
-    console.log("reqfile",req.file);
-    let lastProductIndex = products.length -1;
-    let newProduct = {};
-    if (products == "") {
-        newProduct = {
-            id : 1,
-            name: req.body.name,
-            price: req.body.price,
-            category: req.body.category,
-            description : req.body.description,
-            extraInfo : req.body.extraInfo,
-            img : req.field.filename
+
+    Product.create({
+        name: req.body.name,
+        brand_id: req.body.brand_id,
+        price: req.body.price,
+        discount: req.body.discount,
+        image: req.file ? req.file.filename : null,
+        is_active : req.body.isActive == 'on' ? 1 : 0,
+        description: req.body.description,
+        extra_info: req.body.extraInfo,
+        isActive : req.body.isActive,
+    })
+    .then((product) => {   
+        console.log()
+        if(req.body.category2 != 0) {
+            let category1 = db.ProductCategory.create({
+            product_id: product.id,
+            category_id: req.body.category});
+
+            let category2 = db.ProductCategory.create({
+                product_id: product.id,
+                category_id: req.body.category2});
+
+            Promise.all([category1, category2])
+            .then(() => res.redirect('/shop') )
         }
-    }
-    else { 
-        newProduct = {
-            id : products[lastProductIndex].id + 1,
-            name: req.body.name,
-            price: req.body.price,
-            category: req.body.category,
-            description : req.body.description,
-            extraInfo : req.body.extraInfo,
-            img: req.file.filename,
-    }
-}
+        else {
+            db.ProductCategory
+                .create({
+                product_id: product.id,
+                category_id: req.body.category})
+                .then(() => res.redirect('/shop') )
+        }
+
+        
+    })
+    .catch(err => res.render(err))
 
 
-    console.log("ESTO ES newProduct", newProduct);
-    products.push(newProduct);
-    let productsJSON = JSON.stringify(products, null, '\t');
-    fs.writeFileSync(productsFilePath, productsJSON , "");
-    console.log(req.file);
-    res.redirect('/shop');
+
+
+
+//     console.log("reqfile",req.file);
+//     let lastProductIndex = products.length -1;
+//     let newProduct = {};
+//     if (products == "") {
+//         newProduct = {
+//             id : 1,
+//             name: req.body.name,
+//             price: req.body.price,
+//             category: req.body.category,
+//             description : req.body.description,
+//             extraInfo : req.body.extraInfo,
+//             img : req.field.filename
+//         }
+//     }
+//     else { 
+//         newProduct = {
+//             id : products[lastProductIndex].id + 1,
+//             name: req.body.name,
+//             price: req.body.price,
+//             category: req.body.category,
+//             description : req.body.description,
+//             extraInfo : req.body.extraInfo,
+//             img: req.file.filename,
+//     }
+// }
+
+
+//     console.log("ESTO ES newProduct", newProduct);
+//     products.push(newProduct);
+//     let productsJSON = JSON.stringify(products, null, '\t');
+//     fs.writeFileSync(productsFilePath, productsJSON , "");
+//     console.log(req.file);
+//     res.redirect('/shop');
 },
 
 productEdition:(req, res) => { 

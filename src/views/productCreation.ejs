@@ -33,33 +33,44 @@
                     <label for="price">Price</label>
                         <input type="text" name="price" class="inputPrice" required>
                 </article>
+                <article class="productDiscountContainer" >
+                    <label for="discount">Discount (%)</label>
+                        <input type="number" name="discount" class="inputDiscount" required>
+                </article>
                 <article class="product-Categories-Container">
                     <label for="category">Categories</label>
-                        <Select class="product-Categories" name="category" required>
-                            <option value="Modules&Cases">Modules & Cases</option>
-                            <option value="Sequencers">Sequencers</option>
-                            <option value="Accesories">Accesories</option>
-                            <option value="Effects">Effects</option>
-                            <option value="WeirdGear">Weird Gear</option>
-                         
-                        </Select>
-                        <Select class="product-Categories" name="category2">
-                            <option value="null">Category 2 (optional)</option>
-                            <option value="Modules&Cases">Modules & Cases</option>
-                            <option value="Sequencers">Sequencers</option>
-                            <option value="Accesories">Accesories</option>
-                            <option value="Effects">Effects</option>
-                            <option value="WeirdGear">Weird Gear</option>
-                     <!--   <option value="NewReleases">New Releases</option> -->
-                        </Select>
+                    <select  class="product-Categories"name="category" required>
+                        <% categories.forEach(category => { %>
+                        <option value="<%= category.id %>"><%= category.name %></option>
+                        <% }); %>
+                    </select>
+                    <select  class="product-Categories"name="category2" required>
+                        <option value='0'>2nd Category (optional)</option>
+                        <% categories.forEach(category => { %>
+                        <option value="<%= category.id %>"><%= category.name %></option>
+                        <% }); %>
+                    </select>
                 </article>
+                
             </div>
+            <article class="productBrandContainer">
+                <label for="brand_id">Brand</label>
+                <select name="brand_id" id="brandInput">
+                    <% brands.forEach(brand => { %>
+                    <option value="<%= brand.id %>"><%= brand.name %></option>
+                    <% }); %>
+                </select>
+            </article>
             <article class="product-Images-Container">
                 <section class="product-Images">
                     <label for="productImg">Images</label>
                         <input type="file" name="productImg" class="btn-File-Select" multiple accept=".jpg, .jpeg, .png">
                 </section>
             </article>
+            <article>
+            <label for="isActive">Show in the shop</label>
+            <input type="checkbox" checked name="isActive" placeholder="Active">
+        </article>
             <button type="submit" class="btn-register-product">
                 Create product
             </button>
