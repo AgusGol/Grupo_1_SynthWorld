@@ -4,6 +4,12 @@ const fs = require('fs');
 // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db = require('../database/models');
 const sequelize = db.sequelize;
+
+// Constantes de los Modelos citados//
+const Brand = db.Brand;
+const Product = db.Product;
+const Category = db.ProductCategory;
+
 const productController={
 
 // productDetail:(req, res) => {
@@ -14,7 +20,7 @@ const productController={
 //     res.render('productDetail',{product});
 // },
 productDetail:(req, res) => {
-    db.Product.findByPk(req.params.id)
+    Product.findByPk(req.params.id)
     .then((product) => res.render('productDetail',{product}));
     },
 
@@ -22,7 +28,7 @@ productDetail:(req, res) => {
 //     res.render('shop', {products});
 // },
 shop: (req, res) => {
-    db.Product.findAll().then((products) => res.render('shop', {products}));
+    Product.findAll().then((products) => res.render('shop', {products}));
 },
 productCreation:(req, res) => {
     res.render("productCreation");
@@ -64,52 +70,73 @@ store: (req, res, next) => {
 },
 
 productEdition:(req, res) => { 
-    db.Product.findByPk(req.params.id)
-    .then((product) =>  res.render("productEdition", {product}));
-
-   
+    let productId = req.params.id;
+    // console.log(Category);
+    let editProduc = Product.findByPk(productId,{include:["brand"]});
+    let editCateg = Category.findAll({where:{product_id:productId}});
+    // let editCateg = productCategory();
+    console.log("🚀 ~ file: productController.js:78 ~ productCategory", editCateg)
+    let editBrand = Brand.findAll();
+    Promise
+    .all([editProduc, editBrand, editCateg])
+    .then(([product, allBrand, allCategory]) => {
+        return res.render('productEdition', {product,allBrand,allCategory})})
+        .catch(error => res.send(error))
+    // .then((product) =>  res.render("productEdition", {product}));
 },
 
 update: (req,res) => {
-    /*let id = req.params.id;*/
-    let product = products.find(product => product.id ==req.params.id);
-    /*console.log("req",req)*/
-    let updateInfoProduct = {}
-    console.log("Body",req.body);
-    console.log("file",req.file);
-    if (req.body) {
-        updateInfoProduct = {
-            id : product.id,
-            name: req.body.name,
-            price: req.body.price,
-            category: req.body.category,
-            description : req.body.description,
-            extraInfo : req.body.extraInfo,
-            img: req.file ? req.file.filename : product.img 
-    };
-    }
-console.log("updateinfoproduct", updateInfoProduct)
+    let product = req.params.id;
+    Product.update(
+        {
+        name: req.body.name,
+        brand_id :req.body.brand_id,
+        price: req.body.price,
+        // category: req.body.category,
+        description : req.body.description,
+        extraInfo : req.body.extraInfo,
+        img: req.file ? req.file.filename : product.img
+    },)
 
-    let productToEdit = products.map(product =>{
-        if(updateInfoProduct.id==product.id){
-            return product = updateInfoProduct
-        }
-        else {return product}
-    })
-    fs.writeFileSync(productsFilePath, JSON.stringify(productToEdit, null, '\t'));
-    res.redirect("/shop",);
+//     /*let id = req.params.id;*/
+//     let product = req.params.id;
+//     /*console.log("req",req)*/
+//     let updateInfoProduct = {}
+//     console.log("Body",req.body);
+//     console.log("file",req.file);
+//     if (req.body) {
+//         updateInfoProduct = {
+//             id : product.id,
+//             name: req.body.name,
+//             price: req.body.price,
+//             category: req.body.category,
+//             description : req.body.description,
+//             extraInfo : req.body.extraInfo,
+//             img: req.file ? req.file.filename : product.img 
+//     };
+//     }
+// console.log("updateinfoproduct", updateInfoProduct)
+
+//     let productToEdit = products.map(product =>{
+//         if(updateInfoProduct.id==product.id){
+//             return product = updateInfoProduct
+//         }
+//         else {return product}
+//     })
+//     fs.writeFileSync(productsFilePath, JSON.stringify(productToEdit, null, '\t'));
+//     res.redirect("/shop",);
 },
 delete: (req, res) => {
     let id = req.params.id;
     console.log(id)
   //  let productToDelete = products.filter(product => product.id != id);
    // fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
-   db.ProductCategory.destroy({
+    ProductCategory.destroy({
     where : {
         product_id: id
     }
    })
-   .then(data => { db.Product.destroy({
+   .then(data => { Product.destroy({
         where:{
              id : req.params.id
             }

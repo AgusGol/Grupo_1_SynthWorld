@@ -182,7 +182,7 @@ p {
         position: static;
         bottom: 0px;
         width: 100%;
-        max-width: 50%;
+        /* max-width: 50%; */
     } 
     
     .register-form-New-Product {

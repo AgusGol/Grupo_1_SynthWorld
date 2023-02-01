@@ -19,6 +19,14 @@
                 <label for="name">Product Name</label>
                     <input type="text" name="name" class="productName" value="<%= product.name %>" required>
                 </article>
+                <article class="productBrandContainer">
+                    <label for="brand_id">Brands</label>
+                    <select name="brand_id" id="" required>
+                        <% allBrand.forEach(brand => { %>
+                        <option value="<%= brand.id %>" <% if (product.brand.id == brand.id) { %><%= 'selected' %><% }; %>><%= brand.name %></option>
+                        <% }); %>
+                    </select>
+                </article>
                 <article class="productDescriptionConteiner">
                     <label for="description">Description</label>
                     <textarea name="description" placeholder=" <%= product.description %>" required> <%= product.description %></textarea>
@@ -35,14 +43,19 @@
                 </article>
                 <article class="product-Categories-Container">
                     <label for="category">Categories</label>
-                        <Select class="product-Categories" name="category" value="<%= product.category %>" required>
+                    <select  class="product-Categories"name="category" required>
+                        <% allCategory.forEach(category => { %>
+                        <option value="<%= category.id %>" <% if (category.product_id == category.id) { %><%= 'selected' %><% }; %>><%= category.name %></option>
+                        <% }); %>
+                    </select>
+                        <!-- <Select class="product-Categories" name="category" value="< % = product.category % >" required>
                             <option value="Modules&Cases">Modules & Cases</option>
                             <option value="Sequencers">Sequencers</option>
                             <option value="Accesories">Accesories</option>
                             <option value="Effects">Effects</option>
                             <option value="WeirdGear">Weird Gear</option>
                             <option value="NewReleases">New Releases</option>
-                        </Select>
+                        </Select> -->
                 </article>
             </div>
             <article class="product-Images-Container">
