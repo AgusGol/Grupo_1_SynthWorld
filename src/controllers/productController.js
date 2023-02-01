@@ -8,7 +8,8 @@ const sequelize = db.sequelize;
 // Constantes de los Modelos citados//
 const Brand = db.Brand;
 const Product = db.Product;
-const Category = db.ProductCategory;
+const Category = db.Category;
+const ProductCategory = db.ProductCategory;
 
 const productController={
 
