@@ -38,8 +38,8 @@ module.exports = (sequelize, dataTypes) => {
         Category.belongsToMany(models.Product, {
             as: "product",
             through: "product_category",
-            foreignKey: "product_id",
-            otherKey: "category_id",
+            foreignKey: "category_id",
+            otherKey: "product_id",
             // onDelete: 'CASCADE',
         //  hooks: true
         })
