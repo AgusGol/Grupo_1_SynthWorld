@@ -47,7 +47,6 @@ store: (req, res, next) => {
         price: req.body.price,
         discount: req.body.discount,
         image: req.file ? req.file.filename : null,
-        is_active : req.body.isActive == 'on' ? 1 : 0,
         description: req.body.description,
         extra_info: req.body.extraInfo,
         isActive : req.body.isActive,
@@ -120,31 +119,69 @@ store: (req, res, next) => {
 productEdition:(req, res) => { 
     let productId = req.params.id;
     // console.log(Category);
-    let editProduc = Product.findByPk(productId,{include:["brand"]});
-    let editCateg = Category.findAll({where:{product_id:productId}},{include:["product"]});
+    let editProduct = Product.findByPk(productId,{include:["brand"]});
+    let productCategory = ProductCategory.findAll({where:{product_id:productId}});
+    let category = Category.findAll()
     // let editCateg = productCategory();
-    console.log("🚀 ~ file: productController.js:78 ~ productCategory", editCateg)
-    let editBrand = Brand.findAll();
+    let allBrand = Brand.findAll();
     Promise
-    .all([editProduc, editBrand, editCateg])
-    .then(([product, allBrand, allCategory]) => {
-        return res.render('productEdition', {product,allBrand,allCategory})})
+    .all([productCategory, editProduct, category, allBrand])
+    .then(([productCategory, product, allCategory, allBrand]) => {
+        console.log(product.is_active)
+        return res.render('productEdition', {productCategory,product,allCategory, allBrand})
+    })
         .catch(error => res.send(error))
     // .then((product) =>  res.render("productEdition", {product}));
 },
 
 update: (req,res) => {
-    let product = req.params.id;
+    let idP = req.params.id;
+    let product
+    Product.findByPk(idP)
+    .then(data => {
     Product.update(
         {
         name: req.body.name,
         brand_id :req.body.brand_id,
         price: req.body.price,
-        // category: req.body.category,
+        discount: req.body.discount / 100,
+        image: req.file ? req.file.filename : data.image,
+        is_active : req.body.isActive == 'on' ? 1 : 0,
         description : req.body.description,
-        extraInfo : req.body.extraInfo,
-        img: req.file ? req.file.filename : product.img
-    },)
+        extraInfo : req.body.extraInfo
+        
+    }, {
+        where: {id : idP}
+    })})
+    .then(()=> {
+        ProductCategory.destroy({
+            where: {
+                product_id : idP
+            }
+        })
+        .then(() => {
+
+            if(req.body.category2 != 0) {
+                let category1 = db.ProductCategory.create({
+                product_id: idP,
+                category_id: req.body.category});
+    
+                let category2 = db.ProductCategory.create({
+                    product_id: idP,
+                    category_id: req.body.category2});
+    
+                Promise.all([category1, category2])
+                .then(() => res.redirect('/shop') )
+            }
+            else {
+                db.ProductCategory
+                    .create({
+                    product_id: idP,
+                    category_id: req.body.category})
+                    .then(() => res.redirect('/shop') )
+            }
+        })
+    })
 
 //     /*let id = req.params.id;*/
 //     let product = req.params.id;

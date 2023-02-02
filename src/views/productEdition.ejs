@@ -36,13 +36,19 @@
                 </article>
                 <article class="productDiscountContainer" >
                     <label for="discount">Discount (%)</label>
-                        <input type="number" name="discount" value = "<%= product.discount %> " class="inputDiscount" required>
+                        <input type="number" name="discount" value =<%= product.discount * 100 %> class="inputDiscount" required>
                 </article>
                 <article class="product-Categories-Container">
                     <label for="category">Categories</label>
                     <select  class="product-Categories"name="category" required>
                         <% allCategory.forEach(category => { %>
-                        <option value="<%= category.id %>" <% if (category.product_id == category.id) { %><%= 'selected' %><% }; %>><%= category.name %></option>
+                        <option value="<%= category.id %>" <% if (productCategory[0].category_id == category.id) { %><%= 'selected' %><% }; %>><%= category.name %></option>
+                        <% }); %>
+                    </select>
+                    <select  class="product-Categories"name="category2" required>
+                        <option value='0'>2nd Category (optional)</option>
+                        <% allCategory.forEach(category => { %>
+                        <option value="<%= category.id %>" <% if(productCategory != undefined) { if (productCategory.length > 1) { %><%= 'selected' %><% }; } %>><%= category.name %></option>
                         <% }); %>
                     </select>
                         <!-- <Select class="product-Categories" name="category" value="< % = product.category % >" required>
@@ -63,16 +69,20 @@
                     </select>
                 </article>
             </div>
+            <article>
+                <label for="isActive">Show in the shop</label>
+                <input type="checkbox" <% if (product.is_active == 1) { %> checked <% } %>  name="isActive" placeholder="Active">
+            </article>
             <article class="product-Images-Container">
                 <section class="product-Images">
                     <label for="images">Images</label>
                         <input type="file" name="images" class="btn-File-Select" multiple accept=".jpg, .png" >
-                            <img src="/img/products/<%= product.img %>">
+                            <img src="/img/products/<%= product.image %>" max-width='300px' max-height='300px'>
+                            
+
                 </section>
-                <article>
-                    <label for="isActive">Show in the shop</label>
-                    <input type="checkbox" <% if (product.isActive == 1) { %> checked <% } %>  name="isActive" placeholder="Active">
-                </article>
+               
+                
             <button type="submit" class="btn-modify-product">
                 Modify listing
             </button>
