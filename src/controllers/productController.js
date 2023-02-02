@@ -121,7 +121,7 @@ productEdition:(req, res) => {
     let productId = req.params.id;
     // console.log(Category);
     let editProduc = Product.findByPk(productId,{include:["brand"]});
-    let editCateg = Category.findAll({where:{product_id:productId}});
+    let editCateg = Category.findAll({where:{product_id:productId}},{include:["product"]});
     // let editCateg = productCategory();
     console.log("🚀 ~ file: productController.js:78 ~ productCategory", editCateg)
     let editBrand = Brand.findAll();

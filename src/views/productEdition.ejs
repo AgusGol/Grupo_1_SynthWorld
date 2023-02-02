@@ -19,14 +19,7 @@
                 <label for="name">Product Name</label>
                     <input type="text" name="name" class="productName" value="<%= product.name %>" required>
                 </article>
-                <article class="productBrandContainer">
-                    <label for="brand_id">Brands</label>
-                    <select name="brand_id" id="" required>
-                        <% allBrand.forEach(brand => { %>
-                        <option value="<%= brand.id %>" <% if (product.brand.id == brand.id) { %><%= 'selected' %><% }; %>><%= brand.name %></option>
-                        <% }); %>
-                    </select>
-                </article>
+                
                 <article class="productDescriptionConteiner">
                     <label for="description">Description</label>
                     <textarea name="description" placeholder=" <%= product.description %>" required> <%= product.description %></textarea>
@@ -40,6 +33,10 @@
                 <article class="productPriceContainer" >
                     <label for="price">Price</label>
                         <input type="text" name="price" class="inputPrice" value="<%= product.price %>" placeholder="<%= product.price %>" required>
+                </article>
+                <article class="productDiscountContainer" >
+                    <label for="discount">Discount (%)</label>
+                        <input type="number" name="discount" value = "<%= product.discount %> " class="inputDiscount" required>
                 </article>
                 <article class="product-Categories-Container">
                     <label for="category">Categories</label>
@@ -57,6 +54,14 @@
                             <option value="NewReleases">New Releases</option>
                         </Select> -->
                 </article>
+                <article class="productBrandContainer">
+                    <label for="brand_id">Brands</label>
+                    <select name="brand_id" id="" required>
+                        <% allBrand.forEach(brand => { %>
+                        <option value="<%= brand.id %>" <% if (product.brand.id == brand.id) { %><%= 'selected' %><% }; %>><%= brand.name %></option>
+                        <% }); %>
+                    </select>
+                </article>
             </div>
             <article class="product-Images-Container">
                 <section class="product-Images">
@@ -64,6 +69,10 @@
                         <input type="file" name="images" class="btn-File-Select" multiple accept=".jpg, .png" >
                             <img src="/img/products/<%= product.img %>">
                 </section>
+                <article>
+                    <label for="isActive">Show in the shop</label>
+                    <input type="checkbox" <% if (product.isActive == 1) { %> checked <% } %>  name="isActive" placeholder="Active">
+                </article>
             <button type="submit" class="btn-modify-product">
                 Modify listing
             </button>
