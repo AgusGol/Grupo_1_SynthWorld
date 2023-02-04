@@ -37,9 +37,19 @@ login:(req, res) => {
 userCreate:(req, res) => {
     res.render("register");
 },
-register:(req, res, next) => {
-        console.log("reqfile",req.file);
-        
+register:(req, res, ) => {
+    //guarda los errores, nose porque llegan vacios.
+    const resultValidation = validationResult(req);
+    // return res.send(resultValidation);
+
+    if(resultValidation.errors.length > 0){
+        return res.render("register",{
+        errors:resultValidation.mapped(),
+        oldData:req.body
+    })
+    }
+    
+
         db.User.create({
             first_name: req.body.name,
             last_name: req.body.last_name,

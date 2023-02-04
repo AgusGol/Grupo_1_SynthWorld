@@ -16,24 +16,75 @@
         <h2>Create your account</h2>
         <form action="/users/register" method="POST" class="register-form" enctype="multipart/form-data">
             <div class="container-inputs">
+                <div>
                 <label for="email">Email address</label>
-                <input type="email" name="email" placeholder="Email address" class="email-input-login" required>
-
+                <input 
+                type="email" 
+                name="email" 
+                placeholder="Email address" 
+                class="email-input-login" 
+                value="<%= locals.oldData ? oldData.email : null %>"
+                >
+                <% if(locals.errors && errors.email) { %>
+                    <div class="errorList">
+                        <%= errors.email.msg %> 
+                    </div>
+                <% } %> 
+                </div>
                 <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Password" required>
+                <input 
+                type="password" 
+                name="password" 
+                placeholder="Password" 
+                >
+                <% if(locals.errors && errors.password) { %>
+                    <div class="errorList">
+                        <%= errors.password.msg %> 
+                    </div>
+                <% } %>
+                
                 <label for="password2">Confirm password</label>
-                <input type="password" name="password2" placeholder="Confirm password" required>
+                <input 
+                type="password" 
+                name="password2" 
+                placeholder="Confirm password" >
+                <% if(locals.errors && errors.password2) { %>
+                    <div class="errorList">
+                        <%= errors.password2.msg %> 
+                    </div>
+                <% } %>
             </div>
+            
             <h1>Personal information</h1>
 
             <div class="second-container-inputs">
                 <label for="name">First name</label>
-                <input type="text" name="name" placeholder="First name" required>
+                <input 
+                type="text" 
+                name="name" 
+                placeholder="First name"
+                value="<%= locals.oldData ? oldData.name:null %>">
+                <% if(locals.errors && errors.name) { %>
+                    <div class="errorList">
+                        <%= errors.name.msg %> 
+                    </div>
+                <% } %>
+
                 <label for="last_name">Last name</label>
-                <input type="text" name="last_name" placeholder="Last name">
+                <input 
+                type="text" 
+                name="last_name" 
+                placeholder="Last name"
+                value="<%= locals.oldData ? oldData.last_name:null %>"
+                >
+                <% if(locals.errors && errors.last_name) { %>
+                    <div class="errorList">
+                        <%= errors.last_name.msg %> 
+                    </div>
+                <% } %>
             </div>
             <!--  <div class="userCategory">
-              <p>which type of user are you?</p>
+            <p>which type of user are you?</p>
                 <article class="user-Categories-Container">
                     <label for="category">Categories</label>
                         <Select class="user-Categories" name="category"  required>
@@ -55,8 +106,18 @@
                 <section class="user-image">
                     <label for="userAvatar">Images</label>
                     <p>Image</p>
-                        <input type="file" name="userAvatar" class="btn-File-Select" multiple accept=".jpg, .jpeg, .png">
+                    <input 
+                    type="file" 
+                    name="userAvatar" 
+                    class="btn-File-Select" 
+                    multiple accept=".jpg, .jpeg, .png, gif"
+                    value="<%= locals.olData ? oldData.userAvatar:null %> ">
                 </section>
+                <% if(locals.errors && errors.userAvatar) { %>
+                    <div class="errorList">
+                        <%= errors.userAvatar.msg %> 
+                    </div>
+                <% } %>
             </article>
             <button type="submit" class="btn-register">
                 Register
