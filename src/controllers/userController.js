@@ -41,7 +41,7 @@ register:(req, res, ) => {
     //guarda los errores, nose porque llegan vacios.
     const resultValidation = validationResult(req);
     // return res.send(resultValidation);
-
+    console.log(req.file)
     if(resultValidation.errors.length > 0){
         return res.render("register",{
         errors:resultValidation.mapped(),

@@ -111,7 +111,7 @@
                     name="userAvatar" 
                     class="btn-File-Select" 
                     multiple accept=".jpg, .jpeg, .png, gif"
-                    value="<%= locals.olData ? oldData.userAvatar:null %> ">
+                    value="<%= locals.oldData ? oldData.userAvatar:null %> ">
                 </section>
                 <% if(locals.errors && errors.userAvatar) { %>
                     <div class="errorList">
