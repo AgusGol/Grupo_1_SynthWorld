@@ -12,23 +12,18 @@
 <main>
     <section>
         <article class="product-title product-title-tb">
-            <h2><%= user.first_name %> </h2>
+            <h2><%= user.first_name %><p> <%= user.last_name %></p></h2>
             </article>
         <article class="product-img">
             <img src="/img/users/<%= user.image %>">  <!--imagen de ejemplo. Cambiarla-->
         </article>
         <div class="product-details">
         <article class="product-title product-title-mb">
-        <h2><%= user.first_name %></h2>
         </article>
-            <div class="price-and-quantity">
-                <article class="price">
-                <p><%= user.last_name %></p>
-            </article>
-            </div>
+
         </div>
     <div>
-        <form >
+        <form action="/users/edit" method="get">
             <button type="submit" class="btn-to-edition">
                 Edit details
             </button>
