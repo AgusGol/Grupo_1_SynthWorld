@@ -33,8 +33,10 @@ const validateRegister = [
     check('userAvatar')
         .custom((value, {req}) => {
             // let value = req.file.minetype
-        if((req.file.mimetype === 'image/jpeg'|| req.file.mimetype === 'image/gif' || req.file.mimetype === 'image/png') || !req.file){
             console.log('reeq', req.file)
+        if(req.file.mimetype === 'image/jpeg'|| req.file.mimetype === 'image/gif' || req.file.mimetype === 'image/png' || req.file == 'undefined'){
+           // console.log('reeq', req.file)
+           console.log('reeq entramos', req.file)
             return true;}
         else{
             console.log('req...' ,req.file)
