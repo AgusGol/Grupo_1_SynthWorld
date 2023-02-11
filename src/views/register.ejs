@@ -18,12 +18,14 @@
             <div class="container-inputs">
                 <div>
                 <label for="email">Email address</label>
+                <p class="email-error errorsJs"></p>
                 <input 
                 type="email" 
                 name="email" 
                 placeholder="Email address" 
                 class="email-input-login" 
                 value="<%= locals.oldData ? oldData.email : null %>"
+                id="email-input"
                 >
                 <% if(locals.errors && errors.email) { %>
                     <div class="errorList">
@@ -32,10 +34,12 @@
                 <% } %> 
                 </div>
                 <label for="password">Password</label>
+                <p class="password-error errorsJs"></p>
                 <input 
                 type="password" 
                 name="password" 
                 placeholder="Password" 
+                id="password-input"
                 >
                 <% if(locals.errors && errors.password) { %>
                     <div class="errorList">
@@ -44,26 +48,31 @@
                 <% } %>
                 
                 <label for="password2">Confirm password</label>
+               
                 <input 
                 type="password" 
                 name="password2" 
-                placeholder="Confirm password" >
+                placeholder="Confirm password" 
+                id="password2-input">
                 <% if(locals.errors && errors.password2) { %>
                     <div class="errorList">
                         <%= errors.password2.msg %> 
                     </div>
                 <% } %>
-            </div>
+                <p class="password2-error errorsJs"></p>
+                </div>
+               
             
             <h1>Personal information</h1>
 
             <div class="second-container-inputs">
                 <label for="name">First name</label>
+                <p class="name-error errorsJs"></p>
                 <input 
                 type="text" 
                 name="name" 
                 placeholder="First name"
-                value="<%= locals.oldData ? oldData.name:null %>">
+                value="<%= locals.oldData ? oldData.name:null %>" id="name-input">
                 <% if(locals.errors && errors.name) { %>
                     <div class="errorList">
                         <%= errors.name.msg %> 
@@ -71,11 +80,13 @@
                 <% } %>
 
                 <label for="last_name">Last name</label>
+                <p class="last-name-error errorsJs"></p>
                 <input 
                 type="text" 
                 name="last_name" 
                 placeholder="Last name"
                 value="<%= locals.oldData ? oldData.last_name:null %>"
+                id="last-name-input"
                 >
                 <% if(locals.errors && errors.last_name) { %>
                     <div class="errorList">
@@ -111,7 +122,9 @@
                     name="userAvatar" 
                     class="btn-File-Select" 
                     multiple accept=".jpg, .jpeg, .png, gif"
-                    value="<%= locals.oldData ? oldData.userAvatar:null %> ">
+                    value="<%= locals.oldData ? oldData.userAvatar:null %> "
+                    id="image-input">
+            
                 </section>
                 <% if(locals.errors && errors.userAvatar) { %>
                     <div class="errorList">
@@ -119,6 +132,7 @@
                     </div>
                 <% } %>
             </article>
+            <p class="image-error errorsJs"></p>
             <button type="submit" class="btn-register">
                 Register
             </button>
