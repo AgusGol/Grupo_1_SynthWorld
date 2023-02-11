@@ -1,25 +1,41 @@
 window.addEventListener('load', () => {
-    let form = document.querySelector('form');
-    let errors = {}
+    let form = document.querySelector('.login-form');
+    let errorsJs = []
+    let emailInput = document.querySelector('#userEmail');
+    let emailError = document.querySelector('.email-error');
+    let passwordInput = document.querySelector('#userPassword');
+    let passwordError = document.querySelector('.password-error');
 
     form.addEventListener('submit', (e) => {
-        
+        console.log('eee')
+        e.preventDefault()
+        if (emailInput.value == "") {
+            emailError.innerText = "The email cannot be empty";
+        }
+        else if (passwordInput.value == "") {
+            console.log('000')
+            console.log(passwordError)
+            passwordError.innerText = "The password cannot be empty";
+            emailError.innerText = "";
+        } else {
+            form.submit();
+        }
     })
 
-
-    form.userEmail.addEventListener('keyup', (e) => {
-       
-        if(e.target.value == "") {
-            console.log('vacio');
-            e.target.classList.add('is-invalid');
-            errors = errors.filter(error => {return error != "The email cannot be empty"})
-            errors.push("The email cannot be empty");
+    emailInput.addEventListener('keyup', (e) => {
+        if (emailInput.value == "") {
+            emailError.innerText = "The email cannot be empty";
         }
         else {
-            errors = errors.filter(error => {return error != "The email cannot be empty"})
-            errors = errors.filter(error => {return error != "El rating debe ser entre 0 y 10"})
-            e.target.classList.remove('is-invalid');
-            e.target.classList.add('is-valid');
+            emailError.innerText = "";
+        }
+    })
+    passwordInput.addEventListener('keyup' , (e) => {
+        if (passwordInput.value == "") {
+            passwordError.innerText = "The password cannot be empty";
+        }
+        else {
+            passwordError.innerText = "";
         }
     })
 })
