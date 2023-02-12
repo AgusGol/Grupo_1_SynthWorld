@@ -2,6 +2,7 @@ const express = require("express");
 const router= express.Router();
 const path = require ("path");
 const multer = require ('multer');
+const validateProductCreation = require ("../middlewares/producValidateCreationMiddleware")
 // const admin = require('../middlewares/adminMiddleware') => para implementar los permisos del admin
 
 // Controller require //
@@ -34,7 +35,7 @@ router.get('/shop', productController.shop);
 
 // Edit one product //
 router.get('/products/edit/:id', productController.productEdition); 
-router.put('/products/edit/:id',upload.single("images"), productController.update);
+router.put('/products/edit/:id',upload.single("images"),validateProductCreation ,productController.update);
 
 // Delete one product //
 router.delete('/products/delete/:id', productController.delete); 
