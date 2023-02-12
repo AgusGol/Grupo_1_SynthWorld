@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 //para express session
-app.use(session({secret: "PalabraClave"}))
+app.use(session({secret: "PalabraClave", resave: true, saveUninitialized: true}))
 
 
 

@@ -9,15 +9,33 @@ window.addEventListener('load', () => {
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
+
+let errores = []; 
+
+
+if (productName == " ") {
+    errores.push("You must define a product name")
+} else if (productName.value.length < 6) {
+    errores.push("The product name must be at least 5 characters long")
+}
+
+if (productDescription == " ") {
+    errores.push("You must define a product description")
+} else if (productName.value.length < 21) {
+    errores.push("The product description must be at least 21 characters long")
+}
+
+
 })
 
 
 console.log(form)
 console.log(productName)
-console.log(productDescription)
-console.log(productExtraInfo)
-console.log(productPrice)
-console.log(productDiscount)
+console.log(errores)
+// console.log(productDescription)
+// console.log(productExtraInfo)
+// console.log(productPrice)
+// console.log(productDiscount)
 
 
 
