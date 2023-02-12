@@ -50,35 +50,33 @@ store: (req, res) => {
         image: req.file ? req.file.filename : null,
         is_active : req.body.isActive == 'on' ? 1 : 0,
         description : req.body.description,
-        extraInfo : req.body.extraInfo
+        extra_info : req.body.extraInfo
+        
     })
     .then((product) => {
         console.log(2)  
         console.log()
         if(req.body.category2 != 0) {
-            let category1 = db.ProductCategory.create({
-            product_id: product.id,
-            category_id: req.body.category});
-
-            let category2 = db.ProductCategory.create({
+                
+                let category1 = db.ProductCategory.create({
                 product_id: product.id,
-                category_id: req.body.category2});
-
-            Promise.all([category1, category2])
-            .console.log(3)
-            .then(() => res.redirect('/shop') )
-        }
-        else {
-            
-            db.ProductCategory
-                .create({
-                product_id: product.id,
-                category_id: req.body.category})
-               
-                .then(() => {
-                     console.log(4)
-                    return res.redirect('/shop') })
-        }
+                category_id: req.body.category});
+    
+                let category2 = db.ProductCategory.create({
+                    product_id: product.id,
+                    category_id: req.body.category2});
+    
+                Promise.all([category1, category2])
+                .then(() => res.redirect('/shop') )
+            }
+            else {
+                db.ProductCategory
+                    .create({
+                    product_id: idP,
+                    category_id: req.body.category})
+                    .then(() => res.redirect('/shop') )
+            }
+        
 
         
     })
@@ -155,7 +153,7 @@ update: (req,res) => {
         image: req.file ? req.file.filename : data.image,
         is_active : req.body.isActive == 'on' ? 1 : 0,
         description : req.body.description,
-        extraInfo : req.body.extraInfo
+        extra_info : req.body.extraInfo
         
     }, {
         where: {id : idP}

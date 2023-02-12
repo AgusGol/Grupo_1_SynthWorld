@@ -26,7 +26,7 @@
                 </article>
                 <article class="productExtraInfoConteiner">
                     <label for="extraInfo">Extra Info</label>
-                    <textarea type="text" name="extraInfo" placeholder=" <%= product.extraInfo %>" required><%= product.extraInfo %></textarea>
+                    <textarea type="text" name="extraInfo" ><%= product.extra_info %></textarea>
                 </article>
             </div>
             <div class="second-container-inputs">
@@ -48,7 +48,7 @@
                     <select  class="product-Categories"name="category2" required>
                         <option value='0'>2nd Category (optional)</option>
                         <% allCategory.forEach(category => { %>
-                        <option value="<%= category.id %>" <% if(productCategory != undefined) { if (productCategory.length > 1) { %><%= 'selected' %><% }; } %>><%= category.name %></option>
+                        <option value="<%= category.id %>" <% if(productCategory != undefined) { if (productCategory.length > 0) { if (productCategory[1].category_id == category.id) {%><%= 'selected' %><% }; }} %>><%= category.name %></option>
                         <% }); %>
                     </select>
                         <!-- <Select class="product-Categories" name="category" value="< % = product.category % >" required>
