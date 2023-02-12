@@ -39,39 +39,44 @@ productCreation:(req, res) => {
         .then(([categories, brands]) => { res.render('productCreation', {brands, categories})})
         .catch(error => res.send(error))
 },
-store: (req, res, next) => {
-
+store: (req, res) => {
+    console.log(1)
+    console.log(req.body)
     Product.create({
         name: req.body.name,
-        brand_id: req.body.brand_id,
+        brand_id :req.body.brand_id,
         price: req.body.price,
-        discount: req.body.discount,
+        discount: req.body.discount / 100,
         image: req.file ? req.file.filename : null,
-        description: req.body.description,
-        extra_info: req.body.extraInfo,
-        isActive : req.body.isActive,
+        is_active : req.body.isActive == 'on' ? 1 : 0,
+        description : req.body.description,
+        extra_info : req.body.extraInfo
+        
     })
-    .then((product) => {   
+    .then((product) => {
+        console.log(2)  
         console.log()
         if(req.body.category2 != 0) {
-            let category1 = db.ProductCategory.create({
-            product_id: product.id,
-            category_id: req.body.category});
-
-            let category2 = db.ProductCategory.create({
+                
+                let category1 = db.ProductCategory.create({
                 product_id: product.id,
-                category_id: req.body.category2});
-
-            Promise.all([category1, category2])
-            .then(() => res.redirect('/shop') )
-        }
-        else {
-            db.ProductCategory
-                .create({
-                product_id: product.id,
-                category_id: req.body.category})
+                category_id: req.body.category});
+    
+                let category2 = db.ProductCategory.create({
+                    product_id: product.id,
+                    category_id: req.body.category2});
+    
+                Promise.all([category1, category2])
                 .then(() => res.redirect('/shop') )
-        }
+            }
+            else {
+                db.ProductCategory
+                    .create({
+                    product_id: idP,
+                    category_id: req.body.category})
+                    .then(() => res.redirect('/shop') )
+            }
+        
 
         
     })
@@ -148,7 +153,7 @@ update: (req,res) => {
         image: req.file ? req.file.filename : data.image,
         is_active : req.body.isActive == 'on' ? 1 : 0,
         description : req.body.description,
-        extraInfo : req.body.extraInfo
+        extra_info : req.body.extraInfo
         
     }, {
         where: {id : idP}
