@@ -2,17 +2,10 @@ window.addEventListener('load', () => {
     let form = document.querySelector('form');
     let productName = document.querySelector('#productName')
     let productDescription = document.querySelector('#description')
-    let productExtraInfo = document.querySelector('#extraInfo')
     let productPrice = document.querySelector('#price')
-    let productDiscount = document.querySelector('#discount')
 
-
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
+//falta acomodar el submit. No me queda claro un detalle 
 let errores = []; 
-
-
 if (productName == " ") {
     errores.push("You must define a product name")
 } else if (productName.value.length < 6) {
@@ -25,7 +18,16 @@ if (productDescription == " ") {
     errores.push("The product description must be at least 21 characters long")
 }
 
+if (productPrice == " ") {
+    errores.push("You must define a product price")
+} else if (productPrice.value > 0) {
+    errores.push("The product price must be greater than 0")
+}
+form.addEventListener("submit", function (e) {
+if (errores.length > 0) {
+    e.preventDefault();
 
+}
 })
 
 
