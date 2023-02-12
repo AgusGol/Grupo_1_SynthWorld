@@ -7,14 +7,17 @@ const validateRegister = [
         .isEmail()
         .withMessage('You must fill in a valid email address'),
     check('password')
-        .notEmpty()
-        .withMessage('You must fill in your password')
-        .isLength({min: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1})
+        // .isLength({min: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1})
+        .isStrongPassword({ minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1 })
         .withMessage('Must contain at least 8 characters, 1 lower case character, 1 upper case character, 1 number and 1 special character.')
-        .bail(),
+        .bail()
+        .notEmpty()
+        .withMessage('You must fill in your password').bail(),
     check('password2')
         .notEmpty()
         .withMessage('you must re-confirm your password')
+        .isStrongPassword({ minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1 })
+        .withMessage('Must contain at least 8 characters, 1 lower case character, 1 upper case character, 1 number and 1 special character,as well as the password.')
         .custom((value, { req }) => {
             if (value !== req.body.password) {
             throw new Error('Password confirmation does not match password');

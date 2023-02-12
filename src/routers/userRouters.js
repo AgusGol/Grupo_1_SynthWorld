@@ -3,12 +3,12 @@ const router= express.Router();
 const path = require ("path");
 const multer = require ('multer');
 const userController= require("../controllers/userController");
-const { check } = require('express-validator');
+// const { check } = require('express-validator');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const loggedMiddleware = require('../middlewares/loggedMiddleware');
 const validateRegister = require("../middlewares/validateRegisterMiddleware");
-const validateLogin = require('../middlewares/validateLoginMiddleware')
-   
+const validateLogin = require('../middlewares/validateLoginMiddleware');
+
 
 
 // Multer //

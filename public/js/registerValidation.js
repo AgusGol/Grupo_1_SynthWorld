@@ -27,20 +27,26 @@ window.addEventListener('load', () => {
                 console.log('bad email');
                 emailError.innerText = "Please enter a correct email";
                 counter = 1;
+                
               }
               else {
-                emailError.innerText = ""
-              }
+                emailError.innerText = "";
+            }
         
 
-
+    
         if (passwordInput.value == "") {
             passwordError.innerText = "You must choose a password";
             counter = 1;
         } else if (passwordInput.value.length < 8) {
             passwordError.innerText = "Password minimun length is 8"
             counter = 1;
-        } else {
+        } else if (!(passwordInput.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,}$/
+            ))) {
+            passwordError.innerText = 'Must contain at least eight characters, one lower case character, one upper case character, one number and one special character.'
+            counter = 1;
+        }
+        else {
             passwordError.innerText='';
         }
         if (password2Input.value != passwordInput.value) {
@@ -99,7 +105,7 @@ window.addEventListener('load', () => {
           ))){
             console.log('bad email');
             emailError.innerText = "Please enter a valid email";
-            counter = 1;
+                        
           }
           else {
             emailError.innerText = ""
@@ -110,7 +116,12 @@ window.addEventListener('load', () => {
             passwordError.innerText = "You must choose a password";
         } else if (passwordInput.value.length < 8) {
             passwordError.innerText = "Password minimun length is 8"
-        } else {
+        }  else if (!(passwordInput.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,}$/
+        ))) {
+        passwordError.innerText = 'Must contain at least eight characters, one lower case character, one upper case character, one number and one special character.'
+        
+    } 
+        else {
             passwordError.innerText='';
         }
     })
