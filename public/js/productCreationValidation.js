@@ -27,12 +27,20 @@ form.addEventListener("submit", function (e) {
 if (errores.length > 0) {
     e.preventDefault();
 
+    //pendiente: revisar estas líneas para mostrarlas como listado. Modificar el html
+let errores = document.querySelector("div.errores");
+for (let i = 0; i < errores.length; i++) {
+    errores.innerHTML += errores[i]
+}    
 }
 })
 
+// agregar algunos eventos de mouse
 
-console.log(form)
-console.log(productName)
+
+
+//console.log(form)
+//console.log(productName)
 console.log(errores)
 // console.log(productDescription)
 // console.log(productExtraInfo)
