@@ -3,6 +3,7 @@ window.addEventListener('load', () => {
     let productName = document.querySelector('#productName')
     let productDescription = document.querySelector('#description')
     let productPrice = document.querySelector('#price')
+    let productImage = document.querySelector('#productImage')
 
     form.addEventListener("submit", function (e) {
         if(!validaciones(e)){
@@ -33,7 +34,6 @@ if (productPrice == " ") {
 }
 
 
-    //pendiente: revisar estas líneas para mostrarlas como listado. Modificar el html
 let ulErrores = document.querySelector("div.errores");
 if(errores.values>0){
     e.preventDefault();
