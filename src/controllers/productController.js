@@ -1,5 +1,6 @@
 const path = require ("path");
 const fs = require('fs');
+const {validationResult} = require ('express-validator');
 // const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db = require('../database/models');
@@ -47,11 +48,10 @@ store: (req, res) => {
         brand_id :req.body.brand_id,
         price: req.body.price,
         discount: req.body.discount / 100,
-        image: req.file ? req.file.filename : null,
+        image: req.file ? req.file.filename : "defaultProductImage.png",
         is_active : req.body.isActive == 'on' ? 1 : 0,
         description : req.body.description,
-        extra_info : req.body.extraInfo
-        
+        extraInfo : req.body.extraInfo
     })
     .then((product) => {
         console.log(2)  
@@ -72,15 +72,16 @@ store: (req, res) => {
             else {
                 db.ProductCategory
                     .create({
-                    product_id: idP,
+                    product_id: product.id,
                     category_id: req.body.category})
-                    .then(() => res.redirect('/shop') )
-            }
-        
-
-        
+                    .then(() => {
+                    console.log(4)
+                    res.redirect('/shop')}
+                    )}
+                
     })
-    .catch(err => res.render(err))
+    console.log (validationResult)
+    // .catch(err => res.render(err))
 
 
 
@@ -236,5 +237,6 @@ delete: (req, res) => {
     })
     .catch(err => res.send(err));
 },
+
 };
 module.exports = productController;
