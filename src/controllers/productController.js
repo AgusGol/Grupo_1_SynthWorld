@@ -133,7 +133,8 @@ productEdition:(req, res) => {
     Promise
     .all([productCategory, editProduct, category, allBrand])
     .then(([productCategory, product, allCategory, allBrand]) => {
-        console.log(product.is_active)
+        console.log('prod',productCategory[1])
+        console.log('length', productCategory.length)
         return res.render('productEdition', {productCategory,product,allCategory, allBrand})
     })
         .catch(error => res.send(error))
