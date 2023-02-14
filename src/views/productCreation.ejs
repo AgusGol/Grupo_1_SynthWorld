@@ -13,7 +13,7 @@
 <main>
     <section class="newProduct-Section">
         <h2>Create a new listing</h2>
-        <div>
+        <div class = "validationErrors">
             <ul id="errores"> </ul>
         </div>
         <form action="/products/create" method="POST" class="register-form-New-Product" enctype="multipart/form-data">
@@ -67,14 +67,15 @@
             <article class="product-Images-Container">
                 <section class="product-Images">
                     <label for="productImg">Images</label>
-                        <input type="file" name="productImg" class="btn-File-Select" multiple accept=".jpg, .jpeg, .png .gif">
+                        <input type="file" name="productImg" class="btn-File-Select" multiple accept=".jpg, .jpeg, .png .gif" id="productImage">
                 </section>
             </article>
             <article>
             <label for="isActive">Show in the shop</label>
             <input type="checkbox" checked name="isActive" placeholder="Active">
             </article>
-            <div class="errores"></div>
+            <!-- <div class="errores"></div> -->
+            <p class="productImageError errorsJs"></p>
             <button type="submit" class="btn-register-product">
                 Create product
             </button>
