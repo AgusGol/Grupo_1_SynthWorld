@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
     let errores = []; 
 if (productName.value == "") {
     errores.push("You must define a product name");
-} else if (productName.value.length < 6) {
+} else if (productName.value.length < 5) {
     errores.push("The product name must be at least 5 characters long");
 } else{
     errores.push("")
