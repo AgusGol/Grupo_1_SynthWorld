@@ -40,12 +40,18 @@ if(productImage.value != ''){
     let pImage = productImage.value.slice(productImage.value.length - 5, productImage.value.length);
     if(!(pImage.includes('jpg') || pImage.includes('jpeg')  || pImage.includes('png') || pImage.includes('gif'))) {
         counter = 1;
-        productImageError.innerText = "The image must be jpg, jpeg, png or gif."
+    //    productImageError.innerText = "The image must be jpg, jpeg, png or gif."
+        errores.push("The image must be jpg, jpeg, png or gif.")
     }
     else {
         productImageError.innerHTML = ''
     }
+}else  {
+    //productImageError.innerHTML = 'You must select an image'
+    errores.push('You must select an image')
+    counter = 1;
 }
+
 
 let ulErrores = document.getElementById('errores');
 let errorsSend = errores.filter(error => error != "")

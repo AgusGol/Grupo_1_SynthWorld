@@ -47,7 +47,7 @@ store: (req, res) => {
         name: req.body.name,
         brand_id :req.body.brand_id,
         price: req.body.price,
-        discount: req.body.discount / 100,
+        discount: req.body.discount == "" ? 0 : req.body.discount / 100,
         image: req.file ? req.file.filename : "defaultProductImage.png",
         is_active : req.body.isActive == 'on' ? 1 : 0,
         description : req.body.description,
