@@ -77,11 +77,8 @@ window.addEventListener('load', () => {
         }
 
         if(imageInput.value != ''){
-
-            if(!(imageInput.value.slice(imageInput.value.length - 5, imageInput.value.length).includes('jpg')
-            || imageInput.value.slice(imageInput.value.length - 5, imageInput.value.length).includes('jpeg') 
-            || imageInput.value.slice(imageInput.value.length - 5, imageInput.value.length).includes('png')
-            || imageInput.value.slice(imageInput.value.length - 5, imageInput.value.length).includes('gif'))) {
+            let uImage = imageInput.value.slice(imageInput.value.length - 5, imageInput.value.length);
+            if(!(uImage.includes('jpg') || uImage.includes('jpeg') || uImage.includes('png') || uImage.includes('gif'))) {
                 counter = 1;
                 imageError.innerText = "The image must be jpg, jpeg, png or gif."
             }
@@ -126,11 +123,11 @@ window.addEventListener('load', () => {
         }
     })
 
-    passwordInput.addEventListener('keyup', (e) => {
-        if(passwordInput.value.length>=8){
-            passwordError.innerText=""
-        }
-    })
+    //passwordInput.addEventListener('keyup', (e) => {
+    //    if(passwordInput.value.length>=8){
+    //        passwordError.innerText=""
+    //    }
+    //})
 
     password2Input.addEventListener('focusout' , (e) => {
         if (password2Input.value != passwordInput.value) {

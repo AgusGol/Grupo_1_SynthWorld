@@ -36,17 +36,14 @@ if (productDescription.value == "") {
 if (productPrice.value == "") {
     errores.push("You must define a product price")
 } else if (productPrice.value > 0) {
-    errores.push("The product price must be at least 1$")
+    errores.push("The product price must more than 0")
 } else{
     errores.push("")
 }
 
 if(productImage.value != ''){
-
-    if(!(productImage.value.slice(productImage.value.length - 5, productImage.value.length).includes('jpg')
-    || productImage.value.slice(productImage.value.length - 5, productImage.value.length).includes('jpeg') 
-    || productImage.value.slice(productImage.value.length - 5, productImage.value.length).includes('png')
-    || productImage.value.slice(productImage.value.length - 5, productImage.value.length).includes('gif'))) {
+    let pImage = productImage.value.slice(productImage.value.length - 5, productImage.value.length);
+    if(!(pImage.includes('jpg') || pImage.includes('jpeg')  || pImage.includes('png') || pImage.includes('gif'))) {
         counter = 1;
         productImageError.innerText = "The image must be jpg, jpeg, png or gif."
     }

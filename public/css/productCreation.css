@@ -17,6 +17,8 @@
     margin-left: 40px;
     color: rgb(181, 39, 39);
     font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
 }
 
 h2 {
