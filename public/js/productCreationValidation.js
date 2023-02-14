@@ -9,11 +9,6 @@ window.addEventListener('load', () => {
 
 
     form.addEventListener("submit", function (evento) {
-        if(!validaciones(evento)){
-            evento.preventDefault();
-        } else{
-            form.submit();
-        }
         function validaciones (evento) {
 
     let errores = []; 
@@ -27,7 +22,7 @@ if (productName.value == "") {
 
 if (productDescription.value == "") {
     errores.push("You must define a product description");
-} else if (productName.value.length < 21) {
+} else if (productDescription.value.length < 21) {
     errores.push("The product description must be at least 21 characters long");
 } else{
     errores.push("")
@@ -35,7 +30,7 @@ if (productDescription.value == "") {
 
 if (productPrice.value == "") {
     errores.push("You must define a product price")
-} else if (productPrice.value > 0) {
+} else if (productPrice.value <= 0) {
     errores.push("The product price must more than 0")
 } else{
     errores.push("")
@@ -53,15 +48,22 @@ if(productImage.value != ''){
 }
 
 let ulErrores = document.getElementById('errores');
-if(errores.length > 0){
+let errorsSend = errores.filter(error => error != "")
+if(errorsSend.length > 0){
     evento.preventDefault();
     ulErrores.innerHTML="";
-for (let i = 0; i < errores.length; i++) {
-    ulErrores.innerHTML += `<li> ${errores[i]} </li> `}
-    errores = [];    
+for (let i = 0; i < errorsSend.length; i++) {
+    ulErrores.innerHTML += `<li> ${errorsSend[i]} </li> `}
+    errores = []; 
+    errorsSend = [];   
 } else {
     return true;
 }
+}
+if(!validaciones(evento)){
+    evento.preventDefault();
+} else{
+    form.submit();
 }
 })
 
