@@ -22,6 +22,15 @@ input {
 textarea {
     color: #FFFFFF;
 }
+.validationErrors {
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left: 40px;
+    color: rgb(181, 39, 39);
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+}
 .container-inputs {
     display: flex;
     flex-wrap: wrap;

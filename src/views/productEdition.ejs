@@ -13,16 +13,19 @@
 <main>
     <section class="editProduct-Section">
         <h2>Edit listing</h2>
+        <div class = "validationErrors">
+            <ul id="errores"> </ul>
+        </div>
         <form action="/products/edit/<%=product.id%>?_method=PUT" method="POST" class="register-form-Edit-Product" enctype="multipart/form-data">
             <div class="container-inputs">
                 <article class="productNameContainer">
                 <label for="name">Product Name</label>
-                    <input type="text" name="name" class="productName" value="<%= product.name %>" required>
+                    <input type="text" name="name" class="productName" id="productName" value="<%= product.name %>" placeholder="<%= product.name %>"">
                 </article>
                 
                 <article class="productDescriptionConteiner">
                     <label for="description">Description</label>
-                    <textarea name="description" placeholder=" <%= product.description %>" required> <%= product.description %></textarea>
+                    <textarea name="description" placeholder=" <%= product.description %>" id="productDescription"> <%= product.description %></textarea>
                 </article>
                 <article class="productExtraInfoConteiner">
                     <label for="extraInfo">Extra Info</label>
@@ -31,21 +34,21 @@
             </div>
             <div class="second-container-inputs">
                 <article class="productPriceContainer" >
-                    <label for="price">Price</label>
-                        <input type="text" name="price" class="inputPrice" value="<%= product.price %>" placeholder="<%= product.price %>" required>
+                    <label for="price" >Price</label>
+                        <input type="text" name="price" class="inputPrice" id="price" value="<%= product.price %>" placeholder="<%= product.price %>" >
                 </article>
                 <article class="productDiscountContainer" >
                     <label for="discount">Discount (%)</label>
-                        <input type="number" name="discount" value =<%= product.discount * 100 %> class="inputDiscount" required>
+                        <input type="number" name="discount" value =<%= product.discount * 100 %> class="inputDiscount" >
                 </article>
                 <article class="product-Categories-Container">
                     <label for="category">Categories</label>
-                    <select  class="product-Categories"name="category" required>
+                    <select  class="product-Categories"name="category" >
                         <% allCategory.forEach(category => { %>
                         <option value="<%= category.id %>" <% if (productCategory[0].category_id == category.id) { %><%= 'selected' %><% }; %>><%= category.name %></option>
                         <% }); %>
                     </select>
-                    <select  class="product-Categories"name="category2" required>
+                    <select  class="product-Categories"name="category2" >
                         <option value='0'>2nd Category (optional)</option>
                         <% allCategory.forEach(category => { %>
                         <option value="<%= category.id %>" <% if(productCategory != undefined) { if (productCategory.length > 0) { if (productCategory[1].category_id == category.id) {%><%= 'selected' %><% }; }} %>><%= category.name %></option>
@@ -62,7 +65,7 @@
                 </article>
                 <article class="productBrandContainer">
                     <label for="brand_id">Brands</label>
-                    <select name="brand_id" id="" required>
+                    <select name="brand_id" id="" >
                         <% allBrand.forEach(brand => { %>
                         <option value="<%= brand.id %>" <% if (product.brand.id == brand.id) { %><%= 'selected' %><% }; %>><%= brand.name %></option>
                         <% }); %>
@@ -76,7 +79,7 @@
             <article class="product-Images-Container">
                 <section class="product-Images">
                     <label for="images">Images</label>
-                        <input type="file" name="images" class="btn-File-Select" multiple accept=".jpg, .png" >
+                        <input type="file" name="images" class="btn-File-Select" id="productImage" accept=".jpg, .png" >
                             <img src="/img/products/<%= product.image %>" max-width='300px' max-height='300px'>
                             
 
@@ -94,6 +97,8 @@
 
 <!--Footer partials-->
 <%- include('./partials/footer') %>
+
+<script src="/js/productUpdateValidation.js" type="text/javascript"></script>
 
 </body>
 </html>
