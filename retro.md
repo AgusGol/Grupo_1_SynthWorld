@@ -128,5 +128,17 @@ Participantes: Agus, Mati, Vicky
 
 
 
+*****************************
+Retro sexto sprint
+Dinámica: estrella de mar
+Participantes: Agus, Mati, Vicky
 
-
+- Keep doing:
+    Explicar como se pensó cierto código para que todos aprendamos
+    Programar
+    Repartir tareas
+    Compartir código
+- More of:
+    Compartir fuentes
+    Estudio
+    Resolver juntos
