@@ -37,16 +37,29 @@ productCreation:(req, res) => {
     let brandP = Brand.findAll();
     Promise
         .all([categoryP, brandP])
-        .then(([categories, brands]) => { res.render('productCreation', {brands, categories})})
+        .then(([categories, brands]) => { res.render('productCreation', {categories,brands})})
         .catch(error => res.send(error))
 },
 store: (req, res) => {
-    console.log(1)
-    console.log(req.body)
+    let categoriesP = Category.findAll();  
+    let brandP = Brand.findAll();
+    //guarda los errores, nose porque llegan vacios.
+    let resultValidation = validationResult(req);
+    // return res.send(resultValidation);
+    if(!resultValidation.isEmpty()){
+                Promise
+        .all([categoriesP, brandP])
+        .then(([categories, brands]) => {
+        console.log(categories)
+        return res.render("productCreation",{ 
+        errors:resultValidation.mapped(), oldData:req.body,categories,brands
+    })});
+}    
+    else{
     Product.create({
         name: req.body.name,
         brand_id :req.body.brand_id,
-        price: req.body.price,
+        price: req.body.price == "" ? 0.01 :req.body.price,
         discount: req.body.discount == "" ? 0 : req.body.discount / 100,
         image: req.file ? req.file.filename : "defaultProductImage.png",
         is_active : req.body.isActive == 'on' ? 1 : 0,
@@ -120,7 +133,7 @@ store: (req, res) => {
 //     fs.writeFileSync(productsFilePath, productsJSON , "");
 //     console.log(req.file);
 //     res.redirect('/shop');
-},
+}},
 
 productEdition:(req, res) => { 
     let productId = req.params.id;

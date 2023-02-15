@@ -2,7 +2,7 @@ const express = require("express");
 const router= express.Router();
 const path = require ("path");
 const multer = require ('multer');
-// const validateProductCreation = require ("../middlewares/productValidateCreationMiddleware")
+const validateProductCreation = require ("../middlewares/productValidateCreationMiddleware")
 // const admin = require('../middlewares/adminMiddleware') => para implementar los permisos del admin
 
 // Controller require //
@@ -25,7 +25,7 @@ const adminMiddleware = require('../middlewares/adminMiddleware');
 
 // Create one product //
 router.get('/products/create', productController.productCreation); ////agregar más adelante acá el middleware admin
-router.post('/products/create', upload.single('productImg'), productController.store); //products validateProductCreation
+router.post('/products/create', upload.single('productImg'),validateProductCreation, productController.store); //products validateProductCreation
 
 // Get one product //
 router.get('/products/:id', productController.productDetail); //products

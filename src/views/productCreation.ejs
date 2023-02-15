@@ -20,25 +20,53 @@
             <div class="container-inputs">
                 <article class="productNameContainer">
                 <label for="name">Product Name</label>
-                    <input type="text" name="name" class="productName" id="productName" >
+                    <input type="text" name="name" class="productName" id="productName"
+                    value="<%= locals.oldData ? oldData.name:null %>">
+                    <% if(locals.errors && errors.name) { %>
+                        <div class="errorList">
+                            <%= errors.name.msg %> 
+                        </div>
+                    <% } %>
                 </article>
                 <article class="productDescriptionConteiner">
                     <label for="description">Description</label>
-                    <textarea name="description" id="description" ></textarea>
+                    <textarea name="description" id="description"> <%= locals.oldData ? oldData.description:null %> </textarea>
+                    <% if(locals.errors && errors.description) { %>
+                        <div class="errorList">
+                            <%= errors.description.msg %> 
+                        </div>
+                    <% } %>
                 </article>
                 <article class="productExtraInfoConteiner">
                     <label for="extraInfo">Extra Info</label>
-                    <textarea type="text" name="extraInfo"  id="extraInfo" ></textarea>
+                    <textarea type="text" name="extraInfo"  id="extraInfo" ><%= locals.oldData ? oldData.extraInfo:null %></textarea>
+                    <% if(locals.errors && errors.extraInfo) { %>
+                        <div class="errorList">
+                            <%= errors.extraInfo.msg %> 
+                        </div>
+                    <% } %>
                 </article>
             </div>
             <div class="second-container-inputs">
                 <article class="productPriceContainer" >
                     <label for="price">Price</label>
-                        <input type="text" step="0.01" min="0" name="price" class="inputPrice"  id="price">
-                </article>
+                        <input type="text" step="0.01" min="0" name="price" class="inputPrice"  id="price" 
+                        id="name-input" value="<%= locals.oldData ? oldData.price:null %>">
+                        <% if(locals.errors && errors.price) { %>
+                            <div class="errorList">
+                                <%= errors.price.msg %> 
+                            </div>
+                        <% } %>
+                    </article>
                 <article class="productDiscountContainer" >
                     <label for="discount">Discount (%)</label>
-                        <input type="number" name="discount" class="inputDiscount"  id="discount">
+                        <input type="number" name="discount" class="inputDiscount"  id="discount"
+                        value="<%= locals.oldData ? oldData.discount:null %>">
+                        <% if(locals.errors && errors.discount) { %>
+                            <div class="errorList">
+                                <%= errors.discount.msg %> 
+                            </div>
+                        <% } %>
                 </article>
                 <article class="product-Categories-Container">
                     <label for="category">Categories</label>
@@ -46,12 +74,14 @@
                         <% categories.forEach(category => { %>
                         <option value="<%= category.id %>"><%= category.name %></option>
                         <% }); %>
+                        
                     </select>
                     <select  class="product-Categories"name="category2" >
                         <option value='0'>2nd Category (optional)</option>
                         <% categories.forEach(category => { %>
                         <option value="<%= category.id %>"><%= category.name %></option>
                         <% }); %>
+                        
                     </select>
                 </article>
                 
@@ -67,7 +97,9 @@
             <article class="product-Images-Container">
                 <section class="product-Images">
                     <label for="productImg">Images</label>
-                        <input type="file" name="productImg" class="btn-File-Select" accept=".jpg, .jpeg, .png, .gif" id="productImage">
+                        <input type="file" name="productImg" class="btn-File-Select" 
+                        accept=".jpg, .jpeg, .png, .gif" id="productImage"
+                        value="<%= locals.oldData ? oldData.productImg:null %>">
                 </section>
             </article>
             <article>
@@ -87,6 +119,6 @@
 
 <!--Footer partials-->
 <%- include('./partials/footer') %>
-<script src="/js/productCreationValidation.js" type="text/javascript"></script>
+<!-- <script src="/js/productCreationValidation.js" type="text/javascript"></script> -->
 </body>
 </html>

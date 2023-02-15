@@ -113,7 +113,7 @@ window.addEventListener('load', () => {
             passwordError.innerText = "You must choose a password";
         } else if (passwordInput.value.length < 8) {
             passwordError.innerText = "Password minimun length is 8"
-        }  else if (!(passwordInput.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,}$/
+        }  else if (!(passwordInput.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])(A-Za-z\d$@$!%*?&#.$($)$-$_]|[^ ]){8,}$/
         ))) {
         passwordError.innerText = 'Must contain at least eight characters, one lower case character, one upper case character, one number and one special character.'
         
