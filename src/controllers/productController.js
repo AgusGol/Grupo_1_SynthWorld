@@ -155,11 +155,34 @@ productEdition:(req, res) => {
 },
 
 update: (req,res) => {
-    let idP = req.params.id;
-    let product
-    Product.findByPk(idP)
-    .then(data => {
-    Product.update(
+    let productId = req.params.id;
+    let editProduct = Product.findByPk(productId,{include:["brand"]});
+    let productCategory = ProductCategory.findAll({where:{product_id:productId}});
+    let category = Category.findAll()
+    let allBrand = Brand.findAll();
+    let resultValidation = validationResult(req);
+    console.log(resultValidation)
+    // return res.send(resultValidation);
+    if(!resultValidation.isEmpty()){
+        Promise
+        .all([productCategory, editProduct, category, allBrand])
+        .then(([productCategory, product, allCategory, allBrand]) => {
+          return res.render('productEdition', {oldData:req.body, productCategory,product,allCategory, allBrand})
+    })
+        // Promise
+        // .all([categoriesP, brandP])
+        // .then(([categories, brands]) => {
+        // console.log(Array.from(validationResult))
+        // return res.render("productEdition",{ oldData:req.body,categories,brands
+        //  })})
+        }
+         else {
+
+        let idP = req.params.id;
+        let product
+        Product.findByPk(idP)
+        .then(data => {
+        Product.update(
         {
         name: req.body.name,
         brand_id :req.body.brand_id,
@@ -201,7 +224,7 @@ update: (req,res) => {
                     .then(() => res.redirect('/shop') )
             }
         })
-    })
+    })}
 
 //     /*let id = req.params.id;*/
 //     let product = req.params.id;
