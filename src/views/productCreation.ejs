@@ -101,6 +101,11 @@
                         accept=".jpg, .jpeg, .png, .gif" id="productImage"
                         value="<%= locals.oldData ? oldData.productImg:null %>">
                 </section>
+                <% if(locals.errors && errors.productImg) { %>
+                    <div class="errorList">
+                        <%= errors.productImg.msg %> 
+                    </div>
+                <% } %>
             </article>
             <article>
             <label for="isActive">Show in the shop</label>

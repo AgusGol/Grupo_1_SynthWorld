@@ -167,7 +167,7 @@ update: (req,res) => {
         Promise
         .all([productCategory, editProduct, category, allBrand])
         .then(([productCategory, product, allCategory, allBrand]) => {
-          return res.render('productEdition', {oldData:req.body, productCategory,product,allCategory, allBrand})
+        return res.render('productEdition', {errors:resultValidation.mapped(),oldData:req.body, productCategory,product,allCategory, allBrand})
     })
         // Promise
         // .all([categoriesP, brandP])

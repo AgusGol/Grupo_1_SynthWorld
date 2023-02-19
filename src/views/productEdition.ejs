@@ -20,38 +20,48 @@
             <div class="container-inputs">
                 <article class="productNameContainer">
                 <label for="name">Product Name</label>
-                    <input type="text" name="name" class="productName" id="productName" value="<%= product.name %>" placeholder="<%= product.name %>"">
+                    <input type="text" name="name" class="productName" id="productName" value="<%= locals.oldData ? oldData.name:product.name %>" >
+                    <% if(locals.errors && errors.name) { %>
+                        <div class="errorList">
+                            <%= errors.name.msg %> 
+                        </div>
+                    <% } %>
                 </article>
                 
                 <article class="productDescriptionConteiner">
                     <label for="description">Description</label>
-                    <textarea name="description" placeholder=" <%= product.description %>" id="productDescription"> <%= product.description %></textarea>
+                    <textarea name="description"  id="productDescription"> <%= locals.oldData ? oldData.description:product.description %> </textarea>
+                <% if(locals.errors && errors.description) { %>
+                        <div class="errorList">
+                            <%= errors.description.msg %> 
+                        </div>
+                    <% } %>
                 </article>
                 <article class="productExtraInfoConteiner">
                     <label for="extraInfo">Extra Info</label>
-                    <textarea type="text" name="extraInfo" ><%= product.extra_info %></textarea>
+                    <textarea type="text" name="extraInfo" ><%= locals.oldData ? oldData.extraInfo:product.extraInfo %></textarea>
                 </article>
             </div>
             <div class="second-container-inputs">
                 <article class="productPriceContainer" >
                     <label for="price" >Price</label>
-                        <input type="text" name="price" class="inputPrice" id="price" value="<%= product.price %>" placeholder="<%= product.price %>" >
+                        <input type="text" name="price" class="inputPrice" id="price" value="<%= locals.oldData ? oldData.price:product.price %>">
                 </article>
                 <article class="productDiscountContainer" >
                     <label for="discount">Discount (%)</label>
-                        <input type="number" name="discount" value =<%= product.discount * 100 %> class="inputDiscount" >
+                        <input type="number" name="discount" value="<%= locals.oldData ? oldData.discount:product.discount*100 %>" class="inputDiscount" >
                 </article>
                 <article class="product-Categories-Container">
                     <label for="category">Categories</label>
                     <select  class="product-Categories"name="category" >
                         <% allCategory.forEach(category => { %>
-                        <option value="<%= category.id %>" <% if(productCategory != undefined) {if (productCategory[0].category_id == category.id) { %><%= 'selected' %><% }}; %>><%= category.name %></option>
+                        <option value="<%= locals.oldData ? oldData.category:productCategory %>" <% if(productCategory != undefined) {if (productCategory[0].category_id == category.id) { %><%= 'selected' %><% }}; %>><%= category.name %></option>
                         <% }); %>
                     </select>
                     <select  class="product-Categories"name="category2" >
                         <option value='0'>2nd Category (optional)</option>
                         <% allCategory.forEach(category => { %>
-                        <option value="<%= category.id %>" <% if(productCategory != undefined) { if (productCategory.length > 1) { if (productCategory[1].category_id == category.id) {%><%= 'selected' %><% }; }} %>><%= category.name %></option>
+                        <option value="<%= locals.oldData ? oldData.category2:productCategory %>" <% if(productCategory != undefined) { if (productCategory.length > 1) { if (productCategory[1].category_id == category.id) {%><%= 'selected' %><% }; }} %>><%= category.name %></option>
                         <% }); %>
                     </select>
                         <!-- <Select class="product-Categories" name="category" value="< % = product.category % >" required>
@@ -84,7 +94,12 @@
                             
 
                 </section>
-               
+                <% if(locals.errors && errors.productImg) { %>
+                    <div class="errorList">
+                        <%= errors.productImg.msg %> 
+                    </div>
+                <% } %>
+            </article>   
                 
             <button type="submit" class="btn-modify-product">
                 Modify listing
@@ -97,8 +112,8 @@
 
 <!--Footer partials-->
 <%- include('./partials/footer') %>
-<!--
+
 <script src="/js/productUpdateValidation.js" type="text/javascript"></script>
--->
+
 </body>
 </html>
