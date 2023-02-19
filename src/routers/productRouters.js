@@ -36,7 +36,8 @@ router.get('/shop', productController.shop);
 
 // Edit one product //
 router.get('/products/edit/:id', productController.productEdition); 
-router.put('/products/edit/:id', upload.single("images"),  productController.update);
+const validateProductUpdate = require('../middlewares/productValidateUpdateMiddleware')
+router.put('/products/edit/:id', upload.single("images"),validateProductUpdate, productController.update);
 
 // Delete one product //
 router.delete('/products/delete/:id', productController.delete); 
