@@ -190,11 +190,13 @@ userUpdate: (req,res) => {
         })
         })
 },
-logout: (req, res) => {
-    req.session.destroy();
-    res.clearCookie("userEmail");
-    res.redirect('/users/login')
-}
+
+sqltest: (req, res) => {
+    db.User.findAll()
+        .then(data => {
+            res.json(data)
+        })
+}      
 };
 
 module.exports =userController;
