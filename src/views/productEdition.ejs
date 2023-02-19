@@ -55,13 +55,13 @@
                     <label for="category">Categories</label>
                     <select  class="product-Categories"name="category" >
                         <% allCategory.forEach(category => { %>
-                        <option value="<%= locals.oldData ? oldData.category:productCategory %>" <% if(productCategory != undefined) {if (productCategory[0].category_id == category.id) { %><%= 'selected' %><% }}; %>><%= category.name %></option>
+                        <option value="<%= category.id %>" <% if(productCategory != undefined) {if (productCategory[0].category_id == category.id) { %><%= 'selected' %><% }}; %>><%= category.name %></option>
                         <% }); %>
                     </select>
                     <select  class="product-Categories"name="category2" >
                         <option value='0'>2nd Category (optional)</option>
                         <% allCategory.forEach(category => { %>
-                        <option value="<%= locals.oldData ? oldData.category2:productCategory %>" <% if(productCategory != undefined) { if (productCategory.length > 1) { if (productCategory[1].category_id == category.id) {%><%= 'selected' %><% }; }} %>><%= category.name %></option>
+                        <option value="<%= category.id %>" <% if(productCategory != undefined) { if (productCategory.length > 1) { if (productCategory[1].category_id == category.id) {%><%= 'selected' %><% }; }} %>><%= category.name %></option>
                         <% }); %>
                     </select>
                         <!-- <Select class="product-Categories" name="category" value="< % = product.category % >" required>
