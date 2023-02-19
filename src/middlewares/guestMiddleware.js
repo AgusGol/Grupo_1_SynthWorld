@@ -8,7 +8,8 @@ function guestMiddleware (req, res, next) {
     if (req.session.email == undefined) {
         next();
     } else {
-        res.send('Esta página es sólo para invitados')
+        let idU = req.session.userId
+        res.redirect('/users/detail/' + idU)
     }                                   
 }
 
