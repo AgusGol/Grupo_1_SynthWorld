@@ -52,7 +52,7 @@ window.addEventListener('load', () => {
             emailError.innerText = ""
           }
     })
-    passwordInput.addEventListener('keyup' , (e) => {
+    passwordInput.addEventListener('focusout' , (e) => {
         if (passwordInput.value == "") {
             passwordError.innerText = "The password cannot be empty";
         }

@@ -30,13 +30,11 @@ router.get("/login", guestMiddleware, userController.login);
 router.post("/login", validateLogin, userController.loginRequest);
 router.get("/register", guestMiddleware, userController.userCreate); //users
 router.post("/register",upload.single('userAvatar'),validateRegister,userController.register);
-router.get('/detail/:id', userController.userDetail);
+router.get('/detail/:id',loggedMiddleware, userController.userDetail);
 router.get("/edit", loggedMiddleware, userController.userEdit);
 router.post('/update/:id', upload.single('userAvatar'), userController.userUpdate)
 
-
-// testeando coneccion a  y q los modelos esten bien
-router.get("/test", userController.sqltest);
+router.get("/logout", loggedMiddleware, userController.logout);
 
 router.get("/:id", userController.userDetail);
 
