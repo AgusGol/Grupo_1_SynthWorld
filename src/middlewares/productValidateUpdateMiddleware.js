@@ -20,7 +20,7 @@ const validateProductUpdate =[
         .custom((value, {req}) => {
             // let value = req.file.minetype
             console.log('reeq', req.file)
-        if(req.file.mimetype === 'image/jpeg'|| req.file.mimetype === 'image/gif' || req.file.mimetype === 'image/png' || req.file == undefined){
+        if(req.file.mimetype === 'image/jpeg'|| req.file.mimetype === 'image/gif' || req.file.mimetype === 'image/png' || req.file == 'undefined'){
            // console.log('reeq', req.file)
            console.log('reeq entramos', req.file)
             return true;}
