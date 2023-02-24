@@ -7,9 +7,7 @@ const { Op } = require("sequelize");
 //Aqui tienen otra forma de llamar a cada uno de los modelos
 const Users = db.User;
 
-
-
-const usersApiControllerr = {
+const usersApiController = {
     'list': (req, res) => {
         db.User.findAll()
         .then(clientes => {
@@ -17,14 +15,14 @@ const usersApiControllerr = {
                 meta: {
                     status: 200,
                     count: clientes.length,
-                    url: '/api/clientes'
+                    url: '/api/users'
                 },
                 data: clientes.map(cliente=>{
                     return{
                         id:cliente.id,
                         name:cliente.name,
                         email:cliente.email,
-                        url:"/api/clientes/:"+ cliente.id,
+                        url:"/api/users/:"+ cliente.id,
 
                     }
                 })
@@ -39,9 +37,9 @@ const usersApiControllerr = {
                 let respuesta = {
                     meta: {
                         status: 200,
-                        url: '/api/clientes/:id'
+                        url: '/api/users/:id'
                     },
-                    data: clientes.map(cliente=>{
+                    data: cliente=>{
                         return{
                             id:cliente.id,
                             name:cliente.name,
@@ -52,7 +50,7 @@ const usersApiControllerr = {
                             // image:"http://localhost:3031/api/clientes/:"+ cliente.id+cliente.image,
     
                         }
-                    })
+                    }
                 }
                 res.json(respuesta);
             });

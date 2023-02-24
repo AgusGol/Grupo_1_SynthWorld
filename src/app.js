@@ -6,6 +6,8 @@ const methodOverride = require('method-override'); //para poder implementar los 
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const cookieLoginMiddleware = require('./middlewares/cookieLoginMiddleware');
+// Api's - Require//
+const usersApiRouter = require('./routers/api/usersApiRouter')
 
 app.set('views', path.resolve(__dirname, './views'));
 app.set("view engine", "ejs");
@@ -35,6 +37,9 @@ app.use("/",mainRouters)
 
 //loginMiddleWare
 app.use(cookieLoginMiddleware);
+
+// use Api's//
+app.use("/api/users",usersApiRouter)
 
 app.use((req, res, next) => {
     res.status(404).send('We are sorry, but the page you were looking for was not found');
