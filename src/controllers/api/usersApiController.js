@@ -39,8 +39,8 @@ const usersApiController = {
                         status: 200,
                         url: '/api/users/:id'
                     },
-                    data: cliente=>{
-                        return{
+                    data: {
+                        
                             id:cliente.id,
                             name:cliente.name,
                             last_name:cliente.last_name,
@@ -49,7 +49,7 @@ const usersApiController = {
                             updated_at:cliente.updated_at,
                             // image:"http://localhost:3031/api/clientes/:"+ cliente.id+cliente.image,
     
-                        }
+                        
                     }
                 }
                 res.json(respuesta);
