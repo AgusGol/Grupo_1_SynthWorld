@@ -8,6 +8,6 @@ const usersApiController = require('../../controllers/api/usersApiController');
 router.get('/', usersApiController.list);
 // //Detalle de un cliente
 router.get('/:id', usersApiController.detail);
-
-
+// Avatar de Usuario// 
+router.get('/imagen/:img',usersApiController.avatar)
 module.exports = router;

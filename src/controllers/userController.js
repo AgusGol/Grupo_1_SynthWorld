@@ -191,6 +191,9 @@ userUpdate: (req,res) => {
         })
 },
 
+userAvatar:(req,res)=>{
+    res.render(req.file)
+},
 sqltest: (req, res) => {
     db.User.findAll()
         .then(data => {

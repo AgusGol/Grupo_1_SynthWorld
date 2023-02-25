@@ -22,7 +22,7 @@ const usersApiController = {
                         id:cliente.id,
                         name:cliente.name,
                         email:cliente.email,
-                        url:"/api/users/:"+ cliente.id,
+                        url:"/api/users/"+ cliente.id,
 
                     }
                 })
@@ -42,12 +42,13 @@ const usersApiController = {
                     data: {
                         
                             id:cliente.id,
-                            name:cliente.name,
+                            first_name:cliente.first_name,
                             last_name:cliente.last_name,
                             email:cliente.email,
                             created_at:cliente.created_at,
                             updated_at:cliente.updated_at,
-                            // image:"http://localhost:3031/api/clientes/:"+ cliente.id+cliente.image,
+                            image:'/api/users/imagen/'+cliente.image,
+                            
     
                         
                     }
@@ -55,6 +56,9 @@ const usersApiController = {
                 res.json(respuesta);
             });
     },
+    'avatar':(req,res) =>{
+        res.redirect('/img/users/' + req.params.img)
+    }
     
     
 }
