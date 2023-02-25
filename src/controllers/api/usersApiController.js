@@ -8,8 +8,8 @@ const { Op } = require("sequelize");
 const Users = db.User;
 
 const usersApiController = {
-    'list': (req, res) => {
-        db.User.findAll()
+    list: (req, res) => {
+        Users.findAll()
         .then(clientes => {
             let respuesta = {
                 meta: {
@@ -31,8 +31,8 @@ const usersApiController = {
             })
     },
         
-    'detail': (req, res) => {
-        db.User.findByPk(req.params.id)
+    detail: (req, res) => {
+        Users.findByPk(req.params.id)
             .then(cliente => {
                 let respuesta = {
                     meta: {
@@ -56,7 +56,7 @@ const usersApiController = {
                 res.json(respuesta);
             });
     },
-    'avatar':(req,res) =>{
+    avatar:(req,res) =>{
         res.redirect('/img/users/' + req.params.img)
     }
     
