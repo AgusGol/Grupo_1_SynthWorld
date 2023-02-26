@@ -16,8 +16,29 @@ const productsApiController ={
         let productList= Products.findAll()
         let categoryList= Categorys.findAll()
         let prod_catList = ProductCategory.findAll()
+        let countCategory = [];
         Promise.all([productList,categoryList,prod_catList])
-        .then(([products,categorys,prods_cats]) => {
+        .then(([products,categories,prods_cats]) => {
+           // console.log(prods_cats)
+           let counterCat;
+            categories.forEach((category, i) => {
+                    counterCat = 0
+                    prods_cats.forEach(p_cat =>{
+                    if(p_cat.category_id == category.id){
+                        counterCat++;
+                    }
+                })
+                console.log(counterCat)
+                countCategory[i] = counterCat
+
+            });
+            console.log(categories)
+            let categoriesCounted = {};
+            categories.forEach((category, i) => {
+                let name = category.name
+                categoriesCounted[name] = countCategory[i]
+            })
+            console.log(categoriesCounted)
             
             let respuesta = {
                 meta: {
@@ -25,9 +46,9 @@ const productsApiController ={
                     count: products.length,
                     url: '/api/products'
                 },
-                countByCategory: {
-
-                },
+                countByCategory: categoriesCounted
+                    
+                ,
                 Products: products.map(product=>{
                     
                     return{
@@ -36,7 +57,7 @@ const productsApiController ={
                         description:product.description,
                         category:prods_cats.filter(prod_cat => prod_cat.product_id ==product.id ),
                         
-                        detail:"/api/products/"+ product.id,
+                        detail:"/api/products/" + product.id,
 
                     }
                 })
