@@ -35,10 +35,9 @@ router.get("/edit", loggedMiddleware, userController.userEdit);
 router.post('/update/:id', upload.single('userAvatar'), userController.userUpdate)
 router.get('/logout', userController.logout)
 
+//esta ruta tiene que ir al final
 router.get('/:userAvart', upload.single('userAvatar'), userController.userAvatar)
 
-
-
-router.get("/:id", userController.userDetail);
+//router.get("/:id", userController.userDetail);
 
 module.exports=router;
