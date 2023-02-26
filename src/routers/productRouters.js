@@ -41,4 +41,9 @@ router.put('/products/edit/:id', upload.single("images"),validateProductUpdate, 
 // Delete one product //
 router.delete('/products/delete/:id', productController.delete); 
 
+// //
+router.post('/:images', upload.single("images"), productController.productImage)
+
+
+
 module.exports=router;

@@ -33,7 +33,7 @@ router.post("/register",upload.single('userAvatar'),validateRegister,userControl
 router.get('/detail/:id', userController.userDetail);
 router.get("/edit", loggedMiddleware, userController.userEdit);
 router.post('/update/:id', upload.single('userAvatar'), userController.userUpdate)
-router.post('/:userAvart', upload.single('userAvatar'), userController.userAvatar)
+router.get('/:userAvart', upload.single('userAvatar'), userController.userAvatar)
 
 
 // testeando coneccion a  y q los modelos esten bien

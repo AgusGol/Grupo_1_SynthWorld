@@ -5,7 +5,7 @@ const { Op } = require("sequelize");
 
 //Recursos //
 const Products = db.Product;
-const Brand = db.Brand;
+const Brands = db.Brand;
 const Categorys = db.Category;
 const ProductCategory = db.ProductCategory; 
 
@@ -47,19 +47,25 @@ const productsApiController ={
     },
         
     detail: (req, res) => {
-        Products.findByPk(req.params.id)
-            .then(product => {
+        let productDetail =Products.findByPk(req.params.id,{include:["brand"]});
+        let brandDetail = Brands.findAll();
+        let product_categoryDetail = ProductCategory.findAll();
+        let categoryDetail = Categorys.findAll();
+    Promise
+        .all([productDetail,brandDetail,product_categoryDetail,categoryDetail])
+        .then(([product,brands,prods_cats,category]) => {
+            console.log("somos brand",brands)
                 let respuesta = {
                     meta: {
                         status: 200,
-                        url: '/api/users/:id'
+                        url: '/api/products/:id'
                     },
                     data: {
                         
                         id:product.id,
                         name:product.name,
-                        brand:{},
-                        category:{},
+                        brand:brands.filter(brand=> brand.id==product.brand_id),                       
+                        category:prods_cats.filter(prod_cat => prod_cat.product_id ==product.id ),
                         price:product.price,
                         discount:product.discount,
                         description:product.description,
@@ -67,7 +73,7 @@ const productsApiController ={
                         is_active:product.is_active,
                         created_at:product.created_at,
                         updated_at:product.updated_at,
-                        image:'/api/users/products/'+product.image,
+                        image:'/api/products/imagen/'+product.image,
                             
     
                         

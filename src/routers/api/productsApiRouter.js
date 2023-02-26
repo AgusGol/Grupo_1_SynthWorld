@@ -8,6 +8,6 @@ const productsApiController = require('../../controllers/api/productsApiControll
 router.get('/', productsApiController.list);
 // //Detalle de un cliente
 router.get('/:id', productsApiController.detail);
-// Avatar de Usuario// 
+// Imagen del Producto// 
 router.get('/imagen/:img',productsApiController.images)
 module.exports = router;

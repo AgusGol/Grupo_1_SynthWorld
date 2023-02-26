@@ -274,6 +274,8 @@ delete: (req, res) => {
     })
     .catch(err => res.send(err));
 },
-
+productImage:(req,res)=>{
+    res.render(req.file)
+},
 };
 module.exports = productController;
