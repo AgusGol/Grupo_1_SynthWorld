@@ -33,11 +33,11 @@ router.post("/register",upload.single('userAvatar'),validateRegister,userControl
 router.get('/detail/:id', userController.userDetail);
 router.get("/edit", loggedMiddleware, userController.userEdit);
 router.post('/update/:id', upload.single('userAvatar'), userController.userUpdate)
+router.get('/logout', userController.logout)
+
 router.get('/:userAvart', upload.single('userAvatar'), userController.userAvatar)
 
 
-// testeando coneccion a  y q los modelos esten bien
-router.get("/test", userController.sqltest);
 
 router.get("/:id", userController.userDetail);
 

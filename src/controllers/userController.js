@@ -190,16 +190,15 @@ userUpdate: (req,res) => {
         })
         })
 },
+logout: (req, res) => {
+    req.session.destroy();
+    res.clearCookie("userEmail");
+    res.redirect('/')
+},
 
 userAvatar:(req,res)=>{
     res.render(req.file)
-},
-sqltest: (req, res) => {
-    db.User.findAll()
-        .then(data => {
-            res.json(data)
-        })
-}      
+}
 };
 
 module.exports =userController;
