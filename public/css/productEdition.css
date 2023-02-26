@@ -2,7 +2,19 @@
     padding-top: 15px;
     width: 100%;
 }
-
+.editProduct-Section{
+    max-width: 95%;
+    margin: auto;
+}
+.register-form-Edit-Product{
+    max-width: 95%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
 .register-form-New-Product{
     width: 95%;
     margin: auto;
@@ -125,6 +137,8 @@ p {
     display: flex;
     width: 95%;
     flex-direction: column;
+    max-width: 810px;
+
 }
 .product-Images{
     display: flex;
@@ -163,6 +177,12 @@ p {
 .btn-File-Select{
     margin: 5px 0px;
     
+}
+.btn-Product-Status{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 10px;
+    justify-content: center;
 }
 
 .container-btn-register-with button{

@@ -36,7 +36,7 @@ router.post('/update/:id', upload.single('userAvatar'), userController.userUpdat
 router.get('/logout', userController.logout)
 
 //esta ruta tiene que ir al final
-router.get('/:userAvart', upload.single('userAvatar'), userController.userAvatar)
+router.get('/:userAvatar', upload.single('userAvatar'), userController.userAvatar)
 
 router.get("/:id", userController.userDetail);
 
