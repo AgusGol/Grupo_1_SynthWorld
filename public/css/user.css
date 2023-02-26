@@ -5,7 +5,8 @@
 .users-list {
     display: flex;
     flex-wrap: wrap;
-    
+    max-width: 95%;
+    margin: auto;
 }
 .user-card {
     width: 50%;
