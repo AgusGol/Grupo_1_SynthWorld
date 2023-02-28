@@ -21,6 +21,7 @@ const storage = multer.diskStorage({
     
     const upload = multer({ storage })
 
+//falta agregar a las rutas neecesarias una vez creada la db final
 const adminMiddleware = require('../middlewares/adminMiddleware');
 
 
@@ -33,6 +34,7 @@ router.get('/products/:id', productController.productDetail); //products
 
 // Get all products //
 router.get('/shop', productController.shop);
+router.get('/shop/search', productController.search);
 
 // Edit one product //
 router.get('/products/edit/:id', productController.productEdition); 

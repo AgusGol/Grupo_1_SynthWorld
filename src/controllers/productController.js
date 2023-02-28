@@ -5,6 +5,7 @@ const {validationResult} = require ('express-validator');
 // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db = require('../database/models');
 const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
 // Constantes de los Modelos citados//
 const Brand = db.Brand;
@@ -276,6 +277,16 @@ delete: (req, res) => {
 },
 productImage:(req,res)=>{
     res.render(req.file)
+},
+search:(req,res)=>{
+    let search = req.query.search
+    Product.findAll(
+        {
+        where: {
+            name: {[Op.like]: `%${search}%`}
+        }
+    }
+    ).then((products) => res.render('shop', {products}));
 },
 };
 module.exports = productController;
