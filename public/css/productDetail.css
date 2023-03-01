@@ -1,3 +1,7 @@
+.product_Detail_Section{
+    max-width: 96%;
+    margin: auto;
+}
 .product-title-mb h2 {
     font-size: 2rem;
     padding-top: 10px;
@@ -21,6 +25,7 @@ h1 {
     
     
 }
+
 .product-details {
     padding: 0 20px 0 10px;
 }

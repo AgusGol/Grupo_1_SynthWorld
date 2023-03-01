@@ -1,3 +1,7 @@
+.userDT{
+    max-width: 96%;
+    margin: auto;
+}
 .product-title-mb h2 {
     font-size: 2rem;
     padding-top: 10px;
@@ -8,8 +12,8 @@ h1 {
     margin: 0.67em 0;
 }
 
-.product-img img{
-    width: 100%;
+.user-img img{
+    width: 70%;
 }
 
 .price p{
@@ -29,7 +33,9 @@ h1 {
     align-items: flex-end;
     
 }
-
+.product-title-tb h2{
+    display: block;
+}
 .buttons i {
     font-size: 3.5rem;
 }
@@ -167,7 +173,7 @@ h1 {
     header {
         height: 80px;
     }
-    .product-img {
+    .user-img {
          margin: 20px 00px 30px 00px;
     }
     .price p{

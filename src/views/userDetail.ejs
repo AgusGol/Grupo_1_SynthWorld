@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <%- include('./partials/head') %>
-    <link href="/css/productDetail.css" rel="stylesheet">
+    <link href="/css/userDetail.css" rel="stylesheet">
 </head>
 
 <body>
     <%- include('./partials/header') %>
 
-<!--Inicio productDetail-->
-<main>
-    <section>
+<!--Inicio UserDetail-->
+<main >
+    <section class="userDT">
         <article class="product-title product-title-tb">
             <h2><%= user.first_name %><p> <%= user.last_name %></p></h2>
             </article>
-        <article class="product-img">
+        <article class="user-img">
             <img src="/img/users/<%= user.image %>">  <!--imagen de ejemplo. Cambiarla-->
         </article>
         <div class="product-details">

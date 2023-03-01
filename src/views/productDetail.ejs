@@ -10,7 +10,7 @@
 
 <!--Inicio productDetail-->
 <main>
-    <section>
+    <section class="product_Detail_Section">
         <article class="product-title product-title-tb">
             <h2><%= product.name %> </h2>
             </article>
@@ -45,8 +45,8 @@
 
         </article>
     </div>
-    <div>
-        <a href="/products/edit/<%= product.id %>">Edit Product</a>
+    <div style="display: inline-flex">
+        <a  href="/products/edit/<%= product.id %>">Edit Product</a>
         <!-- <form action="/products/edit/< %= product.id %>" method="get">
             <button type="submit" class="btn-to-edition">
                 Edit Product
