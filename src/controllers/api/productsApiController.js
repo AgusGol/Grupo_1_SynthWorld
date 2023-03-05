@@ -55,6 +55,7 @@ const productsApiController ={
                         id:product.id,
                         name:product.name,
                         description:product.description,
+                        price: product.price,
                         category:prods_cats.filter(prod_cat => prod_cat.product_id ==product.id ),
                         
                         detail:"/api/products/" + product.id,
