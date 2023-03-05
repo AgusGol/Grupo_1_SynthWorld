@@ -65,7 +65,7 @@ store: (req, res) => {
         image: req.file ? req.file.filename : "defaultProductImage.png",
         is_active : req.body.isActive == 'on' ? 1 : 0,
         description : req.body.description,
-        extraInfo : req.body.extraInfo
+        extra_info : req.body.extra_info
     })
     .then((product) => {
         console.log(2)  
@@ -192,7 +192,7 @@ update: (req,res) => {
         image: req.file ? req.file.filename : data.image,
         is_active : req.body.isActive == 'on' ? 1 : 0,
         description : req.body.description,
-        extra_info : req.body.extraInfo
+        extra_info : req.body.extra_info
         
     }, {
         where: {id : idP}
