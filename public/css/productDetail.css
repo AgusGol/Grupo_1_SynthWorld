@@ -46,6 +46,7 @@ h1 {
 }
 
 .btn-wishlist {
+    display: none;
     background-color: #282828;
     color:#FFFFFF;
     border: solid white 1px;
@@ -129,7 +130,7 @@ h1 {
     align-items: flex-end;
 }
 .buttons-quantity {
-    display: flex;
+    display: none;
     justify-content: center;
     height: 25px;
 
