@@ -30,7 +30,7 @@
                 </article>
                 <article class="productDescriptionConteiner">
                     <label for="description">Description</label>
-                    <textarea name="description" id="description"> <%= locals.oldData ? oldData.description:null %> </textarea>
+                    <textarea name="description" id="description"><%= locals.oldData ? oldData.description:null %></textarea>
                     <% if(locals.errors && errors.description) { %>
                         <div class="errorList">
                             <%= errors.description.msg %> 
@@ -38,11 +38,11 @@
                     <% } %>
                 </article>
                 <article class="productExtraInfoConteiner">
-                    <label for="extraInfo">Extra Info</label>
-                    <textarea type="text" name="extraInfo"  id="extraInfo" ><%= locals.oldData ? oldData.extraInfo:null %></textarea>
-                    <% if(locals.errors && errors.extraInfo) { %>
+                    <label for="extra_info">Extra info</label>
+                    <textarea type="text" name="extra_info"  id="extra_info" ><%= locals.oldData ? oldData.extra_info:null %></textarea>
+                    <% if(locals.errors && errors.extra_info) { %>
                         <div class="errorList">
-                            <%= errors.extraInfo.msg %> 
+                            <%= errors.extra_info.msg %> 
                         </div>
                     <% } %>
                 </article>
