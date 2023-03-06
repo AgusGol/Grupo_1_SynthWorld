@@ -23,15 +23,17 @@ const productController={
 //     res.render('productDetail',{product});
 // },
 productDetail:(req, res) => {
+    console.log(req.session)
     Product.findByPk(req.params.id)
-    .then((product) => res.render('productDetail',{product}));
+    .then((product) => res.render('productDetail',{product, session: req.session}));
     },
 
 // shop:(req, res) => {
 //     res.render('shop', {products});
 // },
 shop: (req, res) => {
-    Product.findAll().then((products) => res.render('shop', {products}));
+    console.log(req.session)
+    Product.findAll().then((products) => res.render('shop', {products, session: req.session}));
 },
 productCreation:(req, res) => {
     let categoryP = Category.findAll();  

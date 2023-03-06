@@ -1,14 +1,14 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "P@c02022",
+    "password": "agus1234",
     "database": "synthworld",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "agus1234",
+    "password": "null",
     "database": "synthworld",
     "host": "127.0.0.1",
     "dialect": "mysql"

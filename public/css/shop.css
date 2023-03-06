@@ -55,7 +55,21 @@
 p {
     font-size: 1.4rem;
 }
+.price {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+.linkCreate {
+    margin: auto;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 3px;
+}
 
+.createLinkContainer {
+    display: flex;
+    justify-content: center;
+}
 @media (max-width: 320px) {
     .img-categories article  {
 
@@ -77,12 +91,16 @@ p {
     p {
         font-size: 1.6rem;
     }
-    .price-name {
+    .price {
+        font-size: 1.4rem;
+    }
+    
+   /* .price-name {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 0 10px 0 0;
-    }
+    } */
     .img-categories article {
         width: 16.666666vw;
         margin: 0;

@@ -33,18 +33,20 @@
     </div>
             
             
-        <article class="buttons">
-            <button type="submit" class="btn-wishlist">
+    <article class="buttons">
+          <!--     <button type="submit" class="btn-wishlist">
                 + wishlist
-            </button>
-            <!-- <i class="far fa-heart"></i>
-            <i class="fas fa-cart-plus"></i> -->
+            </button> --> 
+            
+           <!-- <i class="fas fa-cart-plus"></i> -->
             <button type="submit" class="btn-cart">
                 Add to cart
             </button> 
+            <i class="far fa-heart"></i>
 
         </article>
     </div>
+    <% if(session.category == 1) {%>
     <div style="display: inline-flex">
         <a  href="/products/edit/<%= product.id %>">Edit Product</a>
         <!-- <form action="/products/edit/< %= product.id %>" method="get">
@@ -60,6 +62,7 @@
             </button>
         </form>    
     </div>
+    <% } %>
     </section>
     <section class="includes-specs-tb">
         <article class="description-tb">
