@@ -15,10 +15,11 @@ const productsApiController ={
     list: (req, res) => {
         let productList= Products.findAll()
         let categoryList= Categorys.findAll()
+        let brandList = Brands.findAll();
         let prod_catList = ProductCategory.findAll()
         let countCategory = [];
-        Promise.all([productList,categoryList,prod_catList])
-        .then(([products,categories,prods_cats]) => {
+        Promise.all([productList,categoryList,prod_catList,brandList])
+        .then(([products,categories,prods_cats, brands]) => {
            // console.log(prods_cats)
            let counterCat;
             categories.forEach((category, i) => {
@@ -57,6 +58,8 @@ const productsApiController ={
                         description:product.description,
                         price: product.price,
                         category:prods_cats.filter(prod_cat => prod_cat.product_id ==product.id ),
+                        brand:brands.filter(brand=> brand.id==product.brand_id),
+
                         
                         detail:"/api/products/" + product.id,
 
