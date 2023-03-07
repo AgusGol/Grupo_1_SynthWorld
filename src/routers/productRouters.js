@@ -26,7 +26,7 @@ const adminMiddleware = require('../middlewares/adminMiddleware');
 
 
 // Create one product //
-router.get('/products/create', productController.productCreation); ////agregar más adelante acá el middleware admin
+router.get('/products/create', adminMiddleware, productController.productCreation); ////agregar más adelante acá el middleware admin
 router.post('/products/create', upload.single('productImg'),validateProductCreation, productController.store); //products validateProductCreation
 
 // Get one product //
@@ -37,11 +37,11 @@ router.get('/shop', productController.shop);
 router.get('/shop/search', productController.search);
 
 // Edit one product //
-router.get('/products/edit/:id', productController.productEdition); 
-router.put('/products/edit/:id', upload.single("images"),validateProductUpdate, productController.update);
+router.get('/products/edit/:id', adminMiddleware,productController.productEdition); 
+router.put('/products/edit/:id', adminMiddleware, upload.single("images"),validateProductUpdate, productController.update);
 
 // Delete one product //
-router.delete('/products/delete/:id', productController.delete); 
+router.delete('/products/delete/:id', adminMiddleware, productController.delete); 
 
 // //
 router.post('/:images', upload.single("images"), productController.productImage)
