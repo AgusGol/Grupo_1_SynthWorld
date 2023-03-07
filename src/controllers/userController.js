@@ -30,6 +30,7 @@ userDetail:(req,res) =>{
 },
 
 login:(req, res) => {
+
     console.log("cookieee", req.cookies.userEmail);
         res.render('login');
         
@@ -59,48 +60,11 @@ register:(req, res, ) => {
             isAdmin : 0,
         }
         )
-        .then(() => res.redirect('/'));
-
-    //     let lastUserIndex = users.length -1;
-    //     let newUser = {};
-    //     if (users == "") {
-    //         newUser = {
-    //             id : 1,
-    //             name: req.body.name,
-    //             last_name: req.body.last_name,
-    //             email: req.body.email,
-    //             password : bcrypt.hashSync(req.body.password,10),
-    //             category : req.body.category,
-    //             image: req.file.filename,
-    //         }
-    //     }
-    //     else { 
-    //         newUser = {
-    //             id : users[lastUserIndex].id + 1,
-    //             name: req.body.name,
-    //             last_name: req.body.last_name,
-    //             email: req.body.email,
-    //             password : bcrypt.hashSync(req.body.password,10),
-    //             category : req.body.category,
-    //             image: req.file ? req.file.filename : "defaultAvatar.png" , 
-    //     }
-    // }
-    
-    
-    //     console.log("ESTO ES newProduct", newUser);
-    //     users.push(newUser);
-    //     let usersJSON = JSON.stringify(users, null, '\t');
-    //     fs.writeFileSync(usersFilePath, usersJSON , "");
-    //     console.log(req.file);
-        
+        .then(() => res.redirect('/'));   
     
     },
 loginRequest: (req, res) => {
-    console.log(req.body);
-    //guarda los errores, nose porque llegan vacios.
     let errors = validationResult(req);
-    console.log('errorss', errors);
-
 
     
         db.User.findAll({

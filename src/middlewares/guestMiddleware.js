@@ -6,9 +6,11 @@ const session = require("express-session");
 
 function guestMiddleware (req, res, next) {
     if (req.session.email == undefined) {
+        console.log('chau')
         next();
     } else {
         let idU = req.session.userId
+        console.log('holi')
         res.redirect('/users/detail/' + idU)
     }                                   
 }
