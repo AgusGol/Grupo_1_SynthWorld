@@ -8,7 +8,7 @@ function loggedMiddleware (req, res, next) {
     if (req.session.email != undefined) {
         next();
     } else {
-        res.send('Necesitas iniciar sesion para editar tu perfil')
+        res.redirect('/users/login')
     }                                   
 }
 
