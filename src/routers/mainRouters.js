@@ -2,14 +2,15 @@ const express = require("express");
 const router= express.Router();
 const mainController= require("../controllers/mainController");
 const productRouters = require("./productRouters");
-const userRouters = require("./userRouters")
+const userRouters = require("./userRouters");
+const loggedMiddleware = require('../middlewares/loggedMiddleware');
 
 router.get("/", mainController.index);
 router.get("/home", mainController.index);
 router.get("/aboutUs",mainController.about)
 // router.get("/login", mainController.login); //users
 // router.get("/register", mainController.register); //users
-router.get('/productCart', mainController.productCart);
+router.get('/productCart', loggedMiddleware, mainController.productCart);
 router.use('/users', userRouters);
 router.use('/', productRouters);
  
