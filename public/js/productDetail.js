@@ -1,10 +1,10 @@
 window.addEventListener('load',()=>{
     //Encabezados //
-    let descripBtn = document.querySelector(".description-tb")
-    let extra_infoBtn = document.querySelector(".extraInfo-tb")
+    let descripBtn = document.querySelector(".description")
+    let extra_infoBtn = document.querySelector(".extra-info")
     //Parrafos //
-    let descripText = document.querySelector(".description-p-tb")
-    let extra_infoText = document.querySelector(".extra-info-tb")
+    let descripText = document.querySelector(".descriptionTextMb")
+    let extra_infoText = document.querySelector(".extraInfoTextMb")
 
     descripBtn.addEventListener("click",()=>{
         descripText.classList.toggle('visible')
