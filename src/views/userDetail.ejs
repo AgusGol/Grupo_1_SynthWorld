@@ -16,8 +16,10 @@
                 <img src="/img/users/<%= user.image %>">  <!--imagen de ejemplo. Cambiarla-->
             </article>
             <article class="user-title user-title-tb">
-                <h2><%= user.first_name %><p> <%= user.last_name %></p></h2>
+                <h2><%= user.first_name %> <%= user.last_name %></h2>
+                <p><%= user.email %></p>
             </article>
+            
         </div>
         <div class="user-details-btn">
         <div>
@@ -34,14 +36,14 @@
                     Delete user
                 </button>
             </form>
-            <br>
-            <form action="/users/logout" method="get">
-                <button type="submit" class="btn-to-edition">
-                    Log out
-                </button>
-                
-            </form>    
+               
         </div>
+        <form action="/users/logout" method="get">
+            <button type="submit" class="btn-to-edition">
+                Log out
+            </button>
+            
+        </form> 
     </div>
     </section>
     
