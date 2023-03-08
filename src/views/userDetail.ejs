@@ -1,63 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('./partials/head') %>
-    <link href="/css/userDetail.css" rel="stylesheet">
-</head>
+    <link href="/css/userDetail.css" rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
     <%- include('./partials/header') %>
 
-<!--Inicio UserDetail-->
-<main >
-    <section class="userDT">
+    <!--Inicio UserDetail-->
+    <main>
+      <section class="userDT">
         <div class="user-card-info">
-            <article class="user-img">
-                <img src="/img/users/<%= user.image %>">  <!--imagen de ejemplo. Cambiarla-->
-            </article>
-            <article class="user-title user-title-tb">
-                <h2><%= user.first_name %> <%= user.last_name %></h2>
-                <p><%= user.email %></p>
-            </article>
-            
+          <article class="user-img">
+            <img src="/img/users/<%= user.image %>" />
+            <!--imagen de ejemplo. Cambiarla-->
+          </article>
+          <article class="user-title user-title-tb">
+            <h2><%= user.first_name %> <%= user.last_name %></h2>
+            <p><%= user.email %></p>
+          </article>
         </div>
         <div class="user-details-btn">
-        <div>
+          <div>
             <form action="/users/edit" method="get">
-                <button type="submit" class="btn-to-edition linkEdit">
-                    Edit details
-                </button>
+              <button type="submit" class="btn-to-edition linkEdit">
+                Edit details
+              </button>
             </form>
-            
-        </div>
-        <form action="/users/logout" method="get">
+          </div>
+          <form action="/users/logout" method="get">
             <button type="submit" class="btn-to-edition linkEdit">
-                Log out
+              Log out
             </button>
-            
-        </form> 
-        <div>
-            <form >
-                <button type="submit" class="btn-delete-user" style="display: inline-flex">
-                    Delete user
-                </button>
+          </form>
+          <div>
+            <form>
+              <button
+                type="submit"
+                class="btn-delete-user"
+                style="display: inline-flex"
+              >
+                Delete user
+              </button>
             </form>
-               
+          </div>
         </div>
-    </div>
-    </section>
-    <% if(user.is_admin == 1) {%>
-        <div class="createLinkContainer">
-            <a  class='linkList' href="/users">Users List</a>
-        </div>
-            <% } %>
-    
-</main>
+      </section>
+      <% if(user.is_admin == 1) {%>
+      <div class="createLinkContainer">
+        <a class="linkList" href="/users">Users List</a>
+      </div>
+      <% } %> <% if(user.is_admin == 1) {%>
+      <div class="createLinkContainer">
+        <a class="linkList" href="localhost:3000" target="blank">Admin Dashboard</a>
+      </div>
+      <% } %>
+    </main>
 
-
-
-<!--Footer partials-->
-<%- include('./partials/footer') %>
-
-</body>
+    <!--Footer partials-->
+    <%- include('./partials/footer') %>
+  </body>
 </html>

@@ -30,7 +30,7 @@
                 
                 <article class="productDescriptionConteiner">
                     <label for="description">Description</label>
-                    <textarea name="description"  id="productDescription"> <%= locals.oldData ? oldData.description:product.description %> </textarea>
+                    <textarea name="description"  id="productDescription"><%= locals.oldData ? oldData.description:product.description %></textarea>
                 <% if(locals.errors && errors.description) { %>
                         <div class="errorList">
                             <%= errors.description.msg %> 
