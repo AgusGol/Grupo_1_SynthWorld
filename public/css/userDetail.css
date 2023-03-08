@@ -1,3 +1,6 @@
+main {
+    margin: auto;
+}
 .userDT{
     display: flex;
     max-width: 96%;
@@ -193,6 +196,49 @@ h2 {
 }
 .includes-specs-tb {
     display: none;
+}
+
+.linkList {
+    margin: auto;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.createLinkContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.btn-delete-user {
+    background-color: #282828;
+    border: 2px solid rgb(176, 60, 60);
+    padding: 5px;
+    border-radius: 3px;
+    color: white;
+    margin-left: 10px;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.linkEdit {
+    background-color: #282828;
+    color: white;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    width: 100px;
+    text-align: center;
+
 }
 
 @media (min-width :768px) {

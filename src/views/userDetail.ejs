@@ -24,28 +24,33 @@
         <div class="user-details-btn">
         <div>
             <form action="/users/edit" method="get">
-                <button type="submit" class="btn-to-edition">
+                <button type="submit" class="btn-to-edition linkEdit">
                     Edit details
                 </button>
             </form>
             
         </div>
+        <form action="/users/logout" method="get">
+            <button type="submit" class="btn-to-edition linkEdit">
+                Log out
+            </button>
+            
+        </form> 
         <div>
             <form >
-                <button type="submit" class="btn-delete-product" style="display: inline-flex">
+                <button type="submit" class="btn-delete-user" style="display: inline-flex">
                     Delete user
                 </button>
             </form>
                
         </div>
-        <form action="/users/logout" method="get">
-            <button type="submit" class="btn-to-edition">
-                Log out
-            </button>
-            
-        </form> 
     </div>
     </section>
+    <% if(user.is_admin == 1) {%>
+        <div class="createLinkContainer">
+            <a  class='linkList' href="/users">Users List</a>
+        </div>
+            <% } %>
     
 </main>
 

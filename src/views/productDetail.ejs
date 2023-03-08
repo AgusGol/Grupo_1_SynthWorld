@@ -48,7 +48,7 @@
     </div>
     <% if(session.category == 1) {%>
     <div style="display: inline-flex">
-        <a class="linkEdit" href="/products/edit/<%= product.id %>">Edit Product</a>
+        <a class="linkEdit" href="/products/edit/<%= product.id %>">Edit</a>
         <!-- <form action="/products/edit/< %= product.id %>" method="get">
             <button type="submit" class="btn-to-edition">
                 Edit Product
@@ -58,7 +58,7 @@
     <div>
         <form action="/products/delete/<%= product.id %>/?_method=DELETE" method="POST">
             <button type="submit" class="btn-delete-product" style="display: inline-flex">
-                Delete product
+                Delete
             </button>
         </form>    
     </div>
