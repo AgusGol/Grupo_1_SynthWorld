@@ -179,6 +179,24 @@ h1 {
     text-align: justify;
     margin: 10px auto 10px auto;
 }
+.linkEdit {
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+
+}
+
+.btn-delete-product {
+    background-color: #282828;
+    border: 2px solid rgb(176, 60, 60);
+    padding: 5px;
+    border-radius: 3px;
+    color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
 @media (min-width :768px) {
     header {
         height: 80px;
