@@ -11,38 +11,37 @@
 <!--Inicio UserDetail-->
 <main >
     <section class="userDT">
-        <article class="product-title product-title-tb">
-            <h2><%= user.first_name %><p> <%= user.last_name %></p></h2>
+        <div class="user-card-info">
+            <article class="user-img">
+                <img src="/img/users/<%= user.image %>">  <!--imagen de ejemplo. Cambiarla-->
             </article>
-        <article class="user-img">
-            <img src="/img/users/<%= user.image %>">  <!--imagen de ejemplo. Cambiarla-->
-        </article>
-        <div class="product-details">
-        <article class="product-title product-title-mb">
-        </article>
-
+            <article class="user-title user-title-tb">
+                <h2><%= user.first_name %><p> <%= user.last_name %></p></h2>
+            </article>
         </div>
-    <div>
-        <form action="/users/edit" method="get">
-            <button type="submit" class="btn-to-edition">
-                Edit details
-            </button>
-        </form>
-        
-    </div>
-    <div>
-        <form >
-            <button type="submit" class="btn-delete-product" style="display: inline-flex">
-                Delete user
-            </button>
-        </form>
+        <div class="user-details-btn">
+        <div>
+            <form action="/users/edit" method="get">
+                <button type="submit" class="btn-to-edition">
+                    Edit details
+                </button>
+            </form>
+            
+        </div>
+        <div>
+            <form >
+                <button type="submit" class="btn-delete-product" style="display: inline-flex">
+                    Delete user
+                </button>
+            </form>
             <br>
             <form action="/users/logout" method="get">
                 <button type="submit" class="btn-to-edition">
                     Log out
                 </button>
-            
-        </form>    
+                
+            </form>    
+        </div>
     </div>
     </section>
     
