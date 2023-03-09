@@ -59,6 +59,7 @@ const productsApiController ={
                         price: product.price,
                         category:prods_cats.filter(prod_cat => prod_cat.product_id ==product.id ),
                         brand:brands.filter(brand=> brand.id==product.brand_id),
+                        image:'/img/products/'+ product.image,
 
                         
                         detail:"/api/products/" + product.id,

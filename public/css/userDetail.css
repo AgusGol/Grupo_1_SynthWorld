@@ -1,3 +1,6 @@
+main {
+    margin: auto;
+}
 .userDT{
     display: flex;
     max-width: 96%;
@@ -17,10 +20,12 @@ h1 {
 .user-card-info{
     padding: 0 20px 0 10px;
     display: flex;
-    max-width: 75%;
+    align-items: center;
     border-radius: 15px;
     margin-bottom: 10px;
-    background-color: #8a8a8a
+    background-color: #8a8a8a;
+    flex-direction: column;
+    padding-bottom: 10px;
 }
 .user-img img{
     width: 70%;
@@ -30,7 +35,11 @@ h1 {
 
 .user-details-btn{
     display: flex;
+}
 
+.user-details-btn form {
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .buttons {
@@ -64,7 +73,7 @@ h1 {
 }
 main{
     margin-top: 115px;
-    height: 70vh;
+    height: 80vh;
 }
 .btn-cart {
     background-color: #8a8a8a;
@@ -175,14 +184,63 @@ main{
 }
 .user-img{
     max-width: 70%;
+    margin: 5% 00px 5% 00px;
     display: flex;
+    justify-content: center;
 }
-.user-title-tb {
-    
+.user-title {
+    justify-content: center;
+}
+h2 {
+    text-align: center;
 }
 .includes-specs-tb {
     display: none;
 }
+
+.linkList {
+    margin: auto;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.createLinkContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.btn-delete-user {
+    background-color: #282828;
+    border: 2px solid rgb(176, 60, 60);
+    padding: 5px;
+    border-radius: 3px;
+    color: white;
+    margin-left: 10px;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.linkEdit {
+    background-color: #282828;
+    color: white;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    width: 100px;
+    text-align: center;
+
+}
+
 @media (min-width :768px) {
     header {
         height: 80px;
@@ -193,10 +251,15 @@ main{
     }
     .user-card-info {
         margin: 10px 10px 0 10px;
-        
+        max-width: 75%;
+    }
+    .user-details-btn{
+        flex-direction: column;
+    }
+    .user-details-btn{
+        flex-direction: column;
     }
     .user-img {
-         margin: 20px 00px 30px 00px;
          max-width: 350px;
     }
     .price p{
@@ -213,11 +276,6 @@ main{
     .buttons {
         padding-right: 0px;
         justify-content: space-between;
-    }
-    .user-title-tb {
-        display: block;
-        padding-top: 30px;
-        margin-top: 80px;
     }
     .user-title-mb {
         display: none;
@@ -292,5 +350,8 @@ main{
     }
     header {
         height: 80px;
+    }
+    .user-card-info {
+        flex-direction: row;
     }
 }     
