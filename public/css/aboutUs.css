@@ -3,9 +3,18 @@
     padding: 0%;
     box-sizing: border-box;
 }
+.profile{
+    border: #8888 3px solid;
+    padding: 5px;
+    border-radius: 8px;
+}
 main{
         margin-top: 90px;
         
+}
+.Team {
+    width: 80%;
+    margin: auto;
 }
 
 .about-body{
