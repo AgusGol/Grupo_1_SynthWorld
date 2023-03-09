@@ -288,7 +288,7 @@ search:(req,res)=>{
             name: {[Op.like]: `%${search}%`}
         }
     }
-    ).then((products) => res.render('shop', {products}));
+    ).then((products) => res.render('shop', {products, session: req.session}));
 },
 };
 module.exports = productController;

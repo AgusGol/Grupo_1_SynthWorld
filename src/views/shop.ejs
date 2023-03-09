@@ -36,11 +36,12 @@
                     </article>   
                     </div>    
     </section>
-    <% if(session.category == 1) {%>
+    <% if(locals.session) {
+    if(session.category == 1) {%>
         <div class="createLinkContainer">
             <a  class='linkCreate' href="/products/create">Create new product</a>
         </div>
-            <% } %>
+            <% }} %>
     <!-- product list -->
     <section class="popular-products">
         <h2>Popular products</h2>
@@ -50,7 +51,7 @@
         <article class="product-article">
             <a href = "/products/<%= product.id %>">
             <div class="product-img-container">
-            <img class="product-image" src="img/products/<%= product.image %> ">
+            <img class="product-image" src="/img/products/<%= product.image %> ">
         </div>
             <div class="price-name">
             <p class="price">$<%= product.price %> </p>
