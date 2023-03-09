@@ -142,3 +142,20 @@ Participantes: Agus, Mati, Vicky
     Compartir fuentes
     Estudio
     Resolver juntos
+
+*****************************
+Retro séptimo sprint
+Dinámica: estrella de mar
+Participantes: Agus, Mati, Vicky
+
+- Keep doing:
+    Acercarnos a la meta
+    Compañerismo
+- More of:
+    Tirar para adelante
+    Emprolijar el sitio
+    Resolver juntos en clase
+- Start doing:
+    Otro curso de React
+- Less of:
+    Trabajar solo
