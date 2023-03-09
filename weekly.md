@@ -39,3 +39,16 @@ Temas tratados en la reunión:
 - Al igual que en los sprints anteriores, lo primero que hicimos fue la revisión de consignas y crear las tareas en Trello
 - Revisamos las tareas pendientes de sprints anteriores y mejoras que fuimos detectando
 - Durante la semana previa a la reunión, fuimos armando el DER en conjunto y en la weekly directamente revisamos lo que se fue bosquejando. Decidimos en conjunto que cosas agregar/sacar teniendo en cuenta nuestro desarrollo
+
+*****************************
+Weekly sprint 7: no hicimos una formal como habíamos hecho en ocasiones anteriores
+
+*****************************
+Weekly sprint 8: APIs + Dashboard
+Asistentes: Agus, Mati, Vicky
+
+Temas tratados en la reunión:
+- Definimos el orden de resolución de las tareas y decidimos arrancar por las APIs.
+- Una vez que se terminen, si nos vamos a enfocar en el dashboard. No es tanta la carga a comparación de sprints anteriores, así que vamos a aprovechar las clases prácticas para seguir trabajando juntos y en caso de necesitar ayuda podemos preguntarle a algún profe 
+
+--- THE END ---
